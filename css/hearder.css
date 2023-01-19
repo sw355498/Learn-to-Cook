@@ -1,0 +1,33 @@
+/* 共用顏色變數載入 */
+@import url('color.css');
+
+.nav-list, .nav-list ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-list{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background: #fff;
+}
+.nav-list img{
+    width: 80px;
+    display: block;
+}
+.nav-list li{
+    text-align: center;
+}
+.nav-list a{
+    padding: 0 1.2rem;
+    line-height: 80px;
+    text-decoration: none;
+    display: block;
+    color: var(--color_cornflowerBlue);
+}
+.nav-list a:hover{
+    color: black;
+    text-decoration:solid;
+    font-weight: bold;
+    font-size: 1.8vw;
+}
