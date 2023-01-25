@@ -1,6 +1,3 @@
-/* 共用顏色變數載入 */
-@import url('color.css');
-
 .nav-list, .nav-list ul{
     display: flex;
     justify-content: space-between;
@@ -29,5 +26,5 @@
     color: black;
     text-decoration:solid;
     font-weight: bold;
-    font-size: 1.8vw;
+    font-size: 2vw;
 }
