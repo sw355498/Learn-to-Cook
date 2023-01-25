@@ -5,343 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learn to Cook</title>
-    <!-- css重置檔案載入 -->
-    <link rel="stylesheet" href="css/reset-css.css">
-    <!-- Bootstrap icons CDN -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <!-- aos CDN -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
-    <!--  -->
+    <!-- 共用css檔載入 -->
+    <link rel="stylesheet" href="css/all.css">
+    <!-- swiper CDN -->
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
-    <!-- 共用header檔載入 -->
-    <link rel="stylesheet" href="css/hearder.css">
-    <!-- 共用footer檔載入 -->
-    <link rel="stylesheet" href="css/footer.css">
-    <style>
-        body{
-            min-height: 100vh;
-            font-size: 1.6vw;
-            line-height: 1.6;
-            background: var(--color_wheat);
-        }
-        /* banner設置 */
-        .banner-block{
-            width: 100%;
-            /* height: 100%; */
-            margin: 0 auto;
-            overflow: hidden;
-        }
-        .banner-list{
-            width: 400vw;
-            height: 600px;
-            display: flex;
-            flex-basis: 0;
-        }
-        .banner1{  
-
-        }
-        .banner2{
-
-        }
-        .banner3{
-
-        }
-        .banner-list img{
-            width: 100%;
-            object-fit: cover;
-            vertical-align: bottom;
-        }
-        @media screen and (max-width: 1280px) {
-            .banner-list{
-                height: 300px;
-            }
-        }
-
-        /* 每個區塊與標題共用屬性 */
-        main section:nth-child(2n){
-            background: #fff;
-        }
-        .section-block{
-            padding: 20px 4rem 40px;
-            overflow: hidden;
-        }
-        .section-block:first-child{
-            padding-top: 20px;
-        }
-        .section-block:last-child{
-            padding-bottom: 20px;
-        }
-        .section-block:nth-child(2n){
-            background: #fff;
-        }
-        .section-block>h2{
-            text-align: center;
-            font-size: 3.5vw;
-            margin-bottom: 15px;
-        }
-
-        /* 食譜分類(classification)區塊設置 */
-        .classification-list{
-            height: 800px;
-            display: grid;
-            grid-template-columns: repeat(10, 1fr);
-            grid-template-rows: 1fr 1fr;
-            column-gap: 50px;
-            row-gap: 40px;
-            justify-content: center;
-        }
-        .classification-list li{
-            border-radius: 20px;
-            position: relative;
-        }
-        .classification-list img{
-            width: 100%;
-            height: calc(100% - 4.5vw);
-            object-fit: cover;
-            display: block;
-            border-radius: 20px 20px 0 0;
-        }
-        .classification-list h3{
-            width: 100%;
-            background: var(--color_cornflowerBlue);
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-            border-radius: 0 0 20px 20px;
-            position: absolute;
-            bottom: 0;
-        }
-        .theme-block{
-            background: url("images/theme-block.png")no-repeat center center/cover;
-            grid-column-start: 1;
-            grid-column-end: 5;
-            grid-row-start: 1;
-            grid-row-end: 3;
-        }
-        .fitness-block{
-            background: url("images/fitness-block.png")no-repeat center center/cover;
-            grid-column-start: 5;
-            grid-column-end: 11;
-            grid-row-start: 1;
-            grid-row-end: 2;
-        }
-        .soup-block{
-            background: url("images/soup-block.png")no-repeat center center/cover;
-            grid-column-start: 5;
-            grid-column-end: 8;
-            grid-row-start: 2;
-            grid-row-end: 3;
-        }
-        .baby-block{
-            background: url("images/baby-block.png")no-repeat center center/cover;
-            grid-column-start: 8;
-            grid-column-end: 11;
-            grid-row-start: 2;
-            grid-row-end: 3;
-        }
-        @media screen and (max-width: 1280px) {
-            .classification-list{
-                height: 550px;
-            }
-        }
-
-        /* 食譜分享區塊 */
-        .recipe-content>li{
-            display: grid;
-            grid-template-columns: repeat(10, 1fr);
-            column-gap: 50px;
-            padding-bottom: 60px;
-        }
-        .recipe-content>li:not(:first-child){
-            padding-top: 60px;
-            border-top: 3px solid black;
-        }
-        .recipe-content li img{
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-            border-radius: 20px;
-        }
-        .recipe-content li:nth-child(2n+1) img{
-            grid-column-start: 1;
-            grid-column-end: 7;
-        }
-        .recipe-content li:nth-child(2n) img{
-            grid-column-start: 5;
-            grid-column-end: 11;
-        }
-        .recipe-content li:nth-child(2n+1) .recipe-content-text{
-            grid-column-start: 7;
-            grid-column-end: 11;
-        }
-        .recipe-content li:nth-child(2n) .recipe-content-text{
-            order: -1;
-            grid-column-start: 1;
-            grid-column-end: 5;
-        }
-        .recipe-content-text ul{
-            display: flex;
-        }
-        .recipe-content-text h3{
-            font-size: 2vw;
-            font-weight: 400;
-        }
-        .recipe-author{
-            font-size: 1vw;
-            color: var(--color_graniteGray);
-        }
-        .recipe-author a{
-            font-size: 1vw;
-            color: var(--color_cornflowerBlue);
-            text-decoration: none;
-        }
-        .recipe-author li:not(:first-child){
-            margin-left: 20px;
-        }
-        .material{
-            height: 330px;
-            overflow: auto;
-        }
-        .material table{
-            width: 85%; 
-            margin-left: auto;
-        }
-        .material td:last-child{
-            text-align: right;
-        }
-        @media screen and (max-width:1280px){
-            .recipe-content>li{
-                padding-bottom: 40px;
-            }
-            .recipe-content>li:not(:first-child){
-                padding-top: 40px;
-            }
-            .recipe-content li img{
-                height: 330px;
-            }
-            .material{
-                height: 180px;
-            }
-        }
-
-        /* 按鈕區塊 */
-        .btn{
-            text-align: center;
-            margin-top: 20px;
-        }
-        .detailed, .more{
-            background: linear-gradient(to bottom, #FFE6BF 0%, #FF9C00 100%);
-            border: none;
-            color: #fff;
-            cursor: pointer;
-            border-radius: 10px;
-        }
-        .detailed{
-            padding: .5em 1.5em;
-        }
-        .collect{
-            padding: .8em 1.5em;
-            font-size: 1.3vw;
-            border-radius: 10px;
-            cursor: pointer;
-            background: #fff;
-            color: #FF9C00;
-            border: 1px solid #FF9C00;
-            margin-left: 25px;
-        }
-        .detailed:hover, .more:hover{
-            background: linear-gradient(to bottom, #FF9C00 0%, #FFE6BF 100%);
-            color: black;
-            box-shadow: 4px 3px 4px rgba(0, 0, 0, 0.25);
-        }
-        .collect:hover{
-            border: 1px solid black;
-            color: black;
-            box-shadow: 4px 3px 4px rgba(0, 0, 0, 0.25);
-        }
-        .collect .bi-suit-heart-fill{
-            color: red;
-            margin-left: 15px;
-        }
-        .more{
-            display: block;
-            margin: 0 auto;
-            width: 30vw;
-            line-height: 2.2em;
-            font-size: 1.8vw;
-            text-align: center;
-        }
-
-        /* 購物商城 */
-        .swiper{
-            width: 100%;
-        }
-        .item-list{
-            width: 100%;
-        }
-        .item{
-            width: 450px;
-            border-radius: 10px;
-            background: white;
-            overflow: hidden;
-        }
-        .item a{
-            color: black;
-            text-decoration: none;
-        }
-        .item img{
-            display: block;
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-        }
-        .item-text{
-            padding: 15px 20px;
-        }
-        .item-text  h3{
-            font-size: 2vw;
-        }
-        .item-introduce{
-            padding: 10px;
-            font-size: 1vw;
-            height: 150px;
-            border-top: 1px solid black;
-            border-bottom: 1px solid black;
-            overflow: auto;
-        }
-        .item-introduce h4{
-            font-size: 1.1vw;
-            font-weight: 500;
-        }
-        .price{
-            text-align: right;
-        }
-        .swiper~a{
-            margin-top: 20px;
-        }
-        @media screen and (max-width:1280px){
-            .item{
-                width: 300px;
-            }
-            .item img{
-                height: 200px;
-            }
-            .item-introduce{
-                height: 100px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
     <header>
         <nav class="nav-list">
             <ul>
                 <li>
-                    <a href="#">
+                    <a href="index.html">
                         <img src="images/LearnToCook-logo.png" alt="LearnToCook">
                     </a>
                 </li>
-                <li><a href="#">找食譜</a></li>
+                <li><a href="pages/recipe-list.html">找食譜</a></li>
                 <li><a href="#">食譜分享</a></li>
                 <li><a href="#">購物商城</a></li>
             </ul>
@@ -374,20 +53,28 @@
                 <h2>找食譜</h2>
                 <ul class="classification-list">
                     <li class="theme-block" data-aos="fade-up-right">
-                        <div></div>
-                        <h3>主題食譜</h3>
+                        <a href="">
+                            <img src="images/theme-block.png" alt="主題食譜">
+                            <h3>主題食譜</h3>
+                        </a>
                     </li>
                     <li class="fitness-block" data-aos="fade-up">
-                        <div></div>
-                        <h3>健身食譜</h3>
+                        <a href="">
+                            <img src="images/fitness-block.png" alt="健身食譜">
+                            <h3>健身食譜</h3>
+                        </a>
                     </li>
                     <li class="soup-block" data-aos="fade-up-left">
-                        <div></div>
-                        <h3>湯品</h3>
+                        <a href="">
+                            <img src="images/soup-block.png" alt="湯品">
+                            <h3>湯品</h3>
+                        </a>
                     </li>
                     <li class="baby-block" data-aos="fade-up-left">
-                        <div></div>
-                        <h3>寶寶食譜</h3>
+                        <a href="">
+                            <img src="images/baby-block.png" alt="寶寶食譜">
+                            <h3>寶寶食譜</h3>
+                        </a>
                     </li>
                 </ul>
             </div>
