@@ -1,0 +1,24 @@
+/* css重置檔案載入 */
+@import url('reset-css.css');
+
+/* 共用顏色變數載入 */
+@import url('color.css');    
+
+/* Bootstrap icons CDN  */
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css');
+
+/* aos CDN */
+@import url('https://unpkg.com/aos@next/dist/aos.css');
+
+/* 共用header檔載入 */
+@import url('hearder.css');
+
+/* 共用footer檔載入 */
+@import url('footer.css');
+
+body{
+    min-height: 100vh;
+    font-size: 1.6vw;
+    line-height: 1.6;
+    background: var(--color_wheat);
+}
