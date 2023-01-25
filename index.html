@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="css/reset-css.css">
     <!-- Bootstrap icons CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <!-- aos CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+    <!--  -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
     <!-- 共用header檔載入 -->
     <link rel="stylesheet" href="css/hearder.css">
     <!-- 共用footer檔載入 -->
@@ -20,10 +24,301 @@
             line-height: 1.6;
             background: var(--color_wheat);
         }
-        .banner{
-            height: 300px;
+        /* banner設置 */
+        .banner-block{
+            width: 100%;
+            /* height: 100%; */
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .banner-list{
+            width: 400vw;
+            height: 600px;
+            display: flex;
+            flex-basis: 0;
+        }
+        .banner1{  
+
+        }
+        .banner2{
+
+        }
+        .banner3{
+
+        }
+        .banner-list img{
+            width: 100%;
+            object-fit: cover;
+            vertical-align: bottom;
+        }
+        @media screen and (max-width: 1280px) {
+            .banner-list{
+                height: 300px;
+            }
         }
 
+        /* 每個區塊與標題共用屬性 */
+        main section:nth-child(2n){
+            background: #fff;
+        }
+        .section-block{
+            padding: 20px 4rem 40px;
+            overflow: hidden;
+        }
+        .section-block:first-child{
+            padding-top: 20px;
+        }
+        .section-block:last-child{
+            padding-bottom: 20px;
+        }
+        .section-block:nth-child(2n){
+            background: #fff;
+        }
+        .section-block>h2{
+            text-align: center;
+            font-size: 3.5vw;
+            margin-bottom: 15px;
+        }
+
+        /* 食譜分類(classification)區塊設置 */
+        .classification-list{
+            height: 800px;
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            grid-template-rows: 1fr 1fr;
+            column-gap: 50px;
+            row-gap: 40px;
+            justify-content: center;
+        }
+        .classification-list li{
+            border-radius: 20px;
+            position: relative;
+        }
+        .classification-list img{
+            width: 100%;
+            height: calc(100% - 4.5vw);
+            object-fit: cover;
+            display: block;
+            border-radius: 20px 20px 0 0;
+        }
+        .classification-list h3{
+            width: 100%;
+            background: var(--color_cornflowerBlue);
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            position: absolute;
+            bottom: 0;
+        }
+        .theme-block{
+            background: url("images/theme-block.png")no-repeat center center/cover;
+            grid-column-start: 1;
+            grid-column-end: 5;
+            grid-row-start: 1;
+            grid-row-end: 3;
+        }
+        .fitness-block{
+            background: url("images/fitness-block.png")no-repeat center center/cover;
+            grid-column-start: 5;
+            grid-column-end: 11;
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+        .soup-block{
+            background: url("images/soup-block.png")no-repeat center center/cover;
+            grid-column-start: 5;
+            grid-column-end: 8;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+        .baby-block{
+            background: url("images/baby-block.png")no-repeat center center/cover;
+            grid-column-start: 8;
+            grid-column-end: 11;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+        @media screen and (max-width: 1280px) {
+            .classification-list{
+                height: 550px;
+            }
+        }
+
+        /* 食譜分享區塊 */
+        .recipe-content>li{
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            column-gap: 50px;
+            padding-bottom: 60px;
+        }
+        .recipe-content>li:not(:first-child){
+            padding-top: 60px;
+            border-top: 3px solid black;
+        }
+        .recipe-content li img{
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+        .recipe-content li:nth-child(2n+1) img{
+            grid-column-start: 1;
+            grid-column-end: 7;
+        }
+        .recipe-content li:nth-child(2n) img{
+            grid-column-start: 5;
+            grid-column-end: 11;
+        }
+        .recipe-content li:nth-child(2n+1) .recipe-content-text{
+            grid-column-start: 7;
+            grid-column-end: 11;
+        }
+        .recipe-content li:nth-child(2n) .recipe-content-text{
+            order: -1;
+            grid-column-start: 1;
+            grid-column-end: 5;
+        }
+        .recipe-content-text ul{
+            display: flex;
+        }
+        .recipe-content-text h3{
+            font-size: 2vw;
+            font-weight: 400;
+        }
+        .recipe-author{
+            font-size: 1vw;
+            color: var(--color_graniteGray);
+        }
+        .recipe-author a{
+            font-size: 1vw;
+            color: var(--color_cornflowerBlue);
+            text-decoration: none;
+        }
+        .recipe-author li:not(:first-child){
+            margin-left: 20px;
+        }
+        .material{
+            height: 330px;
+            overflow: auto;
+        }
+        .material table{
+            width: 85%; 
+            margin-left: auto;
+        }
+        .material td:last-child{
+            text-align: right;
+        }
+        @media screen and (max-width:1280px){
+            .recipe-content>li{
+                padding-bottom: 40px;
+            }
+            .recipe-content>li:not(:first-child){
+                padding-top: 40px;
+            }
+            .recipe-content li img{
+                height: 330px;
+            }
+            .material{
+                height: 180px;
+            }
+        }
+
+        /* 按鈕區塊 */
+        .btn{
+            text-align: center;
+            margin-top: 20px;
+        }
+        .detailed, .more{
+            background: linear-gradient(to bottom, #FFE6BF 0%, #FF9C00 100%);
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        .detailed{
+            padding: .5em 1.5em;
+        }
+        .collect{
+            padding: .8em 1.5em;
+            font-size: 1.3vw;
+            border-radius: 10px;
+            cursor: pointer;
+            background: #fff;
+            color: #FF9C00;
+            border: 1px solid #FF9C00;
+            margin-left: 25px;
+        }
+        .detailed:hover, .more:hover{
+            background: linear-gradient(to bottom, #FF9C00 0%, #FFE6BF 100%);
+            color: black;
+            box-shadow: 4px 3px 4px rgba(0, 0, 0, 0.25);
+        }
+        .collect:hover{
+            border: 1px solid black;
+            color: black;
+            box-shadow: 4px 3px 4px rgba(0, 0, 0, 0.25);
+        }
+        .collect .bi-suit-heart-fill{
+            color: red;
+            margin-left: 15px;
+        }
+        .more{
+            display: block;
+            margin: 0 auto;
+            width: 30vw;
+            line-height: 2.2em;
+            font-size: 1.8vw;
+            text-align: center;
+        }
+
+        /* 購物商城 */
+        .swiper{
+            width: 100%;
+        }
+        .item-list{
+            width: 100%;
+        }
+        .item{
+            width: 300px;
+            border-radius: 10px;
+            background: white;
+            overflow: hidden;
+        }
+        .item a{
+            color: black;
+            text-decoration: none;
+        }
+        .item img{
+            display: block;
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .item-text{
+            padding: 15px 20px;
+        }
+        .item-text  h3{
+            font-size: 2vw;
+        }
+        .item-introduce{
+            padding: 10px;
+            font-size: 1vw;
+            height: 100px;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            overflow: auto;
+        }
+        .item-introduce h4{
+            font-size: 1.1vw;
+            font-weight: 500;
+        }
+        .price{
+            text-align: right;
+        }
+        .swiper~a{
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -45,13 +340,268 @@
             </ul>
         </nav>
     </header>
-    <main>
-        <div class="banner">
-
-        </div>
+    <div class="banner-block">
+        <ul class="banner-list">
+            <li class="banner1">
+                <img src="images/banner1.png" alt="banner1">
+            </li>
+            <li class="banner2">
+                <img src="images/banner2.png" alt="banner2">
+            </li>
+            <li class="banner3">
+                <img src="images/banner3.png" alt="banner3">
+            </li>
+            <li class="banner1">
+                <img src="images/banner1.png" alt="banner1">
+            </li>
+        </ul>
+    </div>
+    <main class="container">
+        <!-- 找食譜 -->
+        <section>
+            <div class="section-block">
+                <h2>找食譜</h2>
+                <ul class="classification-list">
+                    <li class="theme-block" data-aos="fade-up-right">
+                        <div></div>
+                        <h3>主題食譜</h3>
+                    </li>
+                    <li class="fitness-block" data-aos="fade-up">
+                        <div></div>
+                        <h3>健身食譜</h3>
+                    </li>
+                    <li class="soup-block" data-aos="fade-up-left">
+                        <div></div>
+                        <h3>湯品</h3>
+                    </li>
+                    <li class="baby-block" data-aos="fade-up-left">
+                        <div></div>
+                        <h3>寶寶食譜</h3>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- 食譜分享 -->
+        <section>
+            <div class="section-block">
+                <h2>食譜分享</h2>
+                <ul class="recipe-content">
+                    <li data-aos="fade-right"
+                        data-aos-offset="300"
+                        data-aos-easing="ease-in-sine">
+                        <img src="images/番茄雞肉丸義大利麵.png" alt="番茄肉醬義大利麵">
+                        <div class="recipe-content-text">
+                            <h3>番茄雞肉丸義大利麵</h3>
+                            <ul class="recipe-author">
+                                <li><a href="https://icook.tw/recipes/428291">懶人阿姨</a></li>
+                                <li>擁有 297個食譜</li>
+                                <li>粉絲數 1023位</li>
+                            </ul>
+                            <div class="material">
+                                <table class="material-list">
+                                    <colgroup>材料：</colgroup>
+                                    <tr>
+                                        <td>番茄</td>
+                                        <td>2個</td>
+                                    </tr>
+                                    <tr>
+                                        <td>雞蛋</td>
+                                        <td>1顆</td>
+                                    </tr>
+                                    <tr>
+                                        <td>蒜瓣</td>
+                                        <td>8瓣</td>
+                                    </tr>
+                                    <tr>
+                                        <td>洋蔥</td>
+                                        <td>1顆</td>
+                                    </tr>
+                                    <tr>
+                                        <td>鹽</td>
+                                        <td>3匙</td>
+                                    </tr>
+                                    <tr>
+                                        <td>雞胸肉</td>
+                                        <td>300克</td>
+                                    </tr>
+                                    <tr>
+                                        <td>義大利麵</td>
+                                        <td>1把</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="btn">
+                                <a class="detailed">查看詳細</a>
+                                <button class="collect">收藏食譜<i class="bi bi-suit-heart-fill"></i></button>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-aos="fade-left">
+                        <img src="images/草莓鮮奶油蛋糕.png" alt="番茄肉醬義大利麵">
+                        <div class="recipe-content-text">
+                            <h3>草莓鮮奶油蛋糕</h3>
+                            <ul class="recipe-author">
+                                <li><a href="https://icook.tw/recipes/428368">Tommy's 烘焙</a></li>
+                                <li>擁有 171個食譜</li>
+                                <li>粉絲數 980位</li>
+                            </ul>
+                            <div class="material">
+                                <table class="material-list">
+                                    <colgroup>材料：</colgroup>
+                                    <tr>
+                                        <td>Tommy's雪紡蛋糕粉</td>
+                                        <td>110g</td>
+                                    </tr>
+                                    <tr>
+                                        <td>雞蛋</td>
+                                        <td>125g</td>
+                                    </tr>
+                                    <tr>
+                                        <td>水</td>
+                                        <td>15g</td>
+                                    </tr>
+                                    <tr>
+                                        <td>沙拉油</td>
+                                        <td>25g</td>
+                                    </tr>
+                                    <tr>
+                                        <td>植物性鮮奶油</td>
+                                        <td>150g</td>
+                                    </tr>
+                                    <tr>
+                                        <td>草莓</td>
+                                        <td>適量</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="btn">
+                                <a class="detailed">查看詳細</a>
+                                <button class="collect">收藏食譜<i class="bi bi-suit-heart-fill"></i></button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <a class="more">more</a>
+            </div>
+        </section>
+        <!-- 購物商城 -->
+        <section>
+            <div class="section-block">
+                <h2>購物商城</h2>
+                <div class="swiper">
+                    <ul class="swiper-wrapper">                         
+                        <li class="swiper-slide item">
+                            <a href="">
+                                <img src="images/大湖草莓.png" alt="草莓">
+                                <div class="item-text">
+                                    <h3>大湖草莓</h3>
+                                    <div class="item-introduce">
+                                        <h4>【新鮮食材】</h4>
+                                        <p>特選鮮採苗栗大湖草莓(24-28顆/盒)</p>
+                                        <p>冬季限定！！</p>
+                                    </div>
+                                    <p class="price">$<span>2,000</span></p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="swiper-slide item">
+                            <a href="">
+                                <img src="images/橘子.png" alt="橘子">
+                                <div class="item-text">
+                                    <h3>橘子</h3>
+                                    <div class="item-introduce">
+                                        <h4>【新鮮食材】</h4>
+                                        <p>台灣砂糖橘(約 10斤/箱)</p>
+                                        <p>果農直配～！</p>
+                                    </div>
+                                    <p class="price">$<span>2,000</span></p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="swiper-slide item">
+                            <a href="">
+                                <img src="images/陶瓷鍋具.png" alt="陶瓷萬用不沾鍋">
+                                <div class="item-text">
+                                    <h3>陶瓷萬用不沾鍋</h3>
+                                    <div class="item-introduce">
+                                        <h4>【廚房用具】</h4>
+                                        <p>陶瓷不沾塗層,好清洗</p>
+                                    </div>
+                                    <p class="price">$<span>9,999</span></p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="swiper-slide item">
+                            <a href="">
+                                <img src="images/pizza-cutter.png" alt="不銹鋼滾輪披薩刀">
+                                <div class="item-text">
+                                    <h3>不銹鋼滾輪披薩刀</h3>
+                                    <div class="item-introduce">
+                                        <h4>【廚房用具】</h4>
+                                        <p>
+                                            9cm大寬面，可360°來回靈活滾動、平整切割
+                                            披薩、鹹甜派餅、蔥油餅、香草葉片…等
+                                            貼心擋柄防護設計，輔助施力並同時保護手指
+                                            符合人體工學握把，輕巧好握不滑手
+                                            透明保護套，方便安全收納
+                                        </p>
+                                    </div>
+                                    <p class="price">$<span>999</span></p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="swiper-slide item">
+                            <a href="">
+                                <img src="images/八角.png" alt="八角">
+                                <div class="item-text">
+                                    <h3>八角茴香</h3>
+                                    <div class="item-introduce">
+                                        <h4>【調味料】</h4>
+                                        <p>中式料理中最為廣泛使用的香辛料之一</p>
+                                        <p>無論滷包、湯底甚至甜點，其甜味可用以代替甘草</p>
+                                        <p>本產品經檢驗合格，無農藥殘留</p>
+                                    </div>
+                                    <p class="price">$<span>100</span></p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <a class="more">more</a>
+            </div>
+        </section>
     </main>
     <footer>
         此為TibaMe緯育專題使用，如有疑慮請與我們聯絡，E-MAIL:service@tibame.com，COPYRIGHT © 2023  All rights reserved
     </footer>
+
+    <!-- aos js CDN -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
+    <!-- swiper js CDN -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"> </script>
+    <script>
+        const mySwiper = new Swiper('.swiper', {
+            effect: 'coverflow',
+            slidesPerView: 'auto',
+            centeredSlides: true,
+            coverflowEffect: {
+                slideShadows: true,
+                rotate: 20,
+                stretch: 0,
+                depth: 250,
+                modifier: 1,
+            },
+        });
+        // coverflowEffect 參數
+        // slideShadows：slide 陰影。預設為 true。
+        // rotate：slide 做 3D 旋轉時 Y 軸的旋轉角度。預設為 50。
+        // stretch：每個 slide 之間的拉伸直，越大 slide 靠得越緊。預設為 0。
+        // depth：slide 的位置深度值，值越大 z 軸距離越遠，看起來越小。預設為 100。
+        // modifier：depth 和 rotate 和 stretch 的倍率。預設為 1。
+    </script>
 </body>
 </html>
