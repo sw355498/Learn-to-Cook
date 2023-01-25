@@ -17,8 +17,10 @@
 @import url('footer.css');
 
 body{
-    min-height: 100vh;
     font-size: 1.6vw;
     line-height: 1.6;
     background: var(--color_wheat);
+}
+main{
+    min-height: calc(100vh - 160px);
 }
