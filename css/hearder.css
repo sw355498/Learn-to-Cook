@@ -22,7 +22,7 @@
     display: block;
     color: var(--color_cornflowerBlue);
 }
-.nav-list a:hover{
+.nav-list a:hover, .header-active a{
     color: black;
     text-decoration:solid;
     font-weight: bold;
