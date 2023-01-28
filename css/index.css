@@ -56,6 +56,7 @@
             text-align: center;
             font-size: 2rem;
             margin-bottom: 15px;
+            font-family: NaikaiFont;
         }
 
         /* 食譜分類(classification)區塊設置 */
@@ -67,6 +68,7 @@
             column-gap: 50px;
             row-gap: 40px;
             justify-content: center;
+            margin-bottom: 20px;
         }
         .classification-list li{
             border-radius: 20px;
@@ -91,6 +93,11 @@
             border-radius: 0 0 20px 20px;
             position: absolute;
             bottom: 0;
+            font-family: NaikaiFont;
+            font-size: 1.2rem;
+        }
+        .classification-list li:hover h3{
+            color: black;
         }
         .classification-list img{
             display: block;
@@ -168,7 +175,7 @@
         }
         .recipe-content-text h3{
             font-size: 2vw;
-            font-weight: 400;
+            font-family: NaikaiFont;
         }
         .recipe-author{
             font-size: 1vw;
@@ -236,6 +243,7 @@
         }
         .item-text  h3{
             font-size: 2vw;
+            font-family: NaikaiFont;
         }
         .item-introduce{
             padding: 10px;
@@ -247,10 +255,11 @@
         }
         .item-introduce h4{
             font-size: 1.1vw;
-            font-weight: 500;
+            font-family: NotoSansCJKtc-Bold;
         }
         .price{
             text-align: right;
+            font-family: NotoSansCJKtc-Bold;
         }
         .swiper~a{
             margin-top: 20px;

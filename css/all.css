@@ -7,6 +7,18 @@
 /* aos CDN */
 @import url('https://unpkg.com/aos@next/dist/aos.css');
 
+@font-face{
+    font-family: NotoSansCJKtc;
+    src: url('../font/思源黑體/NotoSansCJKtc-Light.otf');
+}
+@font-face {
+    font-family: NotoSansCJKtc-Bold;
+    src: url('../font/思源黑體/NotoSansCJKtc-Bold.otf');
+}
+@font-face{
+    font-family: NaikaiFont;
+    src: url('../font/naikaifont-master/jp/NaikaiFont-Bold.ttf');
+}
 /* 共用顏色變數 */
 :root{
     --color_wheat: #FFE7C0;
@@ -21,6 +33,7 @@ body{
     font-size: 16px;
     line-height: 1.6;
     background: var(--color_wheat);
+    font-family: NotoSansCJKtc;
 }
 main{
     min-height: calc(100vh - 160px);
@@ -54,8 +67,9 @@ main{
 .nav-list a:hover, .header-active a{
     color: black;
     text-decoration:solid;
-    font-weight: bold;
     font-size: 1.3rem;
+    font-family: NaikaiFont;
+    
 }
 
 /* btn設定 */

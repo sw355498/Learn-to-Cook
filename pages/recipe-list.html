@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/all.css">
     <link rel="stylesheet" href="../css/search.css">
     <style>
+        /* 每個區塊與標題共用屬性 */
         main section:nth-child(2n){
             background: #fff;
         }
@@ -26,6 +27,52 @@
             text-align: center;
             font-size: 2rem;
             margin-bottom: 15px;
+            font-family: NaikaiFont;
+        }
+
+        /* item共通設定 */
+        .classification-list li,
+        .fitnessRecipes li,
+        .soupRecipes li,
+        .babyRecipes li{
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .classification-list li:hover,
+        .fitnessRecipes li:hover,
+        .soupRecipes li:hover,
+        .babyRecipes li:hover{
+            box-shadow: 4px 3px 4px rgba(0, 0, 0, 0.25);
+        }
+        .classification-list img,
+        .fitnessRecipes img,
+        .soupRecipes img,
+        .babyRecipes img{
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .classification-list h3,
+        .fitnessRecipes h3,
+        .babyRecipes h3{
+            width: 100%;
+            background: var(--color_cornflowerBlue);
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            position: absolute;
+            bottom: 0;
+            font-family: NaikaiFont;
+            font-size: 1.2rem;
+        }
+        .classification-list li:hover h3,
+        .fitnessRecipes li:hover h3,
+        .soupRecipes li:hover h3,
+        .babyRecipes li:hover h3{
+            color: black;
         }
 
         /* 主題食譜區塊設置 */
@@ -37,37 +84,7 @@
             column-gap: 50px;
             row-gap: 40px;
             justify-content: center;
-        }
-        .classification-list li{
-            border-radius: 20px;
-            position: relative;
-        }
-        .classification-list li:hover{
-            box-shadow: 4px 3px 4px rgba(0, 0, 0, 0.25);
-        }
-        .classification-list img{
-            width: 100%;
-            height: calc(100% - 4.5vw);
-            object-fit: cover;
-            display: block;
-            border-radius: 20px 20px 0 0;
-        }
-        .classification-list h3{
-            width: 100%;
-            background: var(--color_cornflowerBlue);
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-            border-radius: 0 0 20px 20px;
-            position: absolute;
-            bottom: 0;
-        }
-        .classification-list img{
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 20px;
+            margin-bottom: 20px;
         }
         .left-block{
             grid-column-start: 1;
@@ -105,6 +122,72 @@
             }
         }
 
+        /* 健身食譜區塊設置 */
+        .fitnessRecipes{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 50px;
+            row-gap: 30px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .fitnessRecipes li{
+            height: 330px;
+        }
+        .fitnessRecipes li:nth-child(3n+2){
+            margin-top: 50px;
+        }
+
+        /* 湯品區塊設置 */
+        .soupRecipes{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 50px;
+            margin-bottom: 20px;
+        }
+        .soupRecipes li{
+            height: 350px;
+        }
+        .soupRecipes li:nth-child(2n+1){
+            grid-column-start: 1;
+            grid-column-end: 2;
+            border-radius: 0 20px 0 0;
+        }
+        .soupRecipes li:nth-child(2n){
+            grid-column-start: 2;
+            grid-column-end: 3;
+            margin-top: 220px;
+            border-radius: 20px 0 0 0;
+        }
+        .soupRecipes h3{
+            width: 40px;
+            height: 100%;
+            background: var(--color_cornflowerBlue);
+            color: #fff;
+            padding: 0 15px;
+            writing-mode: vertical-lr;
+            text-align: center;
+            font-size: 1.2rem;
+            letter-spacing: 15px;
+            position: absolute;
+            bottom: 0;
+            font-family: NaikaiFont;
+        }
+        .soupRecipes li:nth-child(2n+1) h3{
+            border-radius: 0 20px 0 0;
+            right: 0; 
+        }
+        .soupRecipes li:nth-child(2n) he{
+            border-radius: 20px 0 0 0;
+            left: 0;
+        }
+
+        /* 寶寶副食品 */
+        .babyRecipes{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 50px;
+        }
     </style>
 </head>
 <body>
@@ -149,36 +232,134 @@
                     <li class="left-block">
                         <a href="">
                             <img src="../images/義式料理.png" alt="義式料理">
-                            <h3>義式料理</h3>
+                            <h3>義大利麵</h3>
                         </a>
                     </li>
                     <li class="topLeft-block">
                         <a href="">
                             <img src="../images/日式料理.png" alt="日式料理">
-                            <h3>日式料理</h3>
+                            <h3>日式豚骨拉麵</h3>
                         </a>
                     </li>
                     <li class="topRight-block">
                         <a href="">
                             <img src="../images/台式料理.png" alt="台式料理">
-                            <h3>台式料理</h3>
+                            <h3>紅燒牛肉麵</h3>
                         </a>
                     </li>
                     <li class="buttomLeft-block">
                         <a href="">
                             <img src="../images/泰式料理.png" alt="泰式料理">
-                            <h3>泰式料理</h3>
+                            <h3>泰式打拋豬</h3>
                         </a>
                     </li>
                     <li class="buttomRight-block">
                         <a href="">
                             <img src="../images/韓式料理.png" alt="韓式料理">
-                            <h3>韓式料理</h3>
+                            <h3>韓式泡菜</h3>
+                        </a>
+                    </li>
+                </ul>
+                <a class="more">more</a>
+            </div>
+        </section>
+        <!-- 健身食譜 -->
+        <section>
+            <div class="section-block">
+                <h2>健身食譜</h2>
+                <ul class="fitnessRecipes">
+                    <li>
+                        <a href="">
+                            <img src="../images/香煎雞胸肉.png" alt="香煎雞胸肉">
+                            <h3>香煎雞胸肉</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="../images/彩虹沙拉.png" alt="彩虹沙拉">
+                            <h3>彩虹沙拉</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="../images/夏日清爽沙拉.png" alt="夏日清爽沙拉">
+                            <h3>夏日清爽沙拉</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="../images/蔬菜鮮果沙拉.png" alt="蔬菜鮮果沙拉">
+                            <h3>蔬菜鮮果沙拉</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="../images/水果優格.png" alt="水果優格">
+                            <h3>水果優格</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="../images/低熱量早餐.png" alt="低熱量早餐">
+                            <h3>低熱量早餐</h3>
+                        </a>
+                    </li>
+                </ul>
+                <a class="more">more</a>
+            </div>
+        </section>
+        <!-- 湯品 -->
+        <section>
+            <div class="section-block">
+                <h2>湯品</h2>
+                <ul class="soupRecipes">
+                    <li>
+                        <a href="">
+                            <img src="../images/南瓜濃湯.png" alt="南瓜濃湯">
+                            <h3>南瓜濃湯</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="../images/海鮮濃湯.png" alt="海鮮濃湯">
+                            <h3>海鮮濃湯</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="../images/濃白蒜頭雞湯.png" alt="濃白蒜頭雞湯">
+                            <h3>濃白蒜頭雞湯</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="../images/番茄蔬菜湯.png" alt="番茄蔬菜湯">
+                            <h3>番茄蔬菜湯</h3>
+                        </a>
+                    </li>
+                </ul>
+                <a class="more">more</a>
+            </div>
+        </section>
+        <!-- 寶寶副食品 -->
+        <section>
+            <div class="section-block">
+                <h2>寶寶副食品</h2>
+                <ul class="babyRecipes">
+                    <li>
+                        <a href="">
+                            <img src="../images/水果米糊.png" alt="水果米糊">
+                            <h3>水果米糊</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="../images/番茄米糊.png" alt="番茄米糊">
+                            <h3>番茄米糊</h3>
                         </a>
                     </li>
                 </ul>
             </div>
-            <a class="more">more</a>
         </section>
     </main>
     <footer>
