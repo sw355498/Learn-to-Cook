@@ -1,13 +1,5 @@
 .section-block{
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 20px 0;
     display: flex;
-}
-@media screen and (max-width: 1280px){
-    .section-block{
-        max-width: 960px;
-    }
 }
 .menu{
     width: 25%;

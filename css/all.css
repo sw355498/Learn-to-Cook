@@ -35,8 +35,36 @@ body{
     background: var(--color_wheat);
     font-family: NotoSansCJKtc;
 }
+
+/* 每個區塊與標題共用屬性 */
 main{
     min-height: calc(100vh - 160px);
+}
+main section:nth-child(2n){
+    background: #fff;
+}
+.section-block{
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+.section-block:first-child{
+    padding-top: 20px;
+}
+.section-block:last-child{
+    padding-bottom: 20px;
+}
+.section-block>h2{
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    font-family: NaikaiFont;
+}
+@media screen and (max-width: 1280px){
+    .section-block{
+        max-width: 960px;
+        margin: 0 auto;
+    }
 }
 
 /* header區塊設定 */

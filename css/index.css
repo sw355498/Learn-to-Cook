@@ -38,22 +38,6 @@
             }
         }
 
-        /* 每個區塊與標題共用屬性 */
-        main section:nth-child(2n){
-            background: #fff;
-        }
-        .section-block{
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 20px 0;
-        }
-        .section-block>h2{
-            text-align: center;
-            font-size: 2.2rem;
-            margin-bottom: 15px;
-            font-family: NaikaiFont;
-        }
-
         /* 食譜分類(classification)區塊設置 */
         .classification-list{
             height: 600px;
