@@ -3,8 +3,9 @@
             background: #fff;
         }
         .section-block{
-            padding: 20px 4rem 40px;
-            overflow: hidden;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 20px 0;
         }
         .section-block:first-child{
             padding-top: 20px;
@@ -18,6 +19,12 @@
             margin-bottom: 15px;
             font-family: NaikaiFont;
         }
+        @media screen and (max-width: 1280px){
+            .section-block{
+                max-width: 960px;
+                margin: 0 auto;
+            }
+        }
 
         /* 食譜區塊 */
         .recipe{
@@ -25,26 +32,24 @@
             justify-content: center;
         }
         .recipe-picture{
-            width: 600px;
-            height: 500px;
-            border-radius: 20px;
+            width: 80%;
             overflow: hidden;
-            margin-right: 10vw;
-            margin-top: 80px;
+            padding: 50px;
         }
         .recipe-picture img{
             width: 100%;
             height: 100%;
             object-fit: cover;
+            border-radius: 20px;
         }
         .recipe-text h2{
-            font-size: 1.8vw;
+            font-size: 1.8rem;
             font-family: NaikaiFont;
         }
         .recipe-author{
             display: flex;
             color: var(--color_graniteGray);
-            font-size: .8vw;
+            font-size: .9rem;
         }
         .recipe-author a{
             color: var(--color_cornflowerBlue);
@@ -74,7 +79,8 @@
             max-height: 200px;
             line-height: 2;
             overflow: auto;
-            padding: 25px 0;
+            padding-top: 25px;
+            margin-bottom: 25px;
             border-top: 3px solid black;
             font-size: 1vw;
         }
@@ -98,13 +104,6 @@
         }
         .material td:last-child{
             text-align: right;
-        }
-        @media screen and (max-width:1280px){
-            .recipe-picture{
-                width: 400px;
-                height: 400px;
-                margin-top: 40px;
-            }
         }
 
         /* 步驟區塊 */
@@ -151,4 +150,9 @@
             align-items: center;
             justify-content: center;
             padding: 10px 20px;
+        }
+        @media screen and (max-width:1280px){
+            .step div{
+                height: 180px;
+            }
         }

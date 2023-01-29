@@ -43,19 +43,20 @@
             background: #fff;
         }
         .section-block{
-            padding: 20px 4rem;
-            overflow: hidden;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 20px 0;
         }
         .section-block>h2{
             text-align: center;
-            font-size: 2rem;
+            font-size: 2.2rem;
             margin-bottom: 15px;
             font-family: NaikaiFont;
         }
 
         /* 食譜分類(classification)區塊設置 */
         .classification-list{
-            height: 800px;
+            height: 600px;
             display: grid;
             grid-template-columns: repeat(10, 1fr);
             grid-template-rows: 1fr 1fr;
@@ -116,8 +117,11 @@
             grid-row-end: 3;
         }
         @media screen and (max-width: 1280px) {
+            .section-block{
+                max-width: 960px;
+            }
             .classification-list{
-                height: 550px;
+                height: 400px;
                 margin-bottom: 20px;
             }
         }
@@ -138,7 +142,7 @@
         }
         .recipe-content li img{
             width: 100%;
-            height: 500px;
+            height: 400px;
             object-fit: cover;
             border-radius: 20px;
         }
@@ -163,7 +167,7 @@
             display: flex;
         }
         .recipe-content-text h3{
-            font-size: 2vw;
+            font-size: 1.6rem;
             font-family: NaikaiFont;
         }
         .recipe-author{
@@ -197,7 +201,7 @@
                 padding-top: 40px;
             }
             .recipe-content li img{
-                height: 330px;
+                height: 280px;
             }
             .material{
                 height: 180px;
@@ -209,7 +213,7 @@
             width: 100%;
         }
         .item{
-            width: 450px;
+            width: 400px;
             border-radius: 10px;
             background: white;
             overflow: hidden;
@@ -228,19 +232,18 @@
             padding: 15px 20px;
         }
         .item-text  h3{
-            font-size: 2vw;
+            font-size: 1.6rem;
             font-family: NaikaiFont;
         }
         .item-introduce{
             padding: 10px;
-            font-size: 1vw;
             height: 150px;
             border-top: 1px solid black;
             border-bottom: 1px solid black;
             overflow: auto;
         }
         .item-introduce h4{
-            font-size: 1.1vw;
+            font-size: 1.2rem;
             font-family: NotoSansCJKtc-Bold;
         }
         .price{

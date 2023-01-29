@@ -3,8 +3,9 @@
         background: #fff;
     }
     .section-block{
-        padding: 20px 4rem 40px;
-        overflow: hidden;
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 20px 0;
     }
     .section-block:first-child{
         padding-top: 20px;
@@ -17,6 +18,11 @@
         font-size: 2rem;
         margin-bottom: 15px;
         font-family: NaikaiFont;
+    }
+    @media screen and (max-width: 1280px){
+        .section-block{
+            max-width: 960px;
+        }
     }
 
     /* item共通設定 */
@@ -66,7 +72,7 @@
 
     /* 主題食譜區塊設置 */
     .classification-list{
-        height: 800px;
+        height: 600px;
         display: grid;
         grid-template-columns: repeat(10, 1fr);
         grid-template-rows: 1fr 1fr;
@@ -106,7 +112,7 @@
     }
     @media screen and (max-width: 1280px) {
         .classification-list{
-            height: 550px;
+            height: 400px;
         }
     }
 
@@ -124,7 +130,11 @@
     .fitnessRecipes li:nth-child(3n+2){
         margin-top: 50px;
     }
-
+    @media screen and (max-width:1280px){
+        .fitnessRecipes li{
+            height: 220px;
+        }
+    }
     /* 湯品區塊設置 */
     .soupRecipes{
         display: grid;
@@ -132,7 +142,7 @@
         column-gap: 50px;
     }
     .soupRecipes li{
-        height: 500px;
+        height: 350px;
     }
     .soupRecipes li:nth-child(2n+1){
         border-radius: 0 20px 0 0;
@@ -165,7 +175,7 @@
     }
     @media screen and (max-width:1280px){
         .soupRecipes li{
-            height: 350px;
+            height: 280px;
         }
     }
 
