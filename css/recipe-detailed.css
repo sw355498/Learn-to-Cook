@@ -85,12 +85,11 @@
             font-size: 1vw;
         }
         .recipe-text h3{
-            font-size: 1.8vw;
+            font-size: 1.8rem;
+            font-family: NaikaiFont;
         }
         .material{
             max-width: 750px;
-        }
-        .material{
             padding: 25px 0;
             max-height: 200px;
             overflow: auto;
@@ -99,8 +98,7 @@
         }
         .material table{
             width: 100%; 
-            margin-left: auto;
-            font-size: 1vw;
+            font-size: 1rem;
         }
         .material td:last-child{
             text-align: right;
