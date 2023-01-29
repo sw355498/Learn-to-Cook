@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>食譜詳細頁面</title>
+    <link rel="stylesheet" href="../css/all.css">
+    <style>
+        /* 每個區塊與標題共用屬性 */
+        main section:nth-child(2n){
+            background: #fff;
+        }
+        .section-block{
+            padding: 20px 4rem 40px;
+            overflow: hidden;
+        }
+        .section-block:first-child{
+            padding-top: 20px;
+        }
+        .section-block:last-child{
+            padding-bottom: 20px;
+        }
+        .section-block>h2{
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 15px;
+            font-family: NaikaiFont;
+        }
+
+        /* 食譜區塊 */
+        .recipe{
+            display: flex;
+            justify-content: center;
+        }
+        .recipe-picture{
+            width: 600px;
+            height: 500px;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-right: 10vw;
+            margin-top: 80px;
+        }
+        .recipe-picture img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .recipe-text h2{
+            font-size: 1.8vw;
+            font-family: NaikaiFont;
+        }
+        .recipe-author{
+            display: flex;
+            color: var(--color_graniteGray);
+            font-size: .8vw;
+        }
+        .recipe-author a{
+            color: var(--color_cornflowerBlue);
+            text-decoration: none;
+        }
+        .recipe-author li:not(:first-child){
+            margin-left: 20px;
+        }
+        .recipe-icon{
+            display: flex;
+            font-size: 1.2vw;
+            margin: 15px;
+        }
+        .recipe-icon li{
+            margin-right: 20px;
+        }
+        .recipe-icon .bi{
+            margin-right: 2px;
+        }
+        .recipe-icon .collect{
+            padding: .5em .8em;
+            font-size: .8vw;
+            margin: 0;
+        }
+        .introduce{
+            max-width: 750px;
+            max-height: 200px;
+            line-height: 2;
+            overflow: auto;
+            padding: 25px 0;
+            border-top: 3px solid black;
+            font-size: 1vw;
+        }
+        .recipe-text h3{
+            font-size: 1.8vw;
+        }
+        .material{
+            max-width: 750px;
+        }
+        .material{
+            padding: 25px 0;
+            max-height: 200px;
+            overflow: auto;
+            border-top: 3px solid black;
+            border-bottom: 3px solid black;
+        }
+        .material table{
+            width: 100%; 
+            margin-left: auto;
+            font-size: 1vw;
+        }
+        .material td:last-child{
+            text-align: right;
+        }
+        @media screen and (max-width:1280px){
+            .recipe-picture{
+                width: 400px;
+                height: 400px;
+                margin-top: 40px;
+            }
+        }
+
+        /* 步驟區塊 */
+        .step{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-content: center; 
+            margin-top: 50px;    
+            column-gap: 100px;
+            row-gap: 50px;
+        }
+        .step li{
+            position: relative;
+            font-size: 1.2vw;
+        }
+        .step li:nth-child(2n+1){
+            grid-column-start: 1;
+            grid-column-end: 2;
+        }
+        .step li:nth-child(2n){
+            grid-column-start: 2;
+            grid-column-end: 3;
+        }
+        .step h3{
+            width: 80px;
+            line-height: 80px;
+            text-align: center;
+            border-radius: 50%;
+            background: var(--color_cornflowerBlue);
+            color: #fff;
+            font-size: 1.2vw;
+            padding: 5px;
+            font-family: NotoSansCJKtc-Bold;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translate(-40%, -40%);
+        }
+        .step div{
+            width: 100%;
+            height: 250px;
+            border: 1px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav-list">
+            <ul>
+                <li>
+                    <a href="../index.html">
+                        <img src="../images/LearnToCook-logo.png" alt="LearnToCook">
+                    </a>
+                </li>
+                <li><a href="recipe-list.html">找食譜</a></li>
+                <li><a href="#">食譜分享</a></li>
+                <li><a href="shop-list.html">購物商城</a></li>
+            </ul>
+            <ul>
+                <li><a href="#"><i class="bi bi-cart-fill"></i></a></li>
+                <li><a href="#"><i class="bi bi-person-fill"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div class="section-block recipe">
+                <div class="recipe-picture">
+                    <img src="../images/草莓鮮奶油蛋糕.png" alt="草莓鮮奶油蛋糕">
+                </div>
+                <div class="recipe-text">
+                    <h2>草莓鮮奶油蛋糕</h2>
+                    <ul class="recipe-author">
+                        <li><a href="https://icook.tw/recipes/428368">Tommy's 烘焙</a></li>
+                        <li>擁有 171個食譜</li>
+                        <li>粉絲數 980位</li>
+                    </ul>
+                    <ul class="recipe-icon">
+                        <li>
+                            <i class="bi bi-people"></i>
+                            <span>1人份</span>
+                        </li>
+                        <li>
+                            <i class="bi bi-alarm"></i>
+                            <span>1小時</span>
+                        </li>
+                        <li>
+                            <button class="collect">收藏食譜<i class="bi bi-suit-heart-fill"></i></button>
+                        </li>
+                    </ul>
+                    <p class="introduce">
+                        日本甜點專賣店「不二家」創始人藤井林 右衛門在美國當地吃到了草莓鮮奶油蛋糕，覺得印象深刻，回日本後便改良成適合日本人口味，並嘗試在聖誕節推出，讓這股風氣逐漸發酵， 久而久之就成為日本聖誕節約定成俗的習慣了。蛋糕上的奶油就像冬天的雪，鮮紅草莓則象徵是聖誕老公公，除此之外，對日本人來說「紅＋白」的配色正是象徵めでたい（值得慶賀）的意思，相當適合聖誕節的時候享用！
+                    </p>
+                    <h3>材料準備</h3>
+                    <div class="material">
+                        <table class="material-list">
+                            <tr>
+                                <td>Tommy's雪紡蛋糕粉</td>
+                                <td>110g</td>
+                            </tr>
+                            <tr>
+                                <td>雞蛋</td>
+                                <td>125g</td>
+                            </tr>
+                            <tr>
+                                <td>水</td>
+                                <td>15g</td>
+                            </tr>
+                            <tr>
+                                <td>沙拉油</td>
+                                <td>25g</td>
+                            </tr>
+                            <tr>
+                                <td>植物性鮮奶油</td>
+                                <td>150g</td>
+                            </tr>
+                            <tr>
+                                <td>草莓</td>
+                                <td>適量</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="section-block">
+                <h2>料理步驟</h2>
+                <ul class="step">
+                    <li>
+                        <h3>step1</h3>
+                        <div>
+                            <p>
+                                將雪紡蛋糕粉、雞蛋以慢速混和均勻2分鐘，再轉快速打發3分鐘。
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>step2</h3>
+                        <div>
+                            <p>
+                                水、沙拉油先混和後緩緩倒入步驟1，再以慢速混和均勻2分鐘。
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>ste3</h3>
+                        <div>
+                            <p>
+                                倒入6吋圓形活動模具中，麵糊約250克，震兩下立刻進爐，預熱烤箱以上下火200℃/160℃，烤焙約25分出爐。
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>step4</h3>
+                        <div>
+                            <p>
+                                出爐後震一下立刻倒扣，待蛋糕體完全冷卻後，進行裝飾。
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>step5</h3>
+                        <div>
+                            <p>
+                                裝飾鮮奶油打發程度約6-7分發，將蛋糕體橫切平均三等份。
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>step6</h3>
+                        <div>
+                            <p>
+                                出爐後震一下立刻倒扣，待蛋糕體完全冷卻後，進行裝飾。
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>step7</h3>
+                        <div>
+                            <p>
+                                完成後於表面和周圍均勻抹上鮮奶油，以抹刀修飾表面使其平整，再依個人喜好放上水果、巧克力、糖果、鮮奶油裝飾即可。
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer>
+        此為TibaMe緯育專題使用，如有疑慮請與我們聯絡，E-MAIL:service@tibame.com，COPYRIGHT © 2023  All rights reserved
+    </footer>
+</body>
+</html>

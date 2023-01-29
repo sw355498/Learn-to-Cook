@@ -85,7 +85,9 @@ main{
     border-radius: 10px;
 }
 .detailed{
-    padding: .5em 1.5em;
+    padding: .8em 1.5em;
+    font-size: 1.3vw;
+    text-decoration: none;
 }
 .collect{
     padding: .8em 1.5em;
@@ -118,6 +120,8 @@ main{
     line-height: 2.2em;
     font-size: 1.8vw;
     text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
 }
 
 /* footer區塊設定 */
@@ -126,6 +130,6 @@ footer{
     background: #37323E;
     line-height: 80px;
     text-align: center;
-    font-size: 1vw;
+    font-size: .5vw;
 }
 
