@@ -1,39 +1,80 @@
         /* banner設置 */
         .banner-block{
             width: 100%;
-            height: 600px;
             overflow: hidden;
         }
         .banner-list{
             display: flex;
             width: 100%;
-            height: 100%;
+            height: 600px;
         }
         .banner-list li{
-            width: 100%;
+            width: 100vw;
+            height: 100%;
             flex-shrink: 0;
         }
         .banner-list img{
             width: 100%;
             height: 100%;
             object-fit: cover;
-        }
-        .banner1{  
-
-        }
-        .banner2{
-
-        }
-        .banner3{
-
-        }
-        .banner-list img{
-            width: 100%;
-            object-fit: cover;
             vertical-align: bottom;
         }
+        .banner-list h2{
+            font-size: 3rem;
+            font-family: NaikaiFont;
+        }
+        .banner-list p{
+            font-size: 1.5rem;
+            font-family: NotoSansCJKtc-Bold;
+        }
+        .banner1,
+        .banner2,
+        .banner3{  
+            position: relative;
+        }
+        .banner1-text,
+        .banner2-text,
+        .banner3-text{
+            position: absolute;
+        }
+        .banner1{
+            background: url('../images/banner1.png') no-repeat center center/cover;
+        }
+        .banner2{
+            background: url('../images/banner2.png') no-repeat center center/cover;
+        }
+        .banner3{
+            background: url('../images/banner3.png') no-repeat center center/cover;
+        }
+        .banner1-text{    
+            left: 40%;
+            top: 58%;
+            transform: translate(-50%, -50%);
+        }
+        .banner1-text p{
+            margin-left: 150px;
+        }
+        .banner2-text{    
+            left: 35%;
+            top: 70%;
+            color: #fff;
+            transform: translate(-50%, -50%);
+        }
+        .banner2 p{
+            margin-left: -100px;
+        }
+        .banner3-text{
+            left: 65%;
+            top: 45%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+        }
+        .banner3-text p{
+            text-align: center;
+            margin-top: 50px;
+        }
         @media screen and (max-width: 1280px) {
-            .banner-block{
+            .banner-list{
                 height: 300px;
             }
         }

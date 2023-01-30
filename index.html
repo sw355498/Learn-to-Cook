@@ -10,6 +10,8 @@
     <!-- swiper CDN -->
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/index.css">
+    <!-- animate.style CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
     <header>
@@ -31,20 +33,28 @@
         </nav>
     </header>
     <div class="banner-block">
-        <ul class="banner-list">
-            <li class="banner1">
-                <img src="images/banner1.png" alt="banner1">
-            </li>
-            <li class="banner2">
-                <img src="images/banner2.png" alt="banner2">
-            </li>
-            <li class="banner3">
-                <img src="images/banner3.png" alt="banner3">
-            </li>
-            <li class="banner1">
-                <img src="images/banner1.png" alt="banner1">
-            </li>
-        </ul>
+        <div class="mySwiper">
+            <ul class="banner-list swiper-wrapper">
+                <li class="banner1 swiper-slide">
+                    <div class="banner1-text animate__animated animate__zoomInUp">
+                        <h2>會開瓦斯...就會煮!!!</h2>
+                        <p>看著食譜，照著步驟輕鬆做出健康料理！！</p>
+                    </div>
+                </li>
+                <li class="banner2 swiper-slide">
+                    <div class="banner2-text">
+                        <h2>0基礎 也會煮!!!</h2>
+                        <p>食譜在手，沒有經驗也能燒出一桌好菜！</p>
+                    </div>
+                </li>
+                <li class="banner3 swiper-slide">
+                    <div class="banner3-text">
+                        <h2>活用蔬菜，速簡料理</h2>
+                        <p>利用新鮮的蔬菜，做出一桌健康又美味的佳餚！！</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </div>
     <main>
         <!-- 找食譜 -->
@@ -283,6 +293,15 @@
     <!-- swiper js CDN -->
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"> </script>
     <script>
+        const swiper = new Swiper(".mySwiper", {
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            }
+        });
+
         const mySwiper = new Swiper('.swiper', {
             effect: 'coverflow',
             slidesPerView: 'auto',
