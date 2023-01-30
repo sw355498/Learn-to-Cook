@@ -1,0 +1,150 @@
+.commodity{
+    display: flex;
+}
+/* 圖片切換區塊 */
+.commodity-picture{
+    width: 50%;
+    overflow: hidden;
+    padding: 0 50px;
+}
+.commodity-picture img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.commodity-text h2{
+    font-size: 1.8rem;
+    font-family: NaikaiFont;
+}
+.cutover{
+    display: flex;
+    justify-content: center
+}
+.thumb{
+    width: 120px;
+    height: 120px;
+    margin: 10px;
+    transition: .4s;
+}
+.thumb.active{
+    border: 3px solid var(--color_oragePeel);
+    transform: translate(-3px, -10px);
+    box-shadow: 3px 5px 10px black;
+}
+.thumb img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* 文字介紹區塊 */
+.introduce{
+    max-width: 750px;
+    max-height: 300px;
+    line-height: 1.5;
+    overflow: auto;
+    padding-top: 25px;
+    margin-bottom: 25px;
+    border-top: 3px solid black;
+    font-size: 1vw;
+}
+.introduce p{
+    margin-bottom: 10px;
+}
+/* 購買資訊 */
+.choose select,
+.amount input[type='number'],
+.amount button,
+.price{
+    background: #fff;
+    color: var(--color_oragePeel);
+    border: 1px solid var(--color_oragePeel);
+    text-align: center;
+    font-size: 1.2rem;
+}
+.choose{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.choose select{
+    flex: 1 0 0;
+    height: 40px;
+}
+.choose select:last-child{
+    margin-left: 10px;
+}
+.amount{
+    width: 50%;
+    height: 40px;
+    display: flex;
+    margin-bottom: 20px;
+}
+.amount input[type='number']{
+    width: 100%;
+    border-left: none;
+    border-right: none;
+}
+.amount button{
+    width: 40px;
+}
+.price{
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+    font-family: NotoSansCJKtc-Bold;
+}
+.addCart{
+    width: 100%;
+    height: 50px;
+    font-size: 1.2rem;
+    font-family: NotoSansCJKtc-Bold;
+    background: var(--color_oragePeel);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+}
+
+/* 商品資訊 */
+.tag{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding-top: 20px;
+}
+.tag li{
+    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+    border-radius: 10px 10px 0 0;
+    background: var(--color_cornflowerBlue);
+    color: #fff;
+}
+.tag label{
+    display: block;
+    padding: 10px 30px;
+    text-decoration: none;
+    color: #fff;
+}
+.tag input{
+    display: none;
+}
+.content{
+    width: 100%;
+    padding: 30px 50px;
+    background: var(--color_wheat);
+    display: none;
+}
+.content h2{
+    font-size: 2rem;
+    font-family: NaikaiFont;
+}
+body:has(#tag1:checked) .content1,
+body:has(#tag2:checked) .content2,
+body:has(#tag3:checked) .content3{
+    display: block;
+}
+.content dd{
+    text-indent:2rem;
+}
+.content ul{
+    list-style: decimal;
+    line-height: 2;
+}
