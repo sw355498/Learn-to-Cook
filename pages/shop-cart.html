@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>購物車</title>
+    <link rel="stylesheet" href="../css/all.css">
+    <style>
+        main section:nth-child(2n){
+            background: var(--color_wheat);
+        }
+        .display-flex{
+            display: flex;
+        }
+        .drop-down{
+            width: calc(100% - 80px);
+            height: 60px;
+            justify-content: space-between;
+            align-items: center;
+            background: #fff;
+            font-size: 1.2rem;
+            padding: 0 40px;
+            border: 1px solid black;
+        }
+        .bi-caret-up-fill{
+            transition: .3s;
+        }
+        .drop-down-checkbox{
+            display: none;
+        }
+        .item-list{
+            background: #E8F7FF;
+            overflow: hidden;
+            transition: 1s;
+        }
+        .item{
+            justify-content: space-between;
+            align-items: center;
+            margin: 0px 30px;
+            padding: 20px 10px;
+            border-bottom: 2px solid black;
+        }
+        .item:last-child{
+            border: none;
+        }
+        .item img{
+            width: 150px;
+            margin: 0 25px;
+        }
+        .item-left ul{
+            flex-direction: column;
+            justify-content: center;
+        }
+        .quantity button{
+            width: 20px;
+            height: 20px;
+            border: 1px solid var(--color_oragePeel);
+            color: var(--color_oragePeel);
+            background: #fff;
+            margin: 5px;
+            cursor: pointer;
+        }
+        .del-btn{
+            text-align: right;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+        .item-price,
+        .total{
+            color: #072B7B;
+            font-family: NotoSansCJKtc-Bold;
+            font-size: 1.1rem;
+        }
+        .del-all{
+            padding: 10px 15px;
+            margin-left: 25px;
+            cursor: pointer;
+            color: #fff;
+            background: var(--color_graniteGray);
+            border: none;
+            border-radius: 10px;
+        }
+        .total{
+            font-size: 1.2rem;
+        }
+        .buyer-information{
+            background: #E8F7FF;
+            margin-bottom: 20px;
+        }
+        .form-block{
+            padding: 0 30px;
+        }
+        .form-block h2{
+            text-align: left;
+            padding-left: 20px;
+            font-size: 1.5rem;
+            border-bottom: 3px solid black;
+            font-family: NotoSansCJKtc-Bold;
+        }
+        .form-block ul{
+            margin-top: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .form-block input{
+            line-height: 25px;
+            font-size: 1.1rem;
+        }
+        .name-block,
+        .tel-block{
+            width: calc(50% - 40px);
+            max-width: 100%;
+            flex: 0 0 auto;
+            padding: 10px 20px;
+        }
+        .name-block input,
+        .tel-block input{
+            width: 100%;
+        }
+        .email-block,
+        .address-block{
+            width: calc(100% - 40px);
+            max-width: 100%;
+            flex: 0 0 auto;
+            padding: 10px 20px;
+        }
+        .email-block input,
+        .address-block input{
+            width: 100%;
+        }
+        .transport-block,
+        .payment-block,
+        .bill-block{
+            padding: 0 20px;
+        }
+        .transport-block li,
+        .payment-block li,
+        .bill-block li{
+            margin-right: 20px;
+            margin-bottom: 20px;
+        }
+        .payment-btn{
+            display: block;
+            margin-left: auto;
+            color: #fff;
+            background: var(--color_oragePeel);
+            border: none;
+            padding: 10px 40px;
+            border-radius: 10px;
+            font-size: 1.3rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav-list">
+            <ul>
+                <li>
+                    <a href="../index.html">
+                        <img src="../images/LearnToCook-logo.png" alt="LearnToCook">
+                    </a>
+                </li>
+                <li><a href="recipe-list.html">找食譜</a></li>
+                <li><a href="recipe-forum.html">食譜分享</a></li>
+                <li><a href="shop-list.html">購物商城</a></li>
+            </ul>
+            <ul>
+                <li class="header-active"><a href="shop-cart.html"><i class="bi bi-cart-fill"></i></a></li>
+                <li><a href="#"><i class="bi bi-person-fill"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div class="section-block">
+                <label class="drop-down display-flex" for="drop-down">
+                    <h2>當前購物車資訊</h2>
+                    <i class="bi bi-caret-up-fill" id="caret"></i>
+                </label>
+                <input type="checkbox" id="drop-down" class="drop-down-checkbox" checked>
+                <ul class="item-list" id="item-list">
+                    <li class="item display-flex">
+                        <div class="item-left display-flex">
+                            <input type="checkbox" name="" id="">
+                            <img src="../images/陶瓷鍋具.png" alt="陶瓷鍋具">
+                            <ul class="display-flex">
+                                <li>商品名稱：<span>陶瓷萬用不沾鍋</span></li>
+                                <li>商品價格：＄<span>9,999</span></li>
+                                <li class="quantity">
+                                    商品數量：
+                                    <button>-</button>
+                                    <span>1</span>
+                                    <button>+</button>
+                                </li>
+                            </ul>
+                        </div>
+                        <ul>
+                            <li class="del-btn"><i class="bi bi-trash"></i></li>
+                            <li class="item-price">總金額：＄<span>9,999</span></li>
+                        </ul>
+                    </li>
+                    <li class="item display-flex">
+                        <div class="item-left display-flex">
+                            <input type="checkbox" name="" id="">
+                            <img src="../images/大湖草莓.png" alt="大湖草莓">
+                            <ul class="display-flex">
+                                <li>商品名稱：<span>大湖草莓</span></li>
+                                <li>商品價格：＄<span>2,000</span></li>
+                                <li class="quantity">
+                                    商品數量：
+                                    <button>-</button>
+                                    <span>3</span>
+                                    <button>+</button>
+                                </li>
+                            </ul>
+                        </div>
+                        <ul>
+                            <li class="del-btn"><i class="bi bi-trash"></i></li>
+                            <li class="item-price">總金額：＄<span>6,000</span></li>
+                        </ul>
+                    </li>
+                    <li class="item display-flex">
+                        <div class="item-left display-flex">
+                            <input type="checkbox" name="" id="">
+                            <img src="../images/八角.png" alt="八角">
+                            <ul class="display-flex">
+                                <li>商品名稱：<span>八角</span></li>
+                                <li>商品價格：＄<span>100</span></li>
+                                <li class="quantity">
+                                    商品數量：
+                                    <button>-</button>
+                                    <span>10</span>
+                                    <button>+</button>
+                                </li>
+                            </ul>
+                        </div>
+                        <ul>
+                            <li class="del-btn"><i class="bi bi-trash"></i></li>
+                            <li class="item-price">總金額：＄<span>1,000</span></li>
+                        </ul>
+                    </li>
+                    <li class="item display-flex">
+                        <div class="item-left display-flex">
+                            <input type="checkbox" name="" id="">
+                            <button class="del-all">刪除全選</button>
+                        </div>
+                        <ul>
+                            <li class="total">結帳總金額：＄<span>16,999</span></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section>
+            <div class="section-block buyer-information">
+                <div class="form-block">
+                    <h2>訂購人資訊</h2>
+                    <ul>
+                        <li class="name-block">
+                            <label for="name">姓名</label>
+                            <input type="text" name="name" id="name" required>
+                        </li>
+                        <li class="tel-block">
+                            <label for="tel">聯絡電話</label>
+                            <input type="tel" name="tel" id="tel" required>
+                        </li>
+                        <li class="email-block">
+                            <label for="email">E-mail</label>
+                            <input type="email" name="email" id="email" required>
+                        </li>
+                        <li class="address-block">
+                            <label for="address">地址</label>
+                            <input type="text" name="address" id="address" required>
+                        </li>
+                    </ul>
+
+                    <h2>配送方式</h2>
+                    <ul class="transport-block">
+                        <li>
+                            <label>
+                                <input type="radio" name="transport" checked>
+                                宅配到府
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="radio" name="transport">
+                                超商取貨
+                            </label>
+                        </li>
+                    </ul>
+
+                    <h2>付款方式</h2>
+                    <ul class="payment-block">
+                        <li>
+                            <label>
+                                <input type="radio" name="payment" checked>
+                                貨到付款
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="radio" name="payment">
+                                信用卡付款
+                            </label>
+                        </li>
+                    </ul>
+    
+                    <h2>發票處理方式</h2>
+                    <ul class="bill-block">
+                        <li>
+                            <label>
+                                <input type="radio" name="bill" checked>
+                                捐贈發票
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="radio" name="bill">
+                                電子發票
+                            </label>
+                        </li>
+                    </ul>
+                    <button class="payment-btn">確認付款</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        此為TibaMe緯育專題使用，如有疑慮請與我們聯絡，E-MAIL:service@tibame.com，COPYRIGHT © 2023  All rights reserved
+    </footer>
+
+    <script>
+        let dropDown = document.querySelector('#drop-down');
+        let itemList = document.querySelector('#item-list');
+        let caret = document.querySelector('#caret');
+        dropDown.addEventListener('click', function() {
+            if(dropDown.checked){
+                itemList.style.setProperty('max-height', '500px')
+                caret.style.setProperty('transform', 'rotate(0deg)')
+            } else{
+                itemList.style.setProperty('max-height', '0px')
+                caret.style.setProperty('transform', 'rotate(-180deg)')
+            }
+        })
+    </script>
+</body>
+</html>
