@@ -6,9 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>商品頁面</title>
     <link rel="stylesheet" href="../css/all.css">
-    <style>
-
-    </style>
+    <link rel="stylesheet" href="../css/commodity.css">
 </head>
 <body>
     <header>
@@ -24,16 +22,153 @@
                 <li><a href="shop-list.html">購物商城</a></li>
             </ul>
             <ul>
-                <li><a href="#"><i class="bi bi-cart-fill"></i></a></li>
+                <li><a href="shop-cart.html"><i class="bi bi-cart-fill"></i></a></li>
                 <li><a href="#"><i class="bi bi-person-fill"></i></a></li>
             </ul>
         </nav>
     </header>
     <main>
-
+        <section>
+            <div class="section-block commodity">
+                <div class="commodity-picture">
+                    <figure>
+                        <img id="pic" src="../images/橘子.png" alt="橘子">
+                    </figure>
+                    <ul class="cutover">
+                        <li class="thumb active">
+                            <img src="../images/橘子.png" alt="橘子">
+                        </li>
+                        <li class="thumb">
+                            <img src="../images/橘子1.png" alt="橘子1">
+                        </li>
+                        <li class="thumb">
+                            <img src="../images/橘子2.png" alt="橘子2">
+                        </li>
+                    </ul>
+                </div>
+                <div class="commodity-text">
+                    <h2>橘子</h2>
+                    <div class="introduce">                        
+                        <p>
+                            桶柑，又稱年柑，果型圓潤、色澤橙黃，是春節相當喜愛的伴手禮之一，產期可從12月底至隔年3月初。
+                        </p>
+                        <p>
+                            果肉柔軟、甜酸夠味，適合送禮自用都大方的好作品。堅持讓桶柑自然成熟，接近完熟的風味柑橘味濃郁，甜酸適中，含有豐富的胡蘿蔔素、維生素C及膳食纖維。
+                        </p>
+                        <p>
+                            桶柑，又稱年柑，果型圓潤、色澤橙黃，是春節相當喜愛的伴手禮之一，產期可從12月底至隔年3月初。苗栗西湖果農徐淡奎的桶柑，果肉柔軟、甜酸夠味，適合送禮自用都大方的好作品。堅持讓桶柑自然成熟，接近完熟的風味柑橘味濃郁，甜酸適中，含有豐富的胡蘿蔔素、維生素C及膳食纖維。
+                        </p>
+                    </div>
+                    <div class="choose">
+                        <select name="" id="">
+                            <option value="0">配送方式</option>
+                            <option value="1">超商取貨</option>
+                            <option value="2">宅配到府</option>
+                        </select>
+                        <select name="" id="">
+                            <option value="0">結帳方式</option>
+                            <option value="1">信用卡付款</option>
+                            <option value="2">貨到付款</option>
+                        </select>
+                    </div>
+                    <div class="amount">
+                        <button id="minus"> - </button>
+                        <input type="number" value="1" readonly min="1" id="amountNumber">
+                        <button id="add"> + </button>
+                    </div>
+                    <input type="text" readonly id="price" class="price" value="$2000">
+                    <button class="addCart">加入購物車</button>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="section-block">
+                <ul class="tag ">
+                    <li>
+                        <label for="tag1">商品特色</label>
+                        <input type="radio" name="tag" id="tag1" >
+                    </li>
+                    <li>
+                        <label for="tag2">商品規格</label>
+                        <input type="radio" name="tag" id="tag2">
+                    </li>
+                    <li class="active">
+                        <label for="tag3">退換貨需知</label>
+                        <input type="radio" name="tag" id="tag3" checked>
+                    </li>
+                </ul>
+                <div class="content content1">
+                    <h2>暫時無資料！</h2>
+                </div>
+                <div class="content content2">
+                    <h2>商品規格：</h2>
+                    <dl>
+                        <dt>品名：</dt>
+                        <dd>台灣砂糖橘子《預購中》</dd>
+                        <dt>產地：</dt>
+                        <dd>台灣</dd>
+                        <dt>成份：</dt>
+                        <dd>橘子</dd>
+                        <dt>重量/規格：</dt>
+                        <dd>3台斤±10%(約15~20顆/盒)；5台斤±10%(約25-35顆/盒)</dd>
+                        <dt>製造日期：</dt>
+                        <dd>依照包裝說明</dd>
+                        <dt>保存期限：</dt>
+                        <dd>7~10天</dd>
+                        <dt>保存方法：</dt>
+                        <dd>新鮮水果請盡早食用完畢</dd>
+                    </dl>
+                </div>
+                <div class="content content3">
+                    <h2>退換貨須知：</h2>
+                    <ul>
+                        <li>請注意：除商品本身瑕疵外，為顧及個人衛生問題，拆封後恕無法退換貨，敬請見諒。</li>
+                        <li>
+                            務必保持商品及相關配件完整性，並請於收到商品日起7天內（含假日）與我們聯繫，辦理換貨事宜（外包塑膠膜已撕開或商品塑膠袋已打開，即算開封狀態）。
+                        </li>
+                        <li>
+                            依《消保法》規定，消費者有7日商品鑑賞期之權益(「天數」計算以超商取件或宅配簽收單為憑)。猶豫期非試用期，商品需全新未開封，若商品已開封，恕無法辦理退貨退款手續。收到商品超過7天，恕不接受退貨。
+                        </li>
+                        <li>
+                            出貨已全程攝影，為保障您購物權益，開箱過程請全程錄影；如有問題請反映客服並提供錄影檔案，祝您購物愉快。
+                        </li>
+                        <li>
+                            您的遇到瑕疵商品換貨，我們會經過確定瑕疵後補寄新商品給您，將由我們全部負擔此次運費。
+                        </li>
+                        <li>已使用之優惠券於完成結帳後即不再有效，退貨申請成立後也無法取回優惠券，敬請見諒。</li>
+                        <li>
+                            當您提附退貨申請後，即同意我們的退貨原則，並接受我們代為處理發票作廢及相關的後續處理事宜。
+                        </li>
+                    </ul>
+                    <br>
+                    <h2>退款方式：</h2>
+                    <ul>
+                        <li>使用信用卡線上刷卡：將以刷退方式退回原信用卡中。</li>
+                        <li>現金付款：退款方式將直接退至現金帳戶。</li>
+                        <li>*退款時間約需一周左右，完成退款後會發送退款通知信至您的e-mail信箱</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
     </main>
     <footer>
         此為TibaMe緯育專題使用，如有疑慮請與我們聯絡，E-MAIL:service@tibame.com，COPYRIGHT © 2023  All rights reserved
     </footer>
+
+    <script>
+        let pic=document.querySelector("#pic");
+        let thumb=document.querySelectorAll(".thumb")
+
+        for(let i=0; i<thumb.length; i++){
+            thumb[i].addEventListener('click', function(){
+                for(let j=0;j<thumb.length; j++){
+                    thumb[j].classList.remove('active')
+                }
+                pic.src=this.querySelector('img').src
+                pic.alt=this.querySelector('img').alt
+                thumb[i].classList.add('active')
+            })
+        }
+    </script>
 </body>
 </html>
