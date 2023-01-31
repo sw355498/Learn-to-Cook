@@ -38,13 +38,13 @@
             position: absolute;
         }
         .banner1{
-            background: url('../images/banner1.png') no-repeat center center/cover;
+            background: url('../images/banner1.jpg') no-repeat center center/cover;
         }
         .banner2{
-            background: url('../images/banner2.png') no-repeat center center/cover;
+            background: url('../images/banner2.jpg') no-repeat center center/cover;
         }
         .banner3{
-            background: url('../images/banner3.png') no-repeat center center/cover;
+            background: url('../images/banner3.jpg') no-repeat center center/cover;
         }
         .banner1-text{    
             left: 40%;

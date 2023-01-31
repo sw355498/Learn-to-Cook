@@ -1,7 +1,7 @@
 .search-bg{
     width: 100vw;
     height: 300px;
-    background: url('../images/banner1.png') no-repeat center center/cover;
+    background: url('../images/banner1.jpg') no-repeat center center/cover;
     position: relative;
 }
 .search-position{
