@@ -49,7 +49,7 @@
     padding: 15px 20px;
 }
 .item-text  h3{
-    font-size: 1.4rem;
+    font-size: 1.4vw;
     font-family: NaikaiFont;
 }
 .item-introduce{
@@ -61,9 +61,10 @@
     font-size: 14px;
 }
 .item-introduce h4{
-    font-size: 1.1rem;
+    font-size: 1vw;
     font-family: NotoSansCJKtc-Bold;
 }
+
 .price{
     text-align: right;
     font-family: NotoSansCJKtc-Bold;
@@ -78,6 +79,20 @@
     }
     .item{
         width: 240px;
+    }
+    .item img{
+        height: 180px;
+    }
+    .item-introduce{
+        height: 100px;
+    }
+}
+@media screen and (max-width:960px){
+    .item-list{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .item{
+        width: 100%;
     }
     .item img{
         height: 180px;
