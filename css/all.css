@@ -1,25 +1,22 @@
-/* css重置檔案載入 */
+/* 
 @import url('reset-css.css');
 
-/* Bootstrap icons CDN  */
 @import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css');
 
-/* aos CDN */
+
 @import url('https://unpkg.com/aos@next/dist/aos.css');
 
+
 @font-face{
-    font-family: NotoSansCJKtc;
-    src: url('../font/思源黑體/NotoSansCJKtc-Light.otf');
-}
-@font-face {
-    font-family: NotoSansCJKtc-Bold;
-    src: url('../font/思源黑體/NotoSansCJKtc-Bold.otf');
+    font-family: NotoSansTraditionalChinese;
+    src: url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;500&display=swap');
 }
 @font-face{
     font-family: NaikaiFont;
     src: url('../font/naikaifont-master/jp/NaikaiFont-Bold.ttf');
+    font-display: swap;
 }
-/* 共用顏色變數 */
+
 :root{
     --color_wheat: #FFE7C0;
     --color_cornflowerBlue: #648DE5;
@@ -33,10 +30,11 @@ body{
     font-size: 16px;
     line-height: 1.6;
     background: var(--color_wheat);
-    font-family: NotoSansCJKtc;
+    font-family: NotoSansTraditionalChinese;
+
 }
 
-/* 每個區塊與標題共用屬性 */
+
 main{
     min-height: calc(100vh - 160px);
 }
@@ -46,7 +44,7 @@ main section:nth-child(2n){
 .section-block{
     max-width: 1280px;
     margin: 0 auto;
-    padding: 20px 0;
+    padding: 100px 0;
 }
 .section-block:first-child{
     padding-top: 20px;
@@ -67,7 +65,7 @@ main section:nth-child(2n){
     }
 }
 
-/* header區塊設定 */
+
 .nav-list, .nav-list ul{
     display: flex;
     justify-content: space-between;
@@ -90,17 +88,17 @@ main section:nth-child(2n){
     line-height: 80px;
     text-decoration: none;
     display: block;
-    color: var(--color_cornflowerBlue);
+    color: var(--color_oragePeel);
+    font-size: 1.2rem;
 }
 .nav-list a:hover, .header-active a{
     color: black;
     text-decoration:solid;
-    font-size: 1.3rem;
     font-family: NaikaiFont;
     
 }
 
-/* btn設定 */
+
 .btn{
     text-align: center;
     margin-top: 20px;
@@ -143,15 +141,14 @@ main section:nth-child(2n){
 }
 .more{
     display: block;
-    margin: 0 auto;
-    width: 30vw;
-    font-size: 1.8vw;
+    margin-left: auto;
+    width: 150px;
+    line-height: 50px;
     text-align: center;
-    margin-top: 20px;
     text-decoration: none;
 }
 
-/* footer區塊設定 */
+
 footer{
     color: #fff;
     background: #37323E;
@@ -159,4 +156,119 @@ footer{
     text-align: center;
     font-size: .5vw;
 }
+ */
 
+ /* 引入檔 */
+    /* css重置檔案載入 */
+    @import url('reset-css.css');
+
+    /* Bootstrap icons CDN  */
+    @import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css');
+
+    /* 字體 */
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;500&display=swap');
+    @font-face{
+        font-family: NaikaiFont;
+        src: url('../font/naikaifont-master/jp/NaikaiFont-Bold.ttf');
+        font-display: swap;
+    }
+/* 共用顏色變數 */
+    :root{
+        --color_wheat: #FFE7C0;
+        --color_cornflowerBlue: #648DE5;
+        --color_oragePeel: #FF9C00;
+        --color_graniteGray: #666666;
+        --color_oragePeel_btn: linear-gradient(to bottom, #FFE6BF 0%, #FF9C00 100%);
+        --color_oragePeel_btn_hover: linear-gradient(to bottom, #FF9C00 0%, #FFE6BF 100%);
+    }
+
+
+/* body */
+    body{
+        font-size: 16px;
+        line-height: 1.6;
+        background: var(--color_wheat);
+        font-family: 'Noto Sans TC', sans-serif;
+    }
+
+/* header */
+    header{
+        min-width: 960px;
+        font-family: NaikaiFont;
+    }
+    /* 網站logo使用h1標籤優化seo方面 */
+    header h1 a{
+        display: block;
+        background: url("../images/LearnToCook-logo.svg") no-repeat 20px center;
+        width: 80px;
+        height: 80px;
+        /* text-indent強迫縮排至區塊外  white-space 禁止文字換行 overflow超出區塊部分不顯示*/
+        text-indent:200%;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    .nav-list, .nav-list ul{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .nav-list{
+        padding-left: 1rem;
+        padding-right: 1rem;
+        background: #fff;
+    }
+    .nav-list img{
+        width: 80px;
+        display: block;
+    }
+    .nav-list li{
+        text-align: center;
+    }
+    .nav-list a{
+        padding: 0 1.2rem;
+        line-height: 80px;
+        text-decoration: none;
+        display: block;
+        color: var(--color_oragePeel);
+        font-size: 1.2rem;
+    }
+    .nav-list a:hover, .header-active a{
+        color: black;
+        text-decoration:solid;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+
+/* main */
+    main{
+        min-width: 960px;
+    }
+    main section:nth-child(2n){
+        background: #fff;
+    }
+    .wrapper{
+        width: 1280px;
+        margin: 0 auto;
+        padding: 40px 0 50px;
+    }
+    .wrapper h2{
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 20px;
+        font-family: NaikaiFont;
+    }
+    @media screen and (max-width:1280px){
+        .wrapper{
+            width: 960px;
+        }
+    }
+
+/* footer */
+    footer{
+        min-width: 960px;
+        color: #fff;
+        background: #37323E;
+        line-height: 80px;
+        text-align: center;
+        font-size: .5vw;
+    }

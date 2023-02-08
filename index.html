@@ -5,22 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learn to Cook</title>
-    <!-- 共用css檔載入 -->
-    <link rel="stylesheet" href="css/all.css">
     <!-- swiper CDN -->
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+
+    <link rel="stylesheet" href="../css/all.css">
+    <link rel="stylesheet" href="css/btn.css">
     <link rel="stylesheet" href="css/index.css">
-    <!-- animate.style CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
     <header>
         <nav class="nav-list">
             <ul>
                 <li>
-                    <a href="index.html">
-                        <img src="images/LearnToCook-logo.png" alt="LearnToCook">
-                    </a>
+                    <h1>
+                        <a href="../index.html">
+                            LearnToCook 學做飯
+                        </a>
+                    </h1>
                 </li>
                 <li><a href="pages/recipe-list.html">找食譜</a></li>
                 <li><a href="pages/recipe-forum.html">食譜分享</a></li>
@@ -59,52 +60,53 @@
     <main>
         <!-- 找食譜 -->
         <section>
-            <div class="section-block">
+            <div class="wrapper">
                 <h2>找食譜</h2>
                 <ul class="classification-list">
-                    <li class="left-block" data-aos="fade-up-right">
+                    <li class="themeRecipe">
                         <a href="pages/cook-list.html">
                             <img src="images/theme-block.jpg" alt="主題食譜">
                             <h3>主題食譜</h3>
                         </a>
                     </li>
-                    <li class="top-block" data-aos="fade-up">
+                    <li class="fitnessRecipe">
                         <a href="pages/cook-list.html">
                             <img src="images/fitness-block.jpg" alt="健身食譜">
                             <h3>健身食譜</h3>
                         </a>
                     </li>
-                    <li class="buttomLeft-block" data-aos="fade-up-left">
-                        <a href="pages/cook-list.html">
-                            <img src="images/soup-block.jpg" alt="湯品">
-                            <h3>湯品</h3>
-                        </a>
-                    </li>
-                    <li class="buttomRight-block" data-aos="fade-up-left">
-                        <a href="pages/cook-list.html">
-                            <img src="images/baby-block.jpg" alt="寶寶食譜">
-                            <h3>寶寶食譜</h3>
-                        </a>
+                    <li class="classificationButtom">
+                        <ul>
+                            <li class="soupRecipe">
+                                <a href="pages/cook-list.html">
+                                    <img src="images/soup-block.jpg" alt="湯品">
+                                    <h3>湯品</h3>
+                                </a>
+                            </li>
+                            <li class="babyRecipe">
+                                <a href="pages/cook-list.html">
+                                    <img src="images/baby-block.jpg" alt="寶寶食譜">
+                                    <h3>寶寶食譜</h3>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
-                <a href="pages/cook-list.html" class="more">more</a>
             </div>
         </section>
         <!-- 食譜分享 -->
         <section>
-            <div class="section-block">
+            <div class="wrapper">
                 <h2>食譜分享</h2>
-                <ul class="recipe-content">
-                    <li data-aos="fade-right"
-                        data-aos-offset="300"
-                        data-aos-easing="ease-in-sine">
+                <ul class="forum-content">
+                    <li>
                         <img src="images/番茄雞肉丸義大利麵.jpg" alt="番茄肉醬義大利麵">
-                        <div class="recipe-content-text">
+                        <div class="forum-content-text">
                             <h3>番茄雞肉丸義大利麵</h3>
                             <ul class="recipe-author">
                                 <li><a href="https://icook.tw/recipes/428291">懶人阿姨</a></li>
-                                <li>擁有 297個食譜</li>
-                                <li>粉絲數 1023位</li>
+                                <li><i class="bi bi-book"></i>擁有 297個食譜</li>
+                                <li><i class="bi bi-person-heart"></i>粉絲數 1023位</li>
                             </ul>
                             <div class="material">
                                 <table class="material-list">
@@ -139,20 +141,20 @@
                                     </tr>
                                 </table>
                             </div>
-                            <div class="btn">
-                                <a href="pages/recipe-detailed.html" class="detailed">查看詳細</a>
-                                <button class="collect">收藏食譜<i class="bi bi-suit-heart-fill"></i></button>
+                            <div class="btn-block">
+                                <a href="pages/recipe-detailed.html" class="primary middle">查看詳細</a>
+                                <button class="collect middle">收藏食譜<i class="bi bi-suit-heart-fill"></i></button>
                             </div>
                         </div>
                     </li>
-                    <li data-aos="fade-left">
+                    <li>
                         <img src="images/草莓鮮奶油蛋糕.jpg" alt="番茄肉醬義大利麵">
-                        <div class="recipe-content-text">
+                        <div class="forum-content-text">
                             <h3>草莓鮮奶油蛋糕</h3>
                             <ul class="recipe-author">
                                 <li><a href="https://icook.tw/recipes/428368">Tommy's 烘焙</a></li>
-                                <li>擁有 171個食譜</li>
-                                <li>粉絲數 980位</li>
+                                <li><i class="bi bi-book"></i>擁有 171個食譜</li>
+                                <li><i class="bi bi-person-heart"></i>粉絲數 980位</li>
                             </ul>
                             <div class="material">
                                 <table class="material-list">
@@ -183,24 +185,24 @@
                                     </tr>
                                 </table>
                             </div>
-                            <div class="btn">
-                                <a href="pages/recipe-detailed.html" class="detailed">查看詳細</a>
-                                <button class="collect">收藏食譜<i class="bi bi-suit-heart-fill"></i></button>
+                            <div class="btn-block">
+                                <a href="pages/recipe-detailed.html" class="primary middle">查看詳細</a>
+                                <button class="collect middle">收藏食譜<i class="bi bi-suit-heart-fill"></i></button>
                             </div>
                         </div>
                     </li>
                 </ul>
-                <a href="pages/cook-list.html" class="more">more</a>
+                <a href="pages/cook-list.html" class="primary middle more">MORE</a>
             </div>
         </section>
         <!-- 購物商城 -->
         <section>
-            <div class="section-block">
+            <div class="wrapper">
                 <h2>購物商城</h2>
                 <div class="swiper">
                     <ul class="swiper-wrapper">                         
                         <li class="swiper-slide item">
-                            <a href="">
+                            <a href="pages/commodity.html">
                                 <img src="images/大湖草莓.jpg" alt="草莓">
                                 <div class="item-text">
                                     <h3>大湖草莓</h3>
@@ -214,7 +216,7 @@
                             </a>
                         </li>
                         <li class="swiper-slide item">
-                            <a href="">
+                            <a href="pages/commodity.html">
                                 <img src="images/橘子.jpg" alt="橘子">
                                 <div class="item-text">
                                     <h3>橘子</h3>
@@ -228,7 +230,7 @@
                             </a>
                         </li>
                         <li class="swiper-slide item">
-                            <a href="">
+                            <a href="pages/commodity.html">
                                 <img src="images/陶瓷鍋具.jpg" alt="陶瓷萬用不沾鍋">
                                 <div class="item-text">
                                     <h3>陶瓷萬用不沾鍋</h3>
@@ -241,7 +243,7 @@
                             </a>
                         </li>
                         <li class="swiper-slide item">
-                            <a href="">
+                            <a href="pages/commodity.html">
                                 <img src="images/pizza-cutter.jpg" alt="不銹鋼滾輪披薩刀">
                                 <div class="item-text">
                                     <h3>不銹鋼滾輪披薩刀</h3>
@@ -260,7 +262,7 @@
                             </a>
                         </li>
                         <li class="swiper-slide item">
-                            <a href="">
+                            <a href="pages/commodity.html">
                                 <img src="images/八角.jpg" alt="八角">
                                 <div class="item-text">
                                     <h3>八角茴香</h3>
@@ -276,19 +278,13 @@
                         </li>
                     </ul>
                 </div>
-                <a href="pages/shop-list.html" class="more">more</a>
+                <a href="pages/shop-list.html" class="primary middle more">MORE</a>
             </div>
         </section>
     </main>
     <footer>
         此為TibaMe緯育專題使用，如有疑慮請與我們聯絡，E-MAIL:service@tibame.com，COPYRIGHT © 2023  All rights reserved
     </footer>
-
-    <!-- aos js CDN -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
 
     <!-- swiper js CDN -->
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"> </script>

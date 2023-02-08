@@ -1,291 +1,302 @@
-        /* banner設置 */
-        .banner-block{
-            width: 100%;
-            overflow: hidden;
-        }
+/* more 按鈕 */
+    .more{
+        display: block;
+        margin:0 auto;
+    }
+/* banner設置 */
+    .banner-block{
+        width: 100%;
+        min-width: 960px;
+        overflow: hidden;
+    }
+    .banner-list{
+        display: flex;
+        height: 600px;
+    }
+    .banner-list li{
+        width: 100vw;
+        height: 100%;
+        flex-shrink: 0;
+    }
+    .banner-list img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        vertical-align: bottom;
+    }
+    .banner-list h2{
+        font-size: 2.2rem;
+        font-family: NaikaiFont;
+        word-wrap: normal;
+    }
+    .banner-list p{
+        font-size: 1.5rem;
+        font-weight: 900;
+    }
+    .banner1,
+    .banner2,
+    .banner3{  
+        position: relative;
+    }
+    .banner1-text,
+    .banner2-text,
+    .banner3-text{
+        position: absolute;
+    }
+    .banner1{
+        background: url('../images/banner1.jpg') no-repeat center center/cover;
+    }
+    .banner2{
+        background: url('../images/banner2.jpg') no-repeat center center/cover;
+    }
+    .banner3{
+        background: url('../images/banner3.jpg') no-repeat center center/cover;
+    }
+    .banner1-text{    
+        left: 40%;
+        top: 58%;
+        transform: translate(-50%, -50%);
+    }
+    .banner1-text p{
+        margin-left: 150px;
+    }
+    .banner2-text{    
+        left: 35%;
+        top: 70%;
+        color: #fff;
+        transform: translate(-50%, -50%);
+    }
+    .banner2 p{
+        margin-left: -100px;
+    }
+    .banner3-text{
+        left: 65%;
+        top: 45%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+    }
+    .banner3-text p{
+        text-align: center;
+        margin-top: 50px;
+    }
+    @media screen and (max-width: 1280px) {
         .banner-list{
-            display: flex;
-            width: 100%;
-            height: 600px;
+            height: 300px;
         }
-        .banner-list li{
-            width: 100vw;
-            height: 100%;
-            flex-shrink: 0;
-        }
-        .banner-list img{
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            vertical-align: bottom;
-        }
-        .banner-list h2{
-            font-size: 3rem;
-            font-family: NaikaiFont;
-        }
-        .banner-list p{
-            font-size: 1.5rem;
-            font-family: NotoSansCJKtc-Bold;
-        }
-        .banner1,
-        .banner2,
-        .banner3{  
-            position: relative;
-        }
-        .banner1-text,
-        .banner2-text,
-        .banner3-text{
-            position: absolute;
-        }
-        .banner1{
-            background: url('../images/banner1.jpg') no-repeat center center/cover;
-        }
-        .banner2{
-            background: url('../images/banner2.jpg') no-repeat center center/cover;
-        }
-        .banner3{
-            background: url('../images/banner3.jpg') no-repeat center center/cover;
-        }
-        .banner1-text{    
-            left: 40%;
-            top: 58%;
-            transform: translate(-50%, -50%);
-        }
-        .banner1-text p{
-            margin-left: 150px;
-        }
-        .banner2-text{    
-            left: 35%;
-            top: 70%;
-            color: #fff;
-            transform: translate(-50%, -50%);
-        }
-        .banner2 p{
-            margin-left: -100px;
-        }
-        .banner3-text{
-            left: 65%;
-            top: 45%;
-            transform: translate(-50%, -50%);
-            color: #fff;
-        }
-        .banner3-text p{
-            text-align: center;
-            margin-top: 50px;
-        }
-        @media screen and (max-width: 1280px) {
-            .banner-list{
-                height: 300px;
-            }
-        }
+    }
 
-        /* 食譜分類(classification)區塊設置 */
+/* 找食譜 */
+    .classification-list{
+        height: 600px;
+        display: grid;
+        grid-template-columns: 4fr 6fr;
+        grid-template-rows: 1fr 1fr;
+        column-gap: 50px;
+        row-gap: 40px;
+    }
+    .classification-list li,
+    .classificationButtom ul li{
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        overflow: hidden;
+        position: relative;
+    }
+    .classification-list img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .classification-list h3{
+        width: 100%;
+        background: var(--color_cornflowerBlue);
+        color: #fff;
+        padding: 10px 0;
+        text-align: center;
+        border-radius: 0 0 20px 20px;
+        position: absolute;
+        bottom: 0;
+        font-size: 1.5rem;
+        font-family: NaikaiFont;
+    }
+    .themeRecipe{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 3;
+        background: url("images/theme-block.jpg") no-repeat center center/cover;
+    }
+    .fitnessRecipe{
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        background: url("images/fitness-block.jpg");
+    }
+    .classification-list .classificationButtom{
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+    .classificationButtom ul{
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 40px;
+    }
+    .soupRecipe{
+        background: url("images/soup-block.jpg");
+    }
+    .babyRecipe{
+        background: url("images/baby-block.jpg");
+    }
+    @media screen and (max-width: 1280px) {
         .classification-list{
-            height: 600px;
-            display: grid;
-            grid-template-columns: repeat(10, 1fr);
-            grid-template-rows: 1fr 1fr;
-            column-gap: 50px;
-            row-gap: 40px;
-        }
-        .classification-list li{
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-        }
-        .classification-list li:hover{
-            box-shadow: 4px 3px 4px rgba(0, 0, 0, 0.25);
-        }
-        .classification-list img{
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-        .classification-list h3{
-            width: 100%;
-            background: var(--color_cornflowerBlue);
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-            border-radius: 0 0 20px 20px;
-            position: absolute;
-            bottom: 0;
-            font-family: NaikaiFont;
-            font-size: 1.2rem;
-        }
-        .classification-list li:hover h3{
-            color: black;
-        }
-        .left-block{
-            grid-column-start: 1;
-            grid-column-end: 5;
-            grid-row-start: 1;
-            grid-row-end: 3;
-        }
-        .top-block{
-            grid-column-start: 5;
-            grid-column-end: 11;
-            grid-row-start: 1;
-            grid-row-end: 2;
-        }
-        .buttomLeft-block{
-            grid-column-start: 5;
-            grid-column-end: 8;
-            grid-row-start: 2;
-            grid-row-end: 3;
-        }
-        .buttomRight-block{
-            grid-column-start: 8;
-            grid-column-end: 11;
-            grid-row-start: 2;
-            grid-row-end: 3;
-        }
-        @media screen and (max-width: 1280px) {
-            .section-block{
-                max-width: 960px;
-            }
-            .classification-list{
-                height: 400px;
-                margin-bottom: 20px;
-            }
-        }
-
-        /* 食譜分享區塊 */
-        .recipe-content>li{
-            display: grid;
-            grid-template-columns: repeat(10, 1fr);
-            column-gap: 50px;
-            
-        }
-        .recipe-content>li:not(:first-child){
-            padding-top: 40px;
-            border-top: 3px solid black;
-        }
-        .recipe-content>li:not(:last-child){
-            padding-bottom: 40px;
-        }
-        .recipe-content li img{
-            width: 100%;
             height: 400px;
-            object-fit: cover;
-            border-radius: 20px;
         }
-        .recipe-content li:nth-child(2n+1) img{
-            grid-column-start: 1;
-            grid-column-end: 7;
+    }
+
+/* 食譜分享區塊 */
+    .forum-content>li{
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        column-gap: 50px;          
+    }
+    .forum-content>li:not(:first-child){
+        padding-top: 40px;
+        border-top: 3px solid black;
+    }
+    .forum-content>li:not(:last-child){
+        padding-bottom: 40px;
+    }
+    .forum-content li img{
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+    .forum-content li:nth-child(2n+1) img{
+        grid-column-start: 1;
+        grid-column-end: 7;
+    }
+    .forum-content li:nth-child(2n) img{
+        grid-column-start: 5;
+        grid-column-end: 11;
+    }
+    .forum-content li:nth-child(2n+1) .forum-content-text{
+        grid-column-start: 7;
+        grid-column-end: 11;
+    }
+    .forum-content li:nth-child(2n) .forum-content-text{
+        order: -1;
+        grid-column-start: 1;
+        grid-column-end: 5;
+    }
+    .forum-content-text ul{
+        display: flex;
+    }
+    .forum-content-text h3{
+        font-size: 1.6rem;
+        font-family: NaikaiFont;
+    }
+    .recipe-author{
+        font-size: 14px;
+        color: var(--color_graniteGray);
+    }
+    .recipe-author a{
+        color: var(--color_cornflowerBlue);
+        text-decoration: none;
+    }
+    .recipe-author li:not(:first-child){
+        margin-left: 20px;
+    }
+    .recipe-author .bi{
+        margin-right: 5px;
+    }
+    .material{
+        height: 330px;
+        overflow: auto;
+    }
+    .material table{
+        width: 85%; 
+        margin-left: auto;
+        font-size: 1.2rem;
+    }
+    .material td:last-child{
+        text-align: right;
+    }
+    .btn-block{
+        margin-top: 20px;
+    }
+    .btn-block .collect{
+        margin-left: 20px;
+    }
+    @media screen and (max-width:1280px){
+        .forum-content>li{
+            padding: 20px 0;
         }
-        .recipe-content li:nth-child(2n) img{
-            grid-column-start: 5;
-            grid-column-end: 11;
-        }
-        .recipe-content li:nth-child(2n+1) .recipe-content-text{
-            grid-column-start: 7;
-            grid-column-end: 11;
-        }
-        .recipe-content li:nth-child(2n) .recipe-content-text{
-            order: -1;
-            grid-column-start: 1;
-            grid-column-end: 5;
-        }
-        .recipe-content-text ul{
-            display: flex;
-        }
-        .recipe-content-text h3{
-            font-size: 1.6rem;
-            font-family: NaikaiFont;
-        }
-        .recipe-author{
-            font-size: 1vw;
-            color: var(--color_graniteGray);
-        }
-        .recipe-author a{
-            font-size: 1vw;
-            color: var(--color_cornflowerBlue);
-            text-decoration: none;
-        }
-        .recipe-author li:not(:first-child){
-            margin-left: 20px;
+        .forum-content li img{
+            height: 280px;
         }
         .material{
-            height: 330px;
-            overflow: auto;
+            height: 180px;
         }
-        .material table{
-            width: 85%; 
-            margin-left: auto;
-        }
-        .material td:last-child{
-            text-align: right;
-        }
-        @media screen and (max-width:1280px){
-            .recipe-content>li{
-                padding-bottom: 40px;
-            }
-            .recipe-content>li:not(:first-child){
-                padding-top: 40px;
-            }
-            .recipe-content li img{
-                height: 280px;
-            }
-            .material{
-                height: 180px;
-            }
-        }
-
-        /* 購物商城 */
-        .item-list{
-            width: 100%;
-        }
+    }
+/* 購物商城 */
+    .item-list{
+        width: 100%;
+    }
+    .item{
+        width: 400px;
+        border-radius: 10px;
+        background: white;
+        overflow: hidden;
+    }
+    .item a{
+        color: black;
+        text-decoration: none;
+    }
+    .item img{
+        display: block;
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+    }
+    .item-text{
+        padding: 15px 20px;
+    }
+    .item-text  h3{
+        font-size: 1.6rem;
+        font-family: NaikaiFont;
+    }
+    .item-introduce{
+        padding: 10px;
+        height: 150px;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        overflow: auto;
+    }
+    .item-introduce h4{
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+    .price{
+        text-align: right;
+        font-weight: bold;
+    }
+    .swiper~a{
+        margin-top: 20px;
+    }
+    @media screen and (max-width:1280px){
         .item{
-            width: 400px;
-            border-radius: 10px;
-            background: white;
-            overflow: hidden;
-        }
-        .item a{
-            color: black;
-            text-decoration: none;
+            width: 300px;
         }
         .item img{
-            display: block;
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-        }
-        .item-text{
-            padding: 15px 20px;
-        }
-        .item-text  h3{
-            font-size: 1.6rem;
-            font-family: NaikaiFont;
+            height: 200px;
         }
         .item-introduce{
-            padding: 10px;
-            height: 150px;
-            border-top: 1px solid black;
-            border-bottom: 1px solid black;
-            overflow: auto;
+            height: 100px;
         }
-        .item-introduce h4{
-            font-size: 1.2rem;
-            font-family: NotoSansCJKtc-Bold;
-        }
-        .price{
-            text-align: right;
-            font-family: NotoSansCJKtc-Bold;
-        }
-        .swiper~a{
-            margin-top: 20px;
-        }
-        @media screen and (max-width:1280px){
-            .item{
-                width: 300px;
-            }
-            .item img{
-                height: 200px;
-            }
-            .item-introduce{
-                height: 100px;
-            }
-        }
+    }

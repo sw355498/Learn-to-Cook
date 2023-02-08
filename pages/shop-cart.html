@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>購物車</title>
     <link rel="stylesheet" href="../css/all.css">
+    <link rel="stylesheet" href="../css/btn.css">
     <style>
         main section:nth-child(2n){
             background: var(--color_wheat);
@@ -14,14 +15,23 @@
             display: flex;
         }
         .drop-down{
-            width: calc(100% - 80px);
+            width: 100%;
             height: 60px;
             justify-content: space-between;
             align-items: center;
             background: #fff;
             font-size: 1.2rem;
             padding: 0 40px;
-            border: 1px solid black;
+            border-bottom: 2px solid transparent;
+            border-radius: 10px 10px 0 0;
+            transition: .5s;
+            box-sizing: border-box;
+        }
+        .dropDown_underline{
+            border-bottom: 2px solid black;
+        }
+        .drop-down h2{
+            margin: 0;
         }
         .bi-caret-up-fill{
             transition: .3s;
@@ -30,9 +40,10 @@
             display: none;
         }
         .item-list{
-            background: #E8F7FF;
+            background: #fff;
             overflow: hidden;
             transition: 1s;
+            border-radius: 0 0 10px 10px ;
         }
         .item{
             justify-content: space-between;
@@ -51,15 +62,31 @@
         .item-left ul{
             flex-direction: column;
             justify-content: center;
+            align-items: flex-start;
+        }
+        .quantity{
+            text-align: center;
+        }
+        .quantity span{
+            display: inline-block;
+            width: 40px;
+            vertical-align: middle;
         }
         .quantity button{
-            width: 20px;
-            height: 20px;
+            padding: 2px 5px;
             border: 1px solid var(--color_oragePeel);
             color: var(--color_oragePeel);
             background: #fff;
-            margin: 5px;
             cursor: pointer;
+            border-radius: 5px;
+        }
+        .quantity button:hover{
+            border: 1px solid transparent;
+            color: #fff;
+            background: var(--color_oragePeel);
+        }
+        .quantity button .bi{
+            vertical-align: middle;
         }
         .del-btn{
             text-align: right;
@@ -73,20 +100,16 @@
             font-size: 1.1rem;
         }
         .del-all{
-            padding: 10px 15px;
             margin-left: 25px;
-            cursor: pointer;
-            color: #fff;
-            background: var(--color_graniteGray);
-            border: none;
-            border-radius: 10px;
         }
         .total{
             font-size: 1.2rem;
         }
         .buyer-information{
-            background: #E8F7FF;
+            background: #fff;
             margin-bottom: 20px;
+            border-radius: 10px;
+            padding-bottom: 20px;
         }
         .form-block{
             padding: 0 30px;
@@ -141,17 +164,14 @@
             margin-right: 20px;
             margin-bottom: 20px;
         }
+        .bill-block li{
+            margin-bottom: 0px;
+        }
         .payment-btn{
             display: block;
             margin-left: auto;
-            color: #fff;
-            background: var(--color_oragePeel);
-            border: none;
-            padding: 10px 40px;
-            border-radius: 10px;
-            font-size: 1.3rem;
-            cursor: pointer;
         }
+
     </style>
 </head>
 <body>
@@ -175,8 +195,8 @@
     </header>
     <main>
         <section>
-            <div class="section-block">
-                <label class="drop-down display-flex" for="drop-down">
+            <div class="wrapper">
+                <label class="drop-down display-flex dropDown_underline" for="drop-down" id="dropDown_underline">
                     <h2>當前購物車資訊</h2>
                     <i class="bi bi-caret-up-fill" id="caret"></i>
                 </label>
@@ -191,15 +211,15 @@
                                 <li>商品價格：＄<span>9,999</span></li>
                                 <li class="quantity">
                                     商品數量：
-                                    <button>-</button>
+                                    <button><i class="bi bi-dash"></i></button>
                                     <span>1</span>
-                                    <button>+</button>
+                                    <button><i class="bi bi-plus"></i></button>
                                 </li>
                             </ul>
                         </div>
                         <ul>
                             <li class="del-btn"><i class="bi bi-trash"></i></li>
-                            <li class="item-price">總金額：＄<span>9,999</span></li>
+                            <li class="item-price">總金額：＄<span>6,000</span></li>
                         </ul>
                     </li>
                     <li class="item display-flex">
@@ -211,9 +231,9 @@
                                 <li>商品價格：＄<span>2,000</span></li>
                                 <li class="quantity">
                                     商品數量：
-                                    <button>-</button>
+                                    <button><i class="bi bi-dash"></i></button>
                                     <span>3</span>
-                                    <button>+</button>
+                                    <button><i class="bi bi-plus"></i></button>
                                 </li>
                             </ul>
                         </div>
@@ -231,9 +251,9 @@
                                 <li>商品價格：＄<span>100</span></li>
                                 <li class="quantity">
                                     商品數量：
-                                    <button>-</button>
+                                    <button><i class="bi bi-dash"></i></button>
                                     <span>10</span>
-                                    <button>+</button>
+                                    <button><i class="bi bi-plus"></i></button>
                                 </li>
                             </ul>
                         </div>
@@ -245,7 +265,7 @@
                     <li class="item display-flex">
                         <div class="item-left display-flex">
                             <input type="checkbox" name="" id="">
-                            <button class="del-all">刪除全選</button>
+                            <button class="small del-all">刪除全選</button>
                         </div>
                         <ul>
                             <li class="total">結帳總金額：＄<span>16,999</span></li>
@@ -255,7 +275,7 @@
             </div>
         </section>
         <section>
-            <div class="section-block buyer-information">
+            <div class="wrapper buyer-information">
                 <div class="form-block">
                     <h2>訂購人資訊</h2>
                     <ul>
@@ -324,7 +344,7 @@
                             </label>
                         </li>
                     </ul>
-                    <button class="payment-btn">確認付款</button>
+                    <button class="middle payment-btn">確認付款</button>
                 </div>
             </div>
         </section>
@@ -335,15 +355,18 @@
 
     <script>
         let dropDown = document.querySelector('#drop-down');
+        let dropDown_underline = document.querySelector('.dropDown_underline')
         let itemList = document.querySelector('#item-list');
         let caret = document.querySelector('#caret');
         dropDown.addEventListener('click', function() {
             if(dropDown.checked){
                 itemList.style.setProperty('max-height', '500px')
                 caret.style.setProperty('transform', 'rotate(0deg)')
+                dropDown_underline.classList.add('dropDown_underline')
             } else{
                 itemList.style.setProperty('max-height', '0px')
                 caret.style.setProperty('transform', 'rotate(-180deg)')
+                dropDown_underline.classList.remove('dropDown_underline')
             }
         })
     </script>

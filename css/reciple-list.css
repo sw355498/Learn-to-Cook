@@ -1,3 +1,8 @@
+/* more 按鈕 */
+.more{
+    display: block;
+    margin:20px auto 0;
+}
 /* item共通設定 */
 .classification-list li,
 .fitnessRecipes li,
@@ -34,7 +39,7 @@
     position: absolute;
     bottom: 0;
     font-family: NaikaiFont;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
 }
 .classification-list li:hover h3,
 .fitnessRecipes li:hover h3,
@@ -132,7 +137,7 @@
     padding: 0 15px;
     writing-mode: vertical-lr;
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     letter-spacing: 15px;
     position: absolute;
     bottom: 0;

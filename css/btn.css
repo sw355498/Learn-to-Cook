@@ -1,0 +1,62 @@
+/* 按鈕尺寸 */
+.small{
+    display: inline-block;
+    width: 120px;
+    line-height: 35px;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+.middle{
+    display: inline-block;
+    width: 150px;
+    line-height: 50px;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+.big{
+    
+}
+
+/* 按鈕色彩 */
+.primary, .payment-btn{
+    background: var(--color_oragePeel_btn);
+    color: #fff;
+}
+.primary:hover, .payment-btn:hover{
+    background: var(--color_oragePeel_btn_hover);
+    box-shadow: 4px 3px 4px rgba(0, 0, 0, 0.25);
+}
+
+.collect{
+    background: #fff;
+    color: var(--color_oragePeel);
+    border: 1px solid var(--color_oragePeel);
+}
+.collect .bi-suit-heart-fill{
+    color: red;
+    margin-left: 15px;
+}
+.collect:hover{
+    border: 1px solid black;
+    color: black;
+    box-shadow: 4px 3px 4px rgba(0, 0, 0, 0.25);
+}
+
+.del-all{
+    color: #fff;
+    background: var(--color_graniteGray);
+    border: 1px solid transparent;
+}
+.del-all:hover{
+    color: var(--color_graniteGray);
+    background: #fff;
+    border: 1px solid var(--color_graniteGray);
+}
