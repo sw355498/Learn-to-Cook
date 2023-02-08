@@ -40,7 +40,7 @@
     break-inside: avoid; 
 }
 .item a{
-    color: black;
+    color: #333;
     text-decoration: none;
 }
 .item img{
@@ -78,4 +78,5 @@
 .material td:last-child{
     width: 30%;
     text-align: right;
+    color: #666;
 }

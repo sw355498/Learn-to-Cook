@@ -21,6 +21,7 @@
     font-family: NaikaiFont;
     text-align: left;
     margin: 0;
+    color: #333;
 }
 .recipe-author{
     display: flex;
@@ -53,8 +54,10 @@
     line-height: 2;
     overflow: auto;
     padding-top: 15px;
+    padding-right: 5px;
     margin-bottom: 15px;
     border-top: 3px solid black;
+    box-sizing: border-box;
 }
 .recipe-text h3{
     font-size: 1.6rem;
@@ -64,8 +67,10 @@
     max-width: 750px;
     max-height: 200px;
     overflow: auto;
+    padding-right: 5px;
     border-top: 3px solid black;
     border-bottom: 3px solid black;
+    box-sizing: border-box;
 }
 .material table{
     width: 100%; 
@@ -83,18 +88,18 @@
     grid-template-columns: 1fr 1fr;
     flex-wrap: wrap;
     justify-content: center;
-    column-gap: 50px;
-    row-gap: 50px;
+    column-gap: 60px;
+    row-gap: 110px;
 }
 .step{
     width: 100%;
-    margin-top: 40px;
+    margin-top: 100px;
     padding: 0 60px;
     box-sizing: border-box;
 }
 .step li{
     position: relative;
-    /* width: 40%; */
+
     flex-shrink: 0;
 }
 .step li:nth-child(2n+1){
@@ -117,19 +122,19 @@
     font-weight: bold;
     position: absolute;
     top: 0;
-    left: 0;
-    transform: translate(-50%, -50%);
+    left: 5%;
+    transform: translate(-50%, -100%);
 }
 .step div{
-    height: 250px;
-    border: 1px solid black;
+    /* height: 250px; */
+    /* border: 1px solid black; */
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px 20px;
+    padding: 0px 20px 0 40px;
 }
 @media screen and (max-width:1280px){
     .step div{
-        height: 180px;
+        /* height: 180px; */
     }
 }

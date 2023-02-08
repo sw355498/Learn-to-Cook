@@ -12,9 +12,7 @@
     <link rel="stylesheet" href="css/btn.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/scrollbar.css">
-    <style>
-
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
     <header>
@@ -67,25 +65,25 @@
             <div class="wrapper">
                 <h2>找食譜</h2>
                 <ul class="classification-list">
-                    <li class="themeRecipe">
+                    <li class="themeRecipe animate__animated animate__backInLeft">
                         <a href="pages/cook-list.html">
                             <img src="images/theme-block.jpg" alt="主題食譜">
                             <h3>主題食譜</h3>
                         </a>
                     </li>
-                    <li class="fitnessRecipe">
+                    <li class="fitnessRecipe animate__animated animate__backInRight">
                         <a href="pages/cook-list.html">
                             <img src="images/fitness-block.jpg" alt="健身食譜">
                             <h3>健身食譜</h3>
                         </a>
                     </li>
-                    <li class="soupRecipe">
+                    <li class="soupRecipe animate__animated left_into">
                         <a href="pages/cook-list.html">
                             <img src="images/soup-block.jpg" alt="湯品">
                             <h3>湯品</h3>
                         </a>
                     </li>
-                    <li class="babyRecipe">
+                    <li class="babyRecipe animate__animated right_into">
                         <a href="pages/cook-list.html">
                             <img src="images/baby-block.jpg" alt="寶寶食譜">
                             <h3>寶寶食譜</h3>
@@ -99,7 +97,7 @@
             <div class="wrapper">
                 <h2>食譜分享</h2>
                 <ul class="forum-content">
-                    <li>
+                    <li class="animate__animated left_into">
                         <img src="images/番茄雞肉丸義大利麵.jpg" alt="番茄肉醬義大利麵">
                         <div class="forum-content-text">
                             <h3>番茄雞肉丸義大利麵</h3>
@@ -147,7 +145,7 @@
                             </div>
                         </div>
                     </li>
-                    <li>
+                    <li class="animate__animated right_into">
                         <img src="images/草莓鮮奶油蛋糕.jpg" alt="番茄肉醬義大利麵">
                         <div class="forum-content-text">
                             <h3>草莓鮮奶油蛋糕</h3>
@@ -317,6 +315,28 @@
         // depth：slide 的位置深度值，值越大 z 軸距離越遠，看起來越小。預設為 100。
         // modifier：depth 和 rotate 和 stretch 的倍率。預設為 1。
 
+
+        let left_into = document.querySelectorAll('.left_into');
+        let right_into= document.querySelectorAll('.right_into');
+        window.addEventListener('scroll', abc)
+        abc();
+
+        function abc(){
+            let triggerBottom = window.innerHeight * 1.2;
+            left_into.forEach((item) => {
+                let item_Top = item.getBoundingClientRect().top;
+                if (item_Top < triggerBottom) {
+                    item.classList.add("animate__backInLeft");
+                    
+                }
+            });
+            right_into.forEach((item) => {
+                let item_Top = item.getBoundingClientRect().top;
+                if (item_Top < triggerBottom) {
+                    item.classList.add("animate__backInRight");
+                }
+            });
+        }
     </script>
 </body>
 </html>

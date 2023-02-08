@@ -45,7 +45,7 @@
 .fitnessRecipes li:hover h3,
 .soupRecipes li:hover h3,
 .babyRecipes li:hover h3{
-    color: black;
+    color: #333;
 }
 
 /* 主題食譜區塊設置 */

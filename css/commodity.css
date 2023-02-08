@@ -36,7 +36,7 @@
 .thumb.active{
     border: 3px solid var(--color_oragePeel);
     transform: translate(-3px, -8px);
-    box-shadow: 3px 5px 10px black;
+    box-shadow: 3px 5px 10px #333;
 }
 .thumb img{
     width: 100%;
@@ -51,7 +51,7 @@
     overflow: auto;
     padding-top: 25px;
     margin-bottom: 25px;
-    border-top: 3px solid black;
+    border-top: 3px solid #333;
     font-size: 1vw;
 }
 .introduce p{
@@ -133,8 +133,8 @@
 }
 .tag-list li{
     border-radius: 10px 10px 0 0;
-    background: var(--color_cornflowerBlue);
-    color: #fff;
+    background: var(--color_wheat);
+    color: #666;
     padding: 10px 30px;
     cursor: pointer;
 
@@ -144,6 +144,7 @@
 }
 .tag-list .tag.active{
     background: var(--color_graniteGray);
+    color: #fff;
 }
 /* .tag label{
     display: block;
@@ -168,8 +169,11 @@
 .content.active{
     display: block;
 }
+.content dt{
+    margin-top: 20px;
+}
 .content dd{
-    text-indent:2rem;
+    color: #555;
 }
 .content ul{
     list-style: decimal;

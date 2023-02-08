@@ -73,7 +73,7 @@
         font-size: 1.2rem;
     }
     .nav-list a:hover, .header-active a{
-        color: black;
+        color: #333;
         text-decoration:solid;
         font-weight: bold;
         text-decoration: underline;
@@ -96,6 +96,25 @@
         font-size: 2rem;
         margin-bottom: 20px;
         font-family: NaikaiFont;
+        position: relative;
+        color: #333;
+    }
+    .wrapper>h2::after,
+    .wrapper>h2::before{
+        content: "";
+        display: inline-block;
+        width: 20%;
+        height: 3px;
+        background: #333;
+        position: absolute;
+    }
+    .wrapper h2::after{
+        right: 10%;
+        top: 50%;
+    }
+    .wrapper h2::before{
+        left: 10%;
+        top: 50%;
     }
     @media screen and (max-width:1280px){
         .wrapper{
