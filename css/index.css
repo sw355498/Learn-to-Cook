@@ -87,9 +87,9 @@
 
 /* 找食譜 */
     .classification-list{
-        height: 600px;
+        height: 800px;
         display: grid;
-        grid-template-columns: 4fr 6fr;
+        grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
         column-gap: 50px;
         row-gap: 40px;
@@ -123,17 +123,21 @@
         grid-column-start: 1;
         grid-column-end: 2;
         grid-row-start: 1;
-        grid-row-end: 3;
-        background: url("images/theme-block.jpg") no-repeat center center/cover;
+        grid-row-end: 2;
     }
     .fitnessRecipe{
         grid-column-start: 2;
         grid-column-end: 3;
         grid-row-start: 1;
         grid-row-end: 2;
-        background: url("images/fitness-block.jpg");
     }
-    .classification-list .classificationButtom{
+    .soupRecipe{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+    .babyRecipe{
         grid-column-start: 2;
         grid-column-end: 3;
         grid-row-start: 2;
@@ -146,15 +150,15 @@
         grid-template-columns: 1fr 1fr;
         column-gap: 40px;
     }
-    .soupRecipe{
-        background: url("images/soup-block.jpg");
+    .classification-list li:hover{
+        box-shadow: 4px 3px 4px rgba(0, 0, 0, 0.25);
     }
-    .babyRecipe{
-        background: url("images/baby-block.jpg");
+    .classification-list li:hover h3{
+        color: black;
     }
     @media screen and (max-width: 1280px) {
         .classification-list{
-            height: 400px;
+            height: 600px;
         }
     }
 
