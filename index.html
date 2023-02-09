@@ -299,10 +299,11 @@
             }
         });
 
-        const mySwiper = new Swiper('.swiper', {
+        const mySwiper = new Swiper('.swiper', { 
             effect: 'coverflow',
             slidesPerView: 'auto',
             centeredSlides: true,
+            loop:true,
             coverflowEffect: {
                 slideShadows: true,
                 rotate: 20,
@@ -311,6 +312,7 @@
                 modifier: 1,
             },
         });
+        // loop 形成環路（即：可以從最後一張圖跳轉到第一張圖
         // coverflowEffect 參數
         // slideShadows：slide 陰影。預設為 true。
         // rotate：slide 做 3D 旋轉時 Y 軸的旋轉角度。預設為 50。
