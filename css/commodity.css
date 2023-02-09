@@ -133,8 +133,9 @@
 }
 .tag-list li{
     border-radius: 10px 10px 0 0;
-    background: var(--color_wheat);
-    color: #666;
+    background: var(--color_graniteGray);
+    color: #fff;
+
     padding: 10px 30px;
     cursor: pointer;
 
@@ -143,18 +144,9 @@
     margin-left: 5px;
 }
 .tag-list .tag.active{
-    background: var(--color_graniteGray);
-    color: #fff;
+    background: var(--color_wheat);
+    color: #666;
 }
-/* .tag label{
-    display: block;
-    padding: 10px 30px;
-    text-decoration: none;
-    color: #fff;
-}
-.tag input{
-    display: none;
-} */
 .content{
     padding: 30px 50px;
     background: var(--color_wheat);

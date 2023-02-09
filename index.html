@@ -7,12 +7,13 @@
     <title>Learn to Cook</title>
     <!-- swiper CDN -->
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
-
+    <!-- animate CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
     <link rel="stylesheet" href="css/all.css">
     <link rel="stylesheet" href="css/btn.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/scrollbar.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
     <header>
@@ -286,6 +287,8 @@
 
     <!-- swiper js CDN -->
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"> </script>
+
+    <script src="js/animate.js"></script>
     <script>
         const swiper = new Swiper(".mySwiper", {
             spaceBetween: 30,
@@ -314,29 +317,6 @@
         // stretch：每個 slide 之間的拉伸直，越大 slide 靠得越緊。預設為 0。
         // depth：slide 的位置深度值，值越大 z 軸距離越遠，看起來越小。預設為 100。
         // modifier：depth 和 rotate 和 stretch 的倍率。預設為 1。
-
-
-        let left_into = document.querySelectorAll('.left_into');
-        let right_into= document.querySelectorAll('.right_into');
-        window.addEventListener('scroll', abc)
-        abc();
-
-        function abc(){
-            let triggerBottom = window.innerHeight * 1.2;
-            left_into.forEach((item) => {
-                let item_Top = item.getBoundingClientRect().top;
-                if (item_Top < triggerBottom) {
-                    item.classList.add("animate__backInLeft");
-                    
-                }
-            });
-            right_into.forEach((item) => {
-                let item_Top = item.getBoundingClientRect().top;
-                if (item_Top < triggerBottom) {
-                    item.classList.add("animate__backInRight");
-                }
-            });
-        }
     </script>
 </body>
 </html>
