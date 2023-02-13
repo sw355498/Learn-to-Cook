@@ -219,11 +219,14 @@
             overflow-x: auto;
             overflow-y: hidden;
             height: 280px;
+            column-gap: 10px;
         }
         .classification-list li {
+            width: 90%;
             height: 250px;
             margin-bottom: 20px;
             flex-shrink: 0;
+            
         }
         .classification-list h3{
             width: 100%;
