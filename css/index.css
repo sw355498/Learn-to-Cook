@@ -42,6 +42,8 @@
     .banner2-text,
     .banner3-text{
         position: absolute;
+        color: #fff;
+        text-shadow: 0 1px rgb(200,200, 200), 0 2px rgb(160,160, 160), 0 3px rgb(120,120, 120), 0 4px rgb(80,80, 80), 0 5px rgb(40,40, 40);
     }
     .banner1{
         background: url('../images/banner1.jpg') no-repeat center center/cover;
@@ -60,7 +62,6 @@
     .banner2-text{    
         left: 35%;
         top: 70%;
-        color: #fff;
         transform: translate(-50%, -50%);
     }
     .banner2 p{
@@ -73,7 +74,6 @@
         left: 65%;
         top: 45%;
         transform: translate(-50%, -50%);
-        color: #fff;
     }
     .banner3-text p{
         text-align: center;
@@ -106,7 +106,7 @@
             transform: translate(0%, -50%);
             color: #fff;
             text-align: center;
-            /* text-shadow: 0 0 5px var(--color_oragePeel),0 0 10px #ffc800; */
+            text-shadow: 1px 1px black, 2px 2px black, 3px 3px black, 4px 4px black, 5px 5px black, 6px 6px black;
         }
         .banner1-text p{
             margin-left: 0;
@@ -121,7 +121,7 @@
             top: 50%;
             color: #fff;
             text-align: center;
-            /* text-shadow: 0 0 5px var(--color_oragePeel),0 0 10px #ffc800; */
+            text-shadow: 1px 1px black, 2px 2px black, 3px 3px black, 4px 4px black, 5px 5px black, 6px 6px black;
             transform: translate(-50%, -50%);
         }
         .banner2 p{
@@ -137,12 +137,13 @@
             top: 45%;
             transform: translate(-50%, -50%);
             color: #fff;
+            text-shadow: 1px 1px black, 2px 2px black, 3px 3px black, 4px 4px black, 5px 5px black, 6px 6px black;
+}
         }
         .banner3-text p{
             text-align: center;
             margin-top: 50px;
         }
-    }
 
 /* 找食譜 */
     .classification-list{
