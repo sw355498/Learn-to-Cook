@@ -41,11 +41,29 @@
     font-family: NaikaiFont;
     font-size: 1.6rem;
 }
+.classification-list li h3,
+.fitnessRecipes li h3,
+.soupRecipes li h3,
+.babyRecipes li h3{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 .classification-list li:hover h3,
 .fitnessRecipes li:hover h3,
 .soupRecipes li:hover h3,
 .babyRecipes li:hover h3{
     color: #333;
+}
+@media screen and (max-width:768px){
+    .classification-list h3,
+    .fitnessRecipes h3,
+    .soupRecipes h3,
+    .babyRecipes h3{
+        font-size: 1.4rem;
+        padding: 0 5px;
+        box-sizing: border-box;
+    }
 }
 
 /* 主題食譜區塊設置 */
@@ -54,8 +72,8 @@
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: 1fr 1fr;
-    column-gap: 50px;
-    row-gap: 40px;
+    column-gap: 20px;
+    row-gap: 20px;
     justify-content: center;
 }
 .left-block{
@@ -93,6 +111,42 @@
         height: 400px;
     }
 }
+@media screen and (max-width:768px) {
+    .classification-list{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+    .left-block{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
+    .topLeft-block{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+    .topRight-block{
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+    .buttomLeft-block{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+    .buttomRight-block{
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+}
 
 /* 健身食譜區塊設置 */
 .fitnessRecipes{
@@ -111,6 +165,21 @@
 @media screen and (max-width:1280px){
     .fitnessRecipes li{
         height: 220px;
+    }
+}
+@media screen and (max-width:768px) {
+    .fitnessRecipes{
+        height: 400px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 20px;
+        row-gap: 20px;
+    }
+    .fitnessRecipes li{
+        height: auto;
+    }
+    .fitnessRecipes li:nth-child(3n+2){
+        margin-top: 0px;
     }
 }
 /* 湯品區塊設置 */
@@ -156,6 +225,41 @@
         height: 280px;
     }
 }
+@media screen and (max-width:768px) {
+    .soupRecipes{
+        height: 260px;
+        column-gap: 20px;
+        row-gap: 20px;
+    }
+    .soupRecipes li{
+        height: auto;
+    }
+    .soupRecipes li:nth-child(2n+1){
+        border-radius: 20px;
+    }
+    .soupRecipes li:nth-child(2n){
+        margin-top: 0px;
+        border-radius: 20px;
+    }
+    .soupRecipes li:nth-child(2n+1) h3{
+        border-radius: 0px 0px 20px 20px;
+        right: 0;
+        left: 0; 
+    }
+    .soupRecipes li:nth-child(2n) he{
+        border-radius: 0px 20px 20px 0;
+        left: 0;
+        right: 0;
+    }
+    .soupRecipes h3{
+        width: 100%;
+        height: auto;
+        writing-mode:horizontal-tb;
+        letter-spacing: normal;
+        position: absolute;
+        bottom: 0;
+    }
+}
 
 /* 寶寶副食品 */
 .babyRecipes{
@@ -163,4 +267,9 @@
     grid-template-columns: 1fr 1fr;
     column-gap: 50px;
     margin-bottom: 20px;
+}
+@media screen and (max-width:768px){
+    .babyRecipes{
+        column-gap: 20px;
+    }
 }
