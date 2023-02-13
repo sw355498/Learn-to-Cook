@@ -12,3 +12,9 @@
     border-radius: 10px;
     background: var(--color_oragePeel);
 }
+
+/*Firefox上的調整*/
+.scrollbar{
+    scrollbar-width: thin;  
+    scrollbar-color: var(--color_oragePeel) #F5F5F5; 
+}
