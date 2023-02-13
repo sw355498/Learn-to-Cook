@@ -7,11 +7,9 @@
 }
 .search-position{
     display: flex;
-    position: absolute;
-    left: 50%;
-    top: 50%;
     align-items: center;
-    transform: translate(-50%, -50%);
+    justify-content: center;
+    padding-top: 150px;
 }
 .search-bg h2{
     width: 130px;
@@ -51,4 +49,18 @@
 }
 .search-btn:hover{
     background: var(--color_oragePeel_btn_hover);
+}
+@media screen and (max-width:768px){
+    .search-bg{
+        min-width: auto;
+    }
+    .search-position{
+        flex-direction: column;
+        padding: 107px 20px;
+    }
+    .search-block{
+        width: 100%;
+        min-width: auto;
+        margin-left: 0px;
+    }
 }
