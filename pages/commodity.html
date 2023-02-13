@@ -12,22 +12,21 @@
 <body>
     <header>
         <nav class="nav-list">
-            <ul>
-                <li>
-                    <h1>
-                        <a href="../index.html">
-                            LearnToCook 學做飯
-                        </a>
-                    </h1>
-                </li>
+            <h1>
+                <a href="../index.html">
+                    LearnToCook 學做飯
+                </a>
+            </h1>
+            <ul class="line-list">
                 <li><a href="recipe-list.html">找食譜</a></li>
                 <li><a href="recipe-forum.html">食譜分享</a></li>
                 <li><a href="shop-list.html">購物商城</a></li>
             </ul>
-            <ul>
-                <li><a href="shop-cart.html"><i class="bi bi-cart-fill"></i></a></li>
+            <ul class="user-line">
+                <li><a href="pages/shop-cart.html"><i class="bi bi-cart-fill"></i></a></li>
                 <li><a href="#"><i class="bi bi-person-fill"></i></a></li>
             </ul>
+            <i class="bi bi-list hamburgerMenu"></i> 
         </nav>
     </header>
     <main>
@@ -146,9 +145,10 @@
         </section>
     </main>
     <footer>
-        此為TibaMe緯育專題使用，如有疑慮請與我們聯絡，E-MAIL:service@tibame.com，COPYRIGHT © 2023  All rights reserved
+        此為TibaMe緯育專題使用，如有疑慮請與我們聯絡，<span>E-MAIL:service@tibame.com，</span><span>COPYRIGHT © 2023  All rights reserved</span>
     </footer>
 
+    <script src="../js/hamburgerMenu.js"></script>
     <script>
         let pic=document.querySelector("#pic");
         let thumb=document.querySelectorAll(".thumb")

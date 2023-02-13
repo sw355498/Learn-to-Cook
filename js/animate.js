@@ -2,8 +2,11 @@ let left_into = document.querySelectorAll('.left_into');
 let right_into = document.querySelectorAll('.right_into');
 let up_into = document.querySelectorAll('.up_into')
 let flipInY = document.querySelectorAll('.flipInY')
-window.addEventListener('scroll', animate)
-animate();
+if(webkitURL.innerWidth > 768){
+    window.addEventListener('scroll', animate)
+    animate();
+}
+
 
 function animate(){
     let triggerBottom = window.innerHeight * 1.2;

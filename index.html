@@ -18,22 +18,22 @@
 <body>
     <header>
         <nav class="nav-list">
-            <ul>
-                <li>
-                    <h1>
-                        <a href="../index.html">
-                            LearnToCook 學做飯
-                        </a>
-                    </h1>
-                </li>
+            <h1>
+                <a href="../index.html">
+                    LearnToCook 學做飯
+                </a>
+            </h1>
+
+            <ul class="line-list">
                 <li><a href="pages/recipe-list.html">找食譜</a></li>
                 <li><a href="pages/recipe-forum.html">食譜分享</a></li>
                 <li><a href="pages/shop-list.html">購物商城</a></li>
             </ul>
-            <ul>
+            <ul class="user-line">
                 <li><a href="pages/shop-cart.html"><i class="bi bi-cart-fill"></i></a></li>
                 <li><a href="#"><i class="bi bi-person-fill"></i></a></li>
             </ul>
+            <i class="bi bi-list hamburgerMenu"></i> 
         </nav>
     </header>
     <div class="banner-block">
@@ -65,7 +65,7 @@
         <section>
             <div class="wrapper">
                 <h2>找食譜</h2>
-                <ul class="classification-list">
+                <ul class="classification-list scrollbar">
                     <li class="themeRecipe animate__animated animate__backInLeft">
                         <a href="pages/cook-list.html">
                             <img src="images/theme-block.jpg" alt="主題食譜">
@@ -108,8 +108,8 @@
                                 <li><i class="bi bi-person-heart"></i>粉絲數 1023位</li>
                             </ul>
                             <div class="material scrollbar">
-                                <table class="material-list">
-                                    <colgroup>材料：</colgroup>
+                                <h4>材料</h4>
+                                <table>
                                     <tr>
                                         <td>番茄</td>
                                         <td>2個</td>
@@ -156,8 +156,8 @@
                                 <li><i class="bi bi-person-heart"></i>粉絲數 980位</li>
                             </ul>
                             <div class="material scrollbar">
-                                <table class="material-list">
-                                    <colgroup>材料：</colgroup>
+                                <h4>材料</h4>
+                                <table>
                                     <tr>
                                         <td>Tommy's雪紡蛋糕粉</td>
                                         <td>110g</td>
@@ -205,7 +205,7 @@
                                 <img src="images/大湖草莓.jpg" alt="草莓">
                                 <div class="item-text">
                                     <h3>大湖草莓</h3>
-                                    <div class="item-introduce">
+                                    <div class="item-introduce scrollbar">
                                         <h4>【新鮮食材】</h4>
                                         <p>特選鮮採苗栗大湖草莓(24-28顆/盒)</p>
                                         <p>冬季限定！！</p>
@@ -219,7 +219,7 @@
                                 <img src="images/橘子.jpg" alt="橘子">
                                 <div class="item-text">
                                     <h3>橘子</h3>
-                                    <div class="item-introduce">
+                                    <div class="item-introduce scrollbar">
                                         <h4>【新鮮食材】</h4>
                                         <p>台灣砂糖橘(約 10斤/箱)</p>
                                         <p>果農直配～！</p>
@@ -233,7 +233,7 @@
                                 <img src="images/陶瓷鍋具.jpg" alt="陶瓷萬用不沾鍋">
                                 <div class="item-text">
                                     <h3>陶瓷萬用不沾鍋</h3>
-                                    <div class="item-introduce">
+                                    <div class="item-introduce scrollbar">
                                         <h4>【廚房用具】</h4>
                                         <p>陶瓷不沾塗層,好清洗</p>
                                     </div>
@@ -246,7 +246,7 @@
                                 <img src="images/pizza-cutter.jpg" alt="不銹鋼滾輪披薩刀">
                                 <div class="item-text">
                                     <h3>不銹鋼滾輪披薩刀</h3>
-                                    <div class="item-introduce">
+                                    <div class="item-introduce scrollbar">
                                         <h4>【廚房用具】</h4>
                                         <p>
                                             9cm大寬面，可360°來回靈活滾動、平整切割
@@ -265,7 +265,7 @@
                                 <img src="images/八角.jpg" alt="八角">
                                 <div class="item-text">
                                     <h3>八角茴香</h3>
-                                    <div class="item-introduce">
+                                    <div class="item-introduce scrollbar">
                                         <h4>【調味料】</h4>
                                         <p>中式料理中最為廣泛使用的香辛料之一</p>
                                         <p>無論滷包、湯底甚至甜點，其甜味可用以代替甘草</p>
@@ -282,13 +282,14 @@
         </section>
     </main>
     <footer>
-        此為TibaMe緯育專題使用，如有疑慮請與我們聯絡，E-MAIL:service@tibame.com，COPYRIGHT © 2023  All rights reserved
+        此為TibaMe緯育專題使用，如有疑慮請與我們聯絡，<span>E-MAIL:service@tibame.com，</span><span>COPYRIGHT © 2023  All rights reserved</span>
     </footer>
 
     <!-- swiper js CDN -->
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"> </script>
 
     <script src="js/animate.js"></script>
+    <script src="js/hamburgerMenu.js"></script>
     <script>
         const swiper = new Swiper(".mySwiper", {
             spaceBetween: 30,
@@ -311,6 +312,9 @@
                 depth: 250,
                 modifier: 1,
             },
+            autoplay:{
+                delay: 3000,
+            }
         });
         // loop 形成環路（即：可以從最後一張圖跳轉到第一張圖
         // coverflowEffect 參數
@@ -319,6 +323,8 @@
         // stretch：每個 slide 之間的拉伸直，越大 slide 靠得越緊。預設為 0。
         // depth：slide 的位置深度值，值越大 z 軸距離越遠，看起來越小。預設為 100。
         // modifier：depth 和 rotate 和 stretch 的倍率。預設為 1。
+        // autoplay:自動輪播參數
+        // autoplay - delay: 每隔多久撥下一張
     </script>
 </body>
 </html>

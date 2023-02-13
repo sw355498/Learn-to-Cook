@@ -32,52 +32,56 @@
     }
 
 /* header */
-    header{
-        min-width: 960px;
-        font-family: NaikaiFont;
-    }
-    /* 網站logo使用h1標籤優化seo方面 */
-    header h1 a{
-        display: block;
-        background: url("../images/LearnToCook-logo.svg") no-repeat 20px center;
-        width: 80px;
-        height: 80px;
-        /* text-indent強迫縮排至區塊外  white-space 禁止文字換行 overflow超出區塊部分不顯示*/
-        text-indent:200%;
-        white-space: nowrap;
-        overflow: hidden;
-    }
-    .nav-list, .nav-list ul{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .nav-list{
-        padding-left: 1rem;
-        padding-right: 1rem;
-        background: #fff;
-    }
-    .nav-list img{
-        width: 80px;
-        display: block;
-    }
-    .nav-list li{
-        text-align: center;
-    }
-    .nav-list a{
-        padding: 0 1.2rem;
-        line-height: 80px;
-        text-decoration: none;
-        display: block;
-        color: var(--color_oragePeel);
-        font-size: 1.2rem;
-    }
-    .nav-list a:hover, .header-active a{
-        color: #333;
-        text-decoration:solid;
-        font-weight: bold;
-        text-decoration: underline;
-    }
+header{
+    min-width: 960px;
+    font-family: NaikaiFont;
+}
+/* 網站logo使用h1標籤優化seo方面 */
+header h1 a{
+    display: block;
+    background: url("../images/LearnToCook-logo.svg") no-repeat center center;
+    width: 80px;
+    height: 80px;
+    /* text-indent強迫縮排至區塊外  white-space 禁止文字換行 overflow超出區塊部分不顯示*/
+    text-indent:200%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.nav-list,
+.line-list,
+.user-line{
+    display: flex;
+    align-items: center;
+}
+.line-list:last-child,
+.user-line{
+    margin-left: auto;
+}
+.nav-list{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background: #fff;
+}
+.nav-list li{
+    text-align: center;
+}
+.hamburgerMenu{
+    display: none;
+}
+.nav-list a{
+    padding: 0 20px;
+    line-height: 80px;
+    text-decoration: none;
+    display: block;
+    color: var(--color_oragePeel);
+    font-size: 1.2rem;
+}
+.nav-list a:hover, .header-active a{
+    color: #333;
+    text-decoration:solid;
+    font-weight: bold;
+    text-decoration: underline;
+}
 
 /* main */
     main{
@@ -127,7 +131,65 @@
         min-width: 960px;
         color: #fff;
         background: #37323E;
-        line-height: 80px;
+        line-height: 60px;
         text-align: center;
-        font-size: .5vw;
+        font-size: .5rem;
+        padding: 10px 0;
+    }
+
+    @media screen and (max-width: 768px) {
+        header,main,footer{
+            min-width: auto;
+        }
+        .nav-list a{
+            line-height: 40px;
+            font-size: 16px; 
+            padding: 0 10px;
+        }
+        header h1 a{
+            background: url("../images/LearnToCook-logo-mobile.svg")no-repeat center center;
+            width: 40px;
+            height: 40px;
+        }
+        /*漢堡選單*/
+        .line-list{
+            display: none;
+            transition: .4s;
+        }
+        .hamburgerMenu{
+            display: block;
+            line-height: 40px;
+            padding: 0 10px;
+        }
+        .line-list.-on{
+            display: block;
+            position: absolute;
+            background: #fff;
+            width: 100%;
+            top: 40px;
+            left: 0;
+            z-index: 4;
+        }
+        .line-list a{
+            border-top: 1px solid #ccc;
+            font-size: 16px;
+        }
+        main{
+            width: 100%;
+        }
+        .wrapper{
+            width: 100%;
+            padding: 20px 10px 20px;
+            box-sizing: border-box;
+        }
+        .wrapper h2{
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+        footer{
+            line-height: 30px;
+        }
+        footer span{
+            display: block;
+        }
     }

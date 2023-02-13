@@ -30,7 +30,7 @@
         word-wrap: normal;
     }
     .banner-list p{
-        font-size: 1.5rem;
+        font-size: 1.4rem;
         font-weight: 900;
     }
     .banner1,
@@ -46,12 +46,6 @@
     .banner1{
         background: url('../images/banner1.jpg') no-repeat center center/cover;
     }
-    .banner2{
-        background: url('../images/banner2.jpg') no-repeat center center/cover;
-    }
-    .banner3{
-        background: url('../images/banner3.jpg') no-repeat center center/cover;
-    }
     .banner1-text{    
         left: 40%;
         top: 58%;
@@ -59,6 +53,9 @@
     }
     .banner1-text p{
         margin-left: 150px;
+    }
+    .banner2{
+        background: url('../images/banner2.jpg') no-repeat center center/cover;
     }
     .banner2-text{    
         left: 35%;
@@ -68,6 +65,9 @@
     }
     .banner2 p{
         margin-left: -100px;
+    }
+    .banner3{
+        background: url('../images/banner3.jpg') no-repeat center center/cover;
     }
     .banner3-text{
         left: 65%;
@@ -82,6 +82,65 @@
     @media screen and (max-width: 1280px) {
         .banner-list{
             height: 300px;
+        }
+    }
+    @media screen and (max-width: 768px) {
+        .banner-block{
+            min-width: auto;
+        }
+        .banner-list h2{
+            font-size: 1.8rem;
+        }
+        .banner-list p{
+            font-size: 1rem;
+            font-weight: 400;
+        }
+        .banner1{
+            background: url('../images/banner1-moblie.jpeg') no-repeat center center/cover;
+        }
+        .banner1-text{
+            position: absolute;
+            width: 50%;
+            left: 40px;
+            top: 40%;
+            transform: translate(0%, -50%);
+            color: #fff;
+            text-align: center;
+            /* text-shadow: 0 0 5px var(--color_oragePeel),0 0 10px #ffc800; */
+        }
+        .banner1-text p{
+            margin-left: 0;
+            margin-top: 10px;
+        }
+        .banner2{
+            background: url('../images/banner2-moblie.jpeg') no-repeat center center/cover;
+        }
+        .banner2-text{    
+            width: 50%;
+            left: 70%;
+            top: 50%;
+            color: #fff;
+            text-align: center;
+            /* text-shadow: 0 0 5px var(--color_oragePeel),0 0 10px #ffc800; */
+            transform: translate(-50%, -50%);
+        }
+        .banner2 p{
+            margin-left: 0px;
+            margin-top: 10px;
+        }
+        .banner3{
+            background: url('../images/banner3.jpg') no-repeat center center/cover;
+        }
+        .banner3-text{
+            width: 50%;
+            left: 65%;
+            top: 45%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+        }
+        .banner3-text p{
+            text-align: center;
+            margin-top: 50px;
         }
     }
 
@@ -143,13 +202,6 @@
         grid-row-start: 2;
         grid-row-end: 3;
     }
-    .classificationButtom ul{
-        width: 100%;
-        height: 100%;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        column-gap: 40px;
-    }
     .classification-list li:hover{
         box-shadow: 4px 3px 4px rgba(0, 0, 0, 0.25);
     }
@@ -161,6 +213,25 @@
             height: 600px;
         }
     }
+    @media screen and (max-width: 768px) {
+        .classification-list{
+            display: flex;
+            overflow-x: auto;
+            overflow-y: hidden;
+            height: 280px;
+        }
+        .classification-list li {
+            height: 250px;
+            margin-bottom: 20px;
+            flex-shrink: 0;
+        }
+        .classification-list h3{
+            width: 100%;
+            padding: 3px 0;
+            font-size: 1.2rem;
+        }
+    }
+
 
 /* 食譜分享區塊 */
     .forum-content>li{
@@ -198,14 +269,12 @@
         grid-column-start: 1;
         grid-column-end: 5;
     }
-    .forum-content-text ul{
-        display: flex;
-    }
     .forum-content-text h3{
         font-size: 1.6rem;
         font-family: NaikaiFont;
     }
     .recipe-author{
+        display: flex;
         font-size: 14px;
         color: var(--color_graniteGray);
         margin-bottom: 15px;
@@ -226,8 +295,14 @@
     }
     .material table{
         width: 85%; 
+        margin-top: 15px;
         margin-left: auto;
         font-size: 1.2rem;
+    }
+    .material h4{
+        text-align: left;
+        padding-bottom: 5px;
+        border-bottom: 2px solid black;
     }
     .material td:last-child{
         text-align: right;
@@ -248,6 +323,55 @@
         }
         .material{
             height: 180px;
+        }
+    }
+    @media screen and (max-width: 768px) {
+        .forum-content>li{
+            display: block;
+            padding: 0px;   
+        }
+        .forum-content>li:not(:last-child){
+            padding: 0;
+        }
+        .forum-content-text h3{
+            text-align: center;
+            font-size: 1.2rem;
+        }
+        .recipe-author{
+            justify-content: center;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+        .recipe-author li:first-child{
+            width: 100%;
+        }
+        .recipe-author li:not(:first-child){
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .material table{
+            width: 100%; 
+            font-size: 1rem;
+        }
+        .material h4{
+            text-align: center;
+            font-size: 1.1rem;
+            margin: 0 25px;
+        }
+        .material td:first-child{
+            padding-left: 25px;
+        }
+        .material td:last-child{
+            padding-right: 25px;
+        }
+        .btn-block{
+            text-align: center;
+        }
+        .btn-block .collect{
+            margin-left: 0px;
+            margin-top: 15px;
+            margin-bottom: 20px;
         }
     }
 /* 購物商城 */
@@ -293,7 +417,7 @@
         font-weight: bold;
     }
     .swiper~a{
-        margin-top: 20px;
+        margin-top: 15px;
     }
     @media screen and (max-width:1280px){
         .item{

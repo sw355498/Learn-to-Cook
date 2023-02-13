@@ -21,9 +21,7 @@
     cursor: pointer;
     font-size: 16px;
 }
-.big{
-    
-}
+
 
 /* 按鈕色彩 */
 .primary, .payment-btn{
@@ -59,4 +57,20 @@
     color: var(--color_graniteGray);
     background: #fff;
     border: 1px solid var(--color_graniteGray);
+}
+
+@media screen and (max-width: 768px) {
+    .middle{
+        /* display: inline-block;
+        width: 150px;
+        line-height: 50px;
+        border: none;
+        border-radius: 10px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        font-size: 16px; */
+        display: block;
+        width: 100%;
+    }
 }
