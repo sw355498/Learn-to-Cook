@@ -21,7 +21,12 @@
         --color_oragePeel_btn: linear-gradient(to bottom, #FFE6BF 0%, #FF9C00 100%);
         --color_oragePeel_btn_hover: linear-gradient(to bottom, #FF9C00 0%, #FFE6BF 100%);
     }
-
+/* 文字單行省略... */
+.text-overflow{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 /* body */
     body{
@@ -136,6 +141,14 @@ header h1 a{
         font-size: .5rem;
         padding: 10px 0;
     }
+    footer a{
+        text-decoration: none;
+        cursor: pointer;
+        color: var(--color_cornflowerBlue);
+    }
+    footer a:hover{
+        color: royalblue;
+    }
 
     @media screen and (max-width: 768px) {
         header,main,footer{
@@ -188,6 +201,7 @@ header h1 a{
         }
         footer{
             line-height: 30px;
+            font-size: 10px;
         }
         footer span{
             display: block;
