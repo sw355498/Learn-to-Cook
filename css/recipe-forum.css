@@ -56,9 +56,6 @@
     font-size: 1.6rem;
     font-family: NaikaiFont;
     text-align: left;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
 }.item-text h4{
     border-bottom: 1px solid black;
     padding: 5px 0;

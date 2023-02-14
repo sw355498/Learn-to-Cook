@@ -41,14 +41,6 @@
     font-family: NaikaiFont;
     font-size: 1.6rem;
 }
-.classification-list li h3,
-.fitnessRecipes li h3,
-.soupRecipes li h3,
-.babyRecipes li h3{
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
 .classification-list li:hover h3,
 .fitnessRecipes li:hover h3,
 .soupRecipes li:hover h3,
@@ -113,12 +105,13 @@
 }
 @media screen and (max-width:768px) {
     .classification-list{
+        height: 490px;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: 1fr 1fr 1fr;
     }
     .left-block{
         grid-column-start: 1;
-        grid-column-end: 3;
+        grid-column-end: 2;
         grid-row-start: 3;
         grid-row-end: 4;
     }
@@ -169,7 +162,7 @@
 }
 @media screen and (max-width:768px) {
     .fitnessRecipes{
-        height: 400px;
+        height: 490px;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         column-gap: 20px;
@@ -227,7 +220,7 @@
 }
 @media screen and (max-width:768px) {
     .soupRecipes{
-        height: 260px;
+        height: 320px;
         column-gap: 20px;
         row-gap: 20px;
     }

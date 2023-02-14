@@ -61,9 +61,6 @@
 .item-text  h3{
     font-size: 1.2rem;
     font-family: NaikaiFont;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
 }
 .item-introduce{
     padding: 10px;
