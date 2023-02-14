@@ -86,3 +86,14 @@
         grid-template-columns: repeat(3, 1fr);
     }
 }
+@media screen and (max-width:768px){
+    .wrapper{
+        display: block;
+    }
+    .menu{
+        position: sticky;
+        top: 0px;
+        flex-shrink: 0;
+        width: 100%;
+    }
+}
