@@ -12,19 +12,6 @@
 .field{
     column-count: 4;
 }
-@media screen and (max-width:1280px) {
-    .field{
-        column-count: 3;
-    }  
-}
-.item-list{
-    width: 75%;
-    padding: 0 20px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 50px;
-    row-gap: 40px;
-}
 .item{
     border-radius: 10px;
     background: white;
@@ -56,7 +43,8 @@
     font-size: 1.6rem;
     font-family: NaikaiFont;
     text-align: left;
-}.item-text h4{
+}
+.item-text h4{
     border-bottom: 1px solid black;
     padding: 5px 0;
     text-align: center;
@@ -65,8 +53,6 @@
 .material{
     width: 100%;
     padding: 10px 0;
-    /* max-height: 200px; */
-    /* overflow: auto; */
 }
 .material table{
     width: 100%; 
@@ -76,4 +62,22 @@
     width: 30%;
     text-align: right;
     color: #666;
+}
+@media screen and (max-width:1280px) {
+    .field{
+        column-count: 3;
+    }  
+}
+@media screen and (max-width:768px) {
+    .field{
+        column-count: 2;
+    }  
+}
+@media screen and (max-width:484px) {
+    .field{
+        column-count: 1;
+    }  
+    .item img{
+        height: 150px;
+    }
 }
