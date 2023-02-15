@@ -120,12 +120,12 @@ main section:nth-child(2n){
 .form-block input{
     line-height: 25px;
     font-size: 1.2rem;
-    box-sizing: border-box;
 }
 .name-block,
 .tel-block{
-    width: calc(50% - 40px);
+    width: 50%;
     padding: 10px 20px;
+    box-sizing: border-box;
 }
 .name-block input,
 .tel-block input{
@@ -134,10 +134,10 @@ main section:nth-child(2n){
 }
 .email-block,
 .address-block{
-    width: calc(100% - 40px);
-    max-width: 100%;
+    width: 100%;
     flex: 0 0 auto;
     padding: 10px 20px;
+    box-sizing: border-box;
 }
 .email-block input,
 .address-block input{
@@ -180,8 +180,7 @@ main section:nth-child(2n){
     }
     .name-block,
     .tel-block{
-        width: auto;
-        padding: 10px 20px;
+        width: 100%;
     }
 
     /* 購買人資訊 */
