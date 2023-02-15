@@ -23,10 +23,6 @@
     font-family: NaikaiFont;
     text-align: left;
 }
-.cutover{
-    /* display: flex; */
-    justify-content: center
-}
 .thumb{
     width: 80px;
     height: 80px;
@@ -195,6 +191,16 @@
     .thumb{
         width: 40px;
         height: 40px;
+        border-radius: 5px;
+        border: 2px solid transparent;
+    }
+    .thumb.active{
+        border: 2px solid var(--color_oragePeel);
+        transform: translate(-1px, -3px);
+        box-shadow: 3px 3px 5px #333;
+    }
+    .commodity-picture img{
+        border-radius: 5px;
     }
     .commodity-text h2{
         font-size: 1.4rem;
