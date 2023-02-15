@@ -1,11 +1,13 @@
 .commodity{
     display: flex;
+    align-items: center;
 }
 /* 圖片切換區塊 */
 .commodity-picture{
     width: 50%;
-    overflow: hidden;
-    padding: 50px;
+    height: 350px;
+    padding-right: 40px;
+    display: flex;
 }
 .commodity-picture img{
     width: 100%;
@@ -22,7 +24,7 @@
     text-align: left;
 }
 .cutover{
-    display: flex;
+    /* display: flex; */
     justify-content: center
 }
 .thumb{
@@ -135,10 +137,8 @@
     border-radius: 10px 10px 0 0;
     background: var(--color_graniteGray);
     color: #fff;
-
     padding: 10px 30px;
     cursor: pointer;
-
 }
 .tag-list li:not(:first-child){
     margin-left: 5px;
@@ -175,8 +175,52 @@
 .content li{
     margin-bottom: 10px;
 }
-@media screen and (max-width:960px){
+@media screen and (max-width:960px) {
     .information{
         padding-bottom: 0;
+    }
+}
+@media screen and (max-width:768px) {
+    .commodity{
+        display: block;
+        align-items: center;
+    }
+    .commodity-picture{
+        width: 100%;
+        height: 200px;
+        padding-right: 0px;
+        margin-bottom: 10px;
+        justify-content: center;
+    }
+    .thumb{
+        width: 40px;
+        height: 40px;
+    }
+    .commodity-text h2{
+        font-size: 1.4rem;
+        margin: 0;
+    }
+    .introduce{
+        padding-top: 15px;
+        margin-bottom: 10px;
+    }
+    .choose select,
+    .amount input[type='number'],
+    .amount button,
+    .price{
+        font-size: 1rem;
+    }
+    .amount{
+        width: 100%;
+    }
+    .information{
+        padding: 10px 0px 0px;
+    }
+    .tag-list li{
+        border-radius: 5px 5px 0 0;
+        padding: 5px 10px;
+    }
+    .content h2{
+        font-size: 1.4rem;
     }
 }
