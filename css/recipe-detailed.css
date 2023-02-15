@@ -84,22 +84,17 @@
 
 /* 步驟區塊 */
 .step{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    flex-wrap: wrap;
-    justify-content: center;
-    column-gap: 60px;
-    row-gap: 110px;
-}
-.step{
     width: 100%;
     margin-top: 100px;
     padding: 0 60px;
     box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 60px;
+    row-gap: 110px;
 }
 .step li{
     position: relative;
-
     flex-shrink: 0;
 }
 .step li:nth-child(2n+1){
@@ -109,6 +104,15 @@
 .step li:nth-child(2n){
     grid-column-start: 2;
     grid-column-end: 3;
+}
+.step div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 20px 0 40px;
+}
+.material table{
+    font-size: 1rem;
 }
 .step h4{
     width: 60px;
@@ -125,16 +129,54 @@
     left: 5%;
     transform: translate(-50%, -100%);
 }
-.step div{
-    /* height: 250px; */
-    /* border: 1px solid black; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0px 20px 0 40px;
-}
-@media screen and (max-width:1280px){
+
+@media screen and (max-width:768px) {
+    .recipe{
+        display: block;
+    }
+    .recipe-picture{
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .recipe-text{
+        width: 100%;
+    }
+    .recipe-text h2{
+        font-size: 1.4rem;
+    }
+    .recipe-author{
+        font-size: 10px;
+    }
+    .recipe-icon .bi{
+        font-size: 10px;
+    }
+    .recipe-text h3{
+        font-size: 1.4rem;
+    }
+    .step{
+        padding: 0 30px;
+        grid-template-columns: 1fr;
+        column-gap: 0px;
+        row-gap: 80px;
+    }
+    .step li:nth-child(2n+1){
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+    .step li:nth-child(2n){
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
     .step div{
-        /* height: 180px; */
+        padding: 0px 10px 0 20px;
+    }
+    .step h4{
+        width: 50px;
+        line-height: 50px;
+        font-size: 1rem;
+        padding: 5px;
     }
 }
