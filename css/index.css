@@ -146,11 +146,11 @@
         }
 
         /* 首頁未加頁籤 第一個wrapper 需增加 paddin*/
-        .wrapper:first-child{
+        section:first-child .wrapper{
             padding-top: 40px;
         }
         @media screen and (max-width:768px){
-            .wrapper:first-child{
+            section:first-child .wrapper{
                 padding-top: 20px;
             } 
         }

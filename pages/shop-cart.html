@@ -52,36 +52,36 @@
                 <ul class="item-list" id="item-list">
                     <li class="item">
                         <div class="item-left">
-                            <input type="checkbox" name="" id="">
+                            <input type="checkbox" class="item-checkbox">
                             <img src="../images/陶瓷鍋具.jpg" alt="陶瓷鍋具">
                             <ul>
                                 <li>商品名稱：<span>陶瓷萬用不沾鍋</span></li>
                                 <li>商品價格：＄<span>9,999</span></li>
                                 <li class="quantity">
                                     商品數量：
-                                    <button><i class="bi bi-dash"></i></button>
+                                    <button data-symbol="dash">-</button>
                                     <span>1</span>
-                                    <button><i class="bi bi-plus"></i></button>
+                                    <button data-symbol="plus">+</button>
                                 </li>
                             </ul>
                         </div>
                         <ul>
                             <li class="del-btn"><i class="bi bi-trash"></i></li>
-                            <li class="item-price">總金額：＄<span>6,000</span></li>
+                            <li class="item-price">總金額：＄<span>9,999</span></li>
                         </ul>
                     </li>
                     <li class="item">
                         <div class="item-left">
-                            <input type="checkbox" name="" id="">
+                            <input type="checkbox" class="item-checkbox">
                             <img src="../images/大湖草莓.jpg" alt="大湖草莓">
                             <ul>
                                 <li>商品名稱：<span>大湖草莓</span></li>
                                 <li>商品價格：＄<span>2,000</span></li>
                                 <li class="quantity">
                                     商品數量：
-                                    <button><i class="bi bi-dash"></i></button>
+                                    <button data-symbol="dash">-</button>
                                     <span>3</span>
-                                    <button><i class="bi bi-plus"></i></button>
+                                    <button data-symbol="plus">+</button>
                                 </li>
                             </ul>
                         </div>
@@ -92,16 +92,16 @@
                     </li>
                     <li class="item">
                         <div class="item-left">
-                            <input type="checkbox" name="" id="">
+                            <input type="checkbox" class="item-checkbox">
                             <img src="../images/八角.jpg" alt="八角">
                             <ul>
                                 <li>商品名稱：<span>八角</span></li>
                                 <li>商品價格：＄<span>100</span></li>
                                 <li class="quantity">
                                     商品數量：
-                                    <button><i class="bi bi-dash"></i></button>
+                                    <button data-symbol="dash">-</button>
                                     <span>10</span>
-                                    <button><i class="bi bi-plus"></i></button>
+                                    <button data-symbol="plus">+</button>
                                 </li>
                             </ul>
                         </div>
@@ -112,7 +112,7 @@
                     </li>
                     <li class="item">
                         <div class="item-left">
-                            <input type="checkbox" name="" id="">
+                            <input type="checkbox" name="" id="checkAllBox">
                             <button class="small del-all">刪除勾選項目</button>
                         </div>
                         <ul>
@@ -204,6 +204,7 @@
     <script src="../js/hamburgerMenu.js"></script>
     <script src="../js/goToTop.js"></script>
     <script>
+        /*購物車資訊-下拉功能*/
         let dropDown = document.querySelector('#drop-down');
         let dropDown_underline = document.querySelector('.dropDown_underline')
         let itemList = document.querySelector('#item-list');
@@ -219,6 +220,101 @@
                 dropDown_underline.classList.remove('dropDown_underline')
             }
         })
+
+        itemList.addEventListener('click',function(e){
+
+            /*------ 商品數量修改 ------*/
+            if(e.target.getAttribute('data-symbol') === 'dash'){
+                let amount = e.target.nextElementSibling.innerHTML
+                if(amount > 1){
+                    amount--
+                    e.target.nextElementSibling.innerHTML = amount
+
+                    itemPrice(e.target, amount)
+                }
+            }
+            if(e.target.getAttribute('data-symbol') === 'plus'){
+                let amount = e.target.previousElementSibling.innerHTML
+                amount++
+                e.target.previousElementSibling.innerHTML = amount
+
+                itemPrice(e.target, amount)
+            
+            }
+
+            /*------ 單筆刪除 ------*/
+            if(e.target.classList.contains('bi-trash')){
+                e.target.closest('li.item').remove()
+            }
+            shopCartNull() 
+            totalChange()      
+        })
+        /*------- 全部勾選 ------*/
+        let checkboxs = document.querySelectorAll('.item-checkbox')
+        let checkAllBox = document.querySelector('#checkAllBox')
+        checkboxs.forEach(function(item, index){
+            item.addEventListener('click', function(){
+                let checked_number = document.querySelectorAll('.item-checkbox:checked').length
+                let checkbox_all = document.querySelectorAll('.item-checkbox').length
+                if(checked_number === checkbox_all){
+                    checkAllBox.checked = true
+                } else {
+                    checkAllBox.checked = false
+                }
+            })
+        })
+        checkAllBox.addEventListener('click',function(){
+            if(checkAllBox.checked){
+                for(let item of checkboxs){
+                    item.checked = true
+                }
+            } else {
+                for(let item of checkboxs){
+                    item.checked = false
+                }
+            }
+        })
+        
+        /*------ 刪除勾選 ------*/
+        let delAll = document.querySelector('.del-all')
+        delAll.addEventListener('click', function(){
+            checkboxs.forEach(function(item, index){
+                if(item.checked){
+                    item.closest('li.item').remove()
+                }
+            })
+            shopCartNull()
+            totalChange()
+        })
+
+        /* 單品總價格變更function */
+        function itemPrice(item, amount){
+            let itemPrice = item.closest('li.quantity').previousElementSibling.querySelector('span').innerHTML
+            itemPrice = parseInt(itemPrice.replace(/\$|\s|,/g, ''))
+            item.closest('li.item').querySelector('.item-price span').innerHTML = Intl.NumberFormat().format(itemPrice * amount)
+        }
+
+        /* 總價格變更 */
+        function totalChange(){
+            let itemPrices = document.querySelectorAll('.item-price span')
+            let total = 0
+            for(let item of itemPrices){
+                total += parseInt(item.innerHTML.replace(/\$|\s|,/g, ''))
+                document.querySelector('.total span').innerHTML = Intl.NumberFormat().format(total)
+            }
+        }
+
+
+        /* 購物車空的時候顯示 */
+        function shopCartNull(){
+            if(document.querySelectorAll('#item-list>li').length === 1){
+                checkAllBox.remove()
+                itemList.innerHTML = `<br><br><br><h2>購物車是空的！！！<h2><br>`
+                let formBlock = document.querySelector('.form-block').closest('section')
+                formBlock.remove()
+            }
+        }
+
     </script>
 </body>
 </html>

@@ -65,7 +65,10 @@ main section:nth-child(2n){
     text-align: center;
 }
 .quantity button{
-    padding: 2px 5px;
+    width: 28px;
+    line-height: 20px;
+    text-align: center;
+    vertical-align: middle;
     border: 1px solid var(--color_oragePeel);
     color: var(--color_oragePeel);
     background: #fff;
@@ -76,9 +79,6 @@ main section:nth-child(2n){
     border: 1px solid transparent;
     color: #fff;
     background: var(--color_oragePeel);
-}
-.quantity button .bi{
-    vertical-align: middle;
 }
 .del-btn{
     text-align: right;
@@ -97,6 +97,7 @@ main section:nth-child(2n){
 .total{
     font-size: 1.2rem;
 }
+
 
 /* 購買人資訊 */
 .form-block{
