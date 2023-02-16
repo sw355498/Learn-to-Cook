@@ -12,36 +12,11 @@
     <link rel="stylesheet" href="../css/all.css">
     <link rel="stylesheet" href="../css/scrollbar.css">
     <link rel="stylesheet" href="../css/btn.css">
+    <link rel="stylesheet" href="../css/middle.css">
 
     <link rel="stylesheet" href="../css/commodity.css">
     <style>
-        .mask{
-            position: fixed;
-            background: rgba(0,0,0,.8);
-            left:0;
-            top:0;
-            right:0;
-            bottom:0;
-            z-index:99;
-            display: none;
-        }
-        .mask.active{
-            display:block;
-        }
-        .modal{
-            background: #fff;
-            border-radius: 10px;
-            padding: 30px;
-            position: fixed;
-            left: 50%;
-            top:50%;
-            width: 300px;
-            transform: translate(-50%, -50%);
-            text-align: center;
-        }
-        #confirm{
-            margin-top: 20px;
-        }
+
     </style>
 </head>
 <body>
@@ -50,8 +25,9 @@
     <div class="mask" id="mask">
         <div class="modal">
             <h3>已加入購物車</h3>
-            <div>
+            <div style="display: flex;">
                 <button class="middle primary" id="confirm">確認</button>
+                <button class="middle cancel" id="cancel">取消</button>
             </div>
         </div>
     </div>
@@ -124,7 +100,7 @@
                         <button id="add"> + </button>
                     </div>
                     <input type="text" readonly id="price" class="price" value="$ 2,000">
-                    <button class="addCart" id="addCart">加入購物車</button>
+                    <button class="addToShopCart" id="addToShopCart">加入購物車</button>
                 </div>
             </div>
         </section>
@@ -262,25 +238,38 @@
         //     price,
         //     picSrc
         // }
-        let addCart = document.querySelector('#addCart')
+        let addToShopCart = document.querySelector('#addToShopCart')
         let confirm = document.querySelector("#confirm")
+        let cancel = document.querySelector('#cancel')
         let bodyBlock = document.querySelector('body')
-        addCart.addEventListener('click',function(){
+
+        function middleClose(){
+            mask.classList.remove('active')
+            bodyBlock.style.cssText = ''
+        }
+        
+        addToShopCart.addEventListener('click',function(){
             mask.classList.add("active")
-            bodyBlock.style.cssText = 'height: 100vh; overflow-y: hidden; padding-right: 15px;'
+            bodyBlock.style.cssText = 'height: 100vh; overflow-y: hidden;'
+        })
+        confirm.addEventListener('click', function(){
+
+            middleClose()
 
             // /* 加入購物車 */
-            // let shopCarts = JSON.parse(localStorage.getItem("shopCarts"));
-            // if(shopCarts){ // 若存在
-            //     shopCarts.unshift(shopCart);
-            // }else{ // 若不存在
-            //     shopCarts = [shopCart];
-            // }
-            // localStorage.setItem("shopCarts", JSON.stringify(shopCarts));
+            let shopCarts = JSON.parse(localStorage.getItem("shopCarts"));
+            if(shopCarts){ // 若存在
+                shopCarts.unshift(shopCart);
+            }else{ // 若不存在
+                shopCarts = [shopCart];
+            }
+            localStorage.setItem("shopCarts", JSON.stringify(shopCarts));
+
+            history.back(); //後退到前一頁
         })
-        confirm.addEventListener("click", function(){
-            mask.classList.remove("active")
-            bodyBlock.style.cssText = ''
+
+        cancel.addEventListener('click', function(){
+            middleClose()
         })
 
 

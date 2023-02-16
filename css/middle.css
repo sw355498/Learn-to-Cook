@@ -1,0 +1,35 @@
+.mask{
+    position: fixed;
+    background: rgba(0,0,0,.8);
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    z-index:99;
+    display: none;
+}
+.mask.active{
+    display:block;
+}
+.modal{
+    background: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    position: fixed;
+    left: 50%;
+    top:50%;
+    width: 300px;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+#confirm, #cancel{
+    margin: 20px 10px 0;
+}
+@media screen and (max-width:768px){
+    .modal{
+        border-radius: 5px;
+        padding: 30px 10px;
+        width: 90%;
+        box-sizing: border-box;
+    }
+}

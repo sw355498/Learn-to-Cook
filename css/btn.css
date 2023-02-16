@@ -48,15 +48,12 @@
     box-shadow: 4px 3px 4px rgba(0, 0, 0, 0.25);
 }
 
-.del-all{
+.del-all, .cancel{
     color: #fff;
-    background: var(--color_graniteGray);
-    border: 1px solid transparent;
+    background: #aaa;
 }
-.del-all:hover{
-    color: var(--color_graniteGray);
-    background: #fff;
-    border: 1px solid var(--color_graniteGray);
+.del-all:hover, .cancel:hover{
+    background: var(--color_graniteGray);
 }
 
 @media screen and (max-width: 768px) {
