@@ -14,9 +14,47 @@
     <link rel="stylesheet" href="../css/btn.css">
 
     <link rel="stylesheet" href="../css/commodity.css">
+    <style>
+        .mask{
+            position: fixed;
+            background: rgba(0,0,0,.8);
+            left:0;
+            top:0;
+            right:0;
+            bottom:0;
+            z-index:99;
+            display: none;
+        }
+        .mask.active{
+            display:block;
+        }
+        .modal{
+            background: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            position: fixed;
+            left: 50%;
+            top:50%;
+            width: 300px;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        #confirm{
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
     <button id="myBtn" title="Go to top">Top</button>
+
+    <div class="mask" id="mask">
+        <div class="modal">
+            <h3>已加入購物車</h3>
+            <div>
+                <button class="middle primary" id="confirm">確認</button>
+            </div>
+        </div>
+    </div>
     <header>
         <nav class="nav-list">
             <h1>
@@ -69,12 +107,12 @@
                         </p>
                     </div>
                     <div class="choose">
-                        <select name="" id="">
+                        <select name="" id="shippingMethod">
                             <option value="0">配送方式</option>
                             <option value="1">超商取貨</option>
                             <option value="2">宅配到府</option>
                         </select>
-                        <select name="" id="">
+                        <select name="" id="paymentMethod">
                             <option value="0">結帳方式</option>
                             <option value="1">信用卡付款</option>
                             <option value="2">貨到付款</option>
@@ -85,8 +123,8 @@
                         <input type="number" value="1" readonly min="1" id="amountNumber">
                         <button id="add"> + </button>
                     </div>
-                    <input type="text" readonly id="price" class="price" value="$2000">
-                    <button class="addCart">加入購物車</button>
+                    <input type="text" readonly id="price" class="price" value="$ 2,000">
+                    <button class="addCart" id="addCart">加入購物車</button>
                 </div>
             </div>
         </section>
@@ -187,7 +225,65 @@
                 // console.log(tag_data)
             }
         })
+
+
+        let commodityID = new Date().getTime();
+        let commodityName = document.querySelector('.commodity-text h2').innerHTML
+        let shippingMethod = +document.querySelector('#shippingMethod').value
+        let paymentMethod = +document.querySelector('#paymentMethod').value
+        let amountNumber = +document.querySelector('#amountNumber').value
+        let price = parseInt(document.querySelector('#price').value.replace(/\$|\s|,/g, ''))
+        let picSrc = pic.src
+        /*更改數量*/
+        let minus = document.querySelector('#minus')
+        let add = document.querySelector('#add')
+        minus.addEventListener('click',function(){
+            if(amountNumber > 1){
+                amountNumber--
+                console.log(amountNumber)
+                document.querySelector('#amountNumber').value = amountNumber
+                document.querySelector('#price').value = `$ ${Intl.NumberFormat().format(price * amountNumber)}`
+            }
+        })
+        add.addEventListener('click',function(){
+            amountNumber++
+            console.log(amountNumber)
+            document.querySelector('#amountNumber').value = amountNumber
+            document.querySelector('#price').value = `$ ${Intl.NumberFormat().format(price * amountNumber)}`
+        })
         
+
+        // let shopCart = {
+        //     commodityID,
+        //     commodityName,
+        //     shippingMethod,
+        //     paymentMethod,
+        //     amountNumber,
+        //     price,
+        //     picSrc
+        // }
+        let addCart = document.querySelector('#addCart')
+        let confirm = document.querySelector("#confirm")
+        let bodyBlock = document.querySelector('body')
+        addCart.addEventListener('click',function(){
+            mask.classList.add("active")
+            bodyBlock.style.cssText = 'height: 100vh; overflow-y: hidden; padding-right: 15px;'
+
+            // /* 加入購物車 */
+            // let shopCarts = JSON.parse(localStorage.getItem("shopCarts"));
+            // if(shopCarts){ // 若存在
+            //     shopCarts.unshift(shopCart);
+            // }else{ // 若不存在
+            //     shopCarts = [shopCart];
+            // }
+            // localStorage.setItem("shopCarts", JSON.stringify(shopCarts));
+        })
+        confirm.addEventListener("click", function(){
+            mask.classList.remove("active")
+            bodyBlock.style.cssText = ''
+        })
+
+
     </script>
 </body>
 </html>

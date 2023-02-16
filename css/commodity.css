@@ -116,10 +116,15 @@
     height: 50px;
     font-size: 1.2rem;
     font-family: NotoSansCJKtc-Bold;
-    background: var(--color_oragePeel);
+    background: var(--color_oragePeel_btn);
     color: #fff;
     border: none;
     border-radius: 10px;
+    cursor: pointer;
+}
+.addCart:hover{
+    background: var(--color_oragePeel_btn_hover);
+    box-shadow: 4px 3px 4px rgba(0, 0, 0, 0.25);
 }
 
 /* 商品資訊 */
