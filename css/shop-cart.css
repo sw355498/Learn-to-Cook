@@ -116,6 +116,7 @@ main section:nth-child(2n){
     margin-bottom: 30px;
     display: flex;
     flex-wrap: wrap;
+    padding: 0 10%;
 }
 .form-block input{
     line-height: 25px;
