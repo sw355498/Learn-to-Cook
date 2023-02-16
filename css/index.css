@@ -145,6 +145,15 @@
             margin-top: 50px;
         }
 
+        /* 首頁未加頁籤 第一個wrapper 需增加 paddin*/
+        .wrapper:first-child{
+            padding-top: 40px;
+        }
+        @media screen and (max-width:768px){
+            .wrapper:first-child{
+                padding-top: 20px;
+            } 
+        }
 /* 找食譜 */
     .classification-list{
         height: 800px;
