@@ -17,6 +17,36 @@
     <link rel="stylesheet" href="../css/scrollbar.css">
 
     <link rel="stylesheet" href="../css/list-page.css">
+    <style>
+        .item-text{
+            height: 180px;
+            overflow: auto;
+        }
+        .item-text  h3{
+            font-size: 1.6rem;
+            font-family: NaikaiFont;
+            text-align: left;
+        }
+        .item-text h4{
+            border-bottom: 1px solid black;
+            padding: 5px 0;
+            text-align: center;
+            font-family: NotoSansCJKtc-Bold;
+        }
+        .material{
+            width: 100%;
+            padding: 10px 0;
+        }
+        .material table{
+            width: 100%; 
+            font-size: 1rem;
+        }
+        .material td:last-child{
+            width: 30%;
+            text-align: right;
+            color: #666;
+        }
+    </style>
 </head>
 <body>
     <button id="myBtn" title="Go to top">Top</button>
@@ -64,86 +94,271 @@
         <div class="wrapper">
             <aside class="menu">
                 <ul>
-                    <li class="active"><a href="">所有商品</a></li>
-                    <li><a href="">主題食譜</a></li>
-                    <li><a href="">健身食譜</a></li>
-                    <li><a href="">湯品</a></li>
-                    <li><a href="">寶寶食譜</a></li>
+                    <li class="active"><a>所有食譜</a></li>
+                    <li><a>主題食譜</a></li>
+                    <li><a>健身食譜</a></li>
+                    <li><a>湯品</a></li>
+                    <li><a>寶寶食譜</a></li>
                 </ul>
             </aside>
             <ul class="item-list">
-                <li class="item">
-                    <a href="">
-                        <img src="../images/陶瓷鍋具.jpg" alt="陶瓷萬用不沾鍋">
-                        <div class="item-text">
-                            <h3 class="text-overflow">陶瓷萬用不沾鍋</h3>
-                            <div class="item-introduce scrollbar">
-                                <h4>【廚房用具】</h4>
-                                <p>陶瓷不沾塗層,好清洗</p>
+                <li class="item" data-category="湯品">
+                    <a href="recipe-detailed.html">
+                        <!-- https://icook.tw/recipes/424343 -->
+                        <img src="../images/南瓜濃湯.jpg" alt="南瓜濃湯">
+                        <div class="item-text scrollbar">
+                            <h3 class="text-overflow" title="南瓜濃湯">南瓜濃湯</h3>
+                            <h4>材料</h4>
+                            <div class="material">
+                                <table class="material-list">
+                                    <tr>
+                                        <td>南瓜</td>
+                                        <td>560克</td>
+                                    </tr>
+                                    <tr>
+                                        <td>馬鈴薯</td>
+                                        <td>160克</td>
+                                    </tr>
+                                    <tr>
+                                        <td>洋蔥</td>
+                                        <td>110克</td>
+                                    </tr>
+                                    <tr>
+                                        <td>無鹽奶油</td>
+                                        <td>24克</td>
+                                    </tr>
+                                    <tr>
+                                        <td>水</td>
+                                        <td>1000克</td>
+                                    </tr>
+                                    <tr>
+                                        <td>蒜頭</td>
+                                        <td>4瓣</td>
+                                    </tr>
+                                    <tr>
+                                        <td>蛋</td>
+                                        <td>1顆</td>
+                                    </tr>
+                                    <tr>
+                                        <td>黑胡椒粒</td>
+                                        <td>適量</td>
+                                    </tr>
+                                    <tr>
+                                        <td>鮮奶油</td>
+                                        <td>60克</td>
+                                    </tr>
+                                    <tr>
+                                        <td>蜂蜜</td>
+                                        <td>2匙</td>
+                                    </tr>
+                                    <tr>
+                                        <td>鹽巴</td>
+                                        <td>1匙</td>
+                                    </tr>
+                                </table>
                             </div>
-                            <p class="price">$<span>9,999</span></p>
                         </div>
                     </a>
                 </li>
-                <li class="item">
-                    <a href="">
-                        <img src="../images/大湖草莓.jpg" alt="草莓">
-                        <div class="item-text">
-                            <h3 class="text-overflow">大湖草莓</h3>
-                            <div class="item-introduce scrollbar">
-                                <h4>【新鮮食材】</h4>
-                                <p>特選鮮採苗栗大湖草莓(24-28顆/盒)</p>
-                                <p>冬季限定！！</p>
+                <li class="item" data-category="湯品">
+                    <a href="recipe-detailed.html">
+                        <!-- https://icook.tw/recipes/406033 -->
+                        <img src="../images/海鮮濃湯.jpg" alt="海鮮濃湯">
+                        <div class="item-text scrollbar">
+                            <h3 class="text-overflow" title="冬粉海鮮湯">冬粉海鮮湯</h3>
+                            <h4>材料</h4>
+                            <div class="material">
+                                <table class="material-list">
+                                    <tr>
+                                        <td>冬粉</td>
+                                        <td>1~2把</td>
+                                    </tr>
+                                    <tr>
+                                        <td>番茄</td>
+                                        <td>1顆</td>
+                                    </tr>
+                                    <tr>
+                                        <td>蛤仔</td>
+                                        <td>10顆左右</td>
+                                    </tr>
+                                    <tr>
+                                        <td>蝦子</td>
+                                        <td>4隻</td>
+                                    </tr>
+                                    <tr>
+                                        <td>雞蛋</td>
+                                        <td>1個</td>
+                                    </tr>
+                                    <tr>
+                                        <td>胡椒粉</td>
+                                        <td>適量</td>
+                                    </tr>
+                                    <tr>
+                                        <td>紅蔥油</td>
+                                        <td>一大匙</td>
+                                    </tr>
+                                    <tr>
+                                        <td>鹽</td>
+                                        <td>一點點</td>
+                                    </tr>
+                                </table>
                             </div>
-                            <p class="price">$<span>2,000</span></p>
                         </div>
                     </a>
                 </li>
-                <li class="item">
-                    <a href="">
-                        <img src="../images/橘子.jpg" alt="橘子">
-                        <div class="item-text">
-                            <h3 class="text-overflow">橘子</h3>
-                            <div class="item-introduce scrollbar">
-                                <h4>【新鮮食材】</h4>
-                                <p>台灣砂糖橘(約 10斤/箱)</p>
-                                <p>果農直配～！</p>
+                <li class="item" data-category="主題食譜">
+                    <a href="recipe-detailed.html">
+                        <!-- https://icook.tw/recipes/428291 -->
+                        <img src="../images/番茄雞肉丸義大利麵.jpg" alt="番茄雞肉丸義大利麵">
+                        <div class="item-text scrollbar">
+                            <h3 class="text-overflow" title="番茄雞肉丸義大利麵">番茄雞肉丸義大利麵</h3>
+                            <h4>材料</h4>
+                            <div class="material">
+                                <table class="material-list">
+                                    <tr>
+                                        <td>番茄</td>
+                                        <td>2顆</td>
+                                    </tr>
+                                    <tr>
+                                        <td>洋蔥</td>
+                                        <td>1顆</td>
+                                    </tr>
+                                    <tr>
+                                        <td>蒜瓣</td>
+                                        <td>8瓣</td>
+                                    </tr>
+                                    <tr>
+                                        <td>雞胸肉</td>
+                                        <td>300g</td>
+                                    </tr>
+                                    <tr>
+                                        <td>雞蛋</td>
+                                        <td>1顆</td>
+                                    </tr>
+                                    <tr>
+                                        <td>鹽</td>
+                                        <td>3匙</td>
+                                    </tr>
+                                    <tr>
+                                        <td>蕃茄糊</td>
+                                        <td>400克</td>
+                                    </tr>
+                                    <tr>
+                                        <td>義大利麵</td>
+                                        <td>1把</td>
+                                    </tr>
+                                </table>
                             </div>
-                            <p class="price">$<span>2,000</span></p>
                         </div>
                     </a>
                 </li>
-                <li class="item">
-                    <a href="">
-                        <img src="../images/pizza-cutter.jpg" alt="不銹鋼滾輪披薩刀">
-                        <div class="item-text">
-                            <h3 class="text-overflow">不銹鋼滾輪披薩刀</h3>
-                            <div class="item-introduce scrollbar">
-                                <h4>【廚房用具】</h4>
-                                <p>
-                                    9cm大寬面，可360°來回靈活滾動、平整切割
-                                    披薩、鹹甜派餅、蔥油餅、香草葉片…等
-                                    貼心擋柄防護設計，輔助施力並同時保護手指
-                                    符合人體工學握把，輕巧好握不滑手
-                                    透明保護套，方便安全收納
-                                </p>
+                <li class="item" data-category="健身食譜">
+                    <a href="recipe-detailed.html">
+                        <!-- https://icook.tw/recipes/420633 -->
+                        <img src="../images/蔬菜鮮果沙拉.jpg" alt="蔬菜鮮果沙拉">
+                        <div class="item-text scrollbar">
+                            <h3 class="text-overflow" title="番茄蔬菜溫沙拉(氣炸烤箱)">番茄蔬菜溫沙拉(氣炸烤箱)</h3>
+                            <h4>材料</h4>
+                            <div class="material">
+                                <table class="material-list">
+                                    <tr>
+                                        <td>櫛瓜</td>
+                                        <td>1條</td>
+                                    </tr>
+                                    <tr>
+                                        <td>番茄</td>
+                                        <td>1顆</td>
+                                    </tr>
+                                    <tr>
+                                        <td>紅椒</td>
+                                        <td>1顆</td>
+                                    </tr>
+                                    <tr>
+                                        <td>黃椒</td>
+                                        <td>1顆</td>
+                                    </tr>
+                                    <tr>
+                                        <td>玉米筍</td>
+                                        <td>1盒</td>
+                                    </tr>
+                                    <tr>
+                                        <td>橄欖油</td>
+                                        <td>1大匙</td>
+                                    </tr>
+                                    <tr>
+                                        <td>黑胡椒粉</td>
+                                        <td>1小匙</td>
+                                    </tr>
+                                    <tr>
+                                        <td>鹽巴</td>
+                                        <td>1小匙</td>
+                                    </tr>
+                                </table>
                             </div>
-                            <p class="price">$<span>999</span></p>
                         </div>
                     </a>
                 </li>
-                <li class="item">
-                    <a href="">
-                        <img src="../images/八角.jpg" alt="八角">
-                        <div class="item-text">
-                            <h3 class="text-overflow">八角茴香</h3>
-                            <div class="item-introduce scrollbar">
-                                <h4>【調味料】</h4>
-                                <p>中式料理中最為廣泛使用的香辛料之一</p>
-                                <p>無論滷包、湯底甚至甜點，其甜味可用以代替甘草</p>
-                                <p>本產品經檢驗合格，無農藥殘留</p>
+                <li class="item" data-category="健身食譜">
+                    <a href="recipe-detailed.html">
+                        <!-- https://icook.tw/recipes/376984 -->
+                        <img src="../images/香煎雞胸肉.jpg" alt="香煎雞胸肉">
+                        <div class="item-text scrollbar">
+                            <h3 class="text-overflow" title="舒肥雞胸(電鍋版)">舒肥雞胸(電鍋版)</h3>
+                            <h4>材料</h4>
+                            <div class="material">
+                                <table class="material-list">
+                                    <tr>
+                                        <td>雞胸肉</td>
+                                        <td>4片</td>
+                                    </tr>
+                                    <tr>
+                                        <td>白胡椒粉</td>
+                                        <td>1匙</td>
+                                    </tr>
+                                    <tr>
+                                        <td>黑胡椒粒</td>
+                                        <td>1匙</td>
+                                    </tr>
+                                    <tr>
+                                        <td>七味唐辛子</td>
+                                        <td>1匙</td>
+                                    </tr>
+                                    <tr>
+                                        <td>鹽</td>
+                                        <td>1匙</td>
+                                    </tr>
+                                    <tr>
+                                        <td>義式香料</td>
+                                        <td>1匙</td>
+                                    </tr>
+                                </table>
                             </div>
-                            <p class="price">$<span>100</span></p>
+                        </div>
+                    </a>
+                </li>
+                <li class="item" data-category="寶寶食譜">
+                    <a href="recipe-detailed.html">
+                        <!-- https://cookpad.com/tw/%E9%A3%9F%E8%AD%9C/3139941-%E5%AF%B6%E5%AF%B6%E5%89%AF%E9%A3%9F%E5%93%81-%E7%B4%85%E8%98%BF%E8%94%94%E8%98%8B%E6%9E%9C%E7%B1%B3%E7%B3%8A5m?ref=search&search_term=%E7%B1%B3%E7%B3%8A -->
+                        <img src="../images/水果米糊.jpg" alt="水果米糊">
+                        <div class="item-text scrollbar">
+                            <h3 class="text-overflow" title="胡蘿蔔頻果米糊">胡蘿蔔頻果米糊</h3>
+                            <h4>材料</h4>
+                            <div class="material">
+                                <table class="material-list">
+                                    <tr>
+                                        <td>頻果</td>
+                                        <td>1/4顆</td>
+                                    </tr>
+                                    <tr>
+                                        <td>胡蘿蔔</td>
+                                        <td>數片</td>
+                                    </tr>
+                                    <tr>
+                                        <td>米</td>
+                                        <td>1/4杯</td>
+                                    </tr>
+                                </table>
+                            </div>
                         </div>
                     </a>
                 </li>
@@ -156,5 +371,50 @@
 
     <script src="../js/hamburgerMenu.js"></script>
     <script src="../js/goToTop.js"></script>
+    <script>
+        let search = document.querySelector('.search-text input')
+        let search_btn = document.querySelector('.search-btn')
+        search_btn.addEventListener('click', function(){
+            if(search.value.trim()){
+                console.log(search.value)
+            } else {
+                alert('輸入錯誤，請重新輸入')
+            }
+        })
+
+
+        let menu = document.querySelector('.menu ul')
+        let menuItems = document.querySelectorAll('.menu>ul>li')
+        let items = document.querySelectorAll('.item')
+        menu.addEventListener('click', function(e){
+            if(e.target.closest('aside').classList.contains('menu')){
+                for(let item of menuItems){
+                            item.classList.remove('active')
+                }
+                for(let item of items){
+                  if(item.getAttribute('data-category') === e.target.innerHTML){
+                        item.style.setProperty('display', 'block')
+                    } else {
+                        item.style.setProperty('display', 'none')
+                    }
+                    if(e.target.innerHTML === '所有食譜'){
+                        item.style.setProperty('display', 'block')
+                    }
+                }
+                e.target.closest('li').classList.add('active')
+            }
+            
+
+        })
+        for(let item of items){
+                //   if(item.getAttribute('data-category') === e.target.innerHTML){
+                //         e.target.setAttribute('display', 'block')
+                //     } else {
+                //         e.target.setAttribute('display', 'none')
+                //     }
+                    // console.log(item)
+                    // console.log(item.dataset.category)
+        }
+    </script>
 </body>
 </html>

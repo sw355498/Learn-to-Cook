@@ -1,5 +1,6 @@
 .wrapper{
     display: flex;
+    padding-top: 0px;
 }
 .menu{
     flex-shrink: 0;
@@ -29,6 +30,7 @@
     background: var(--color_cornflowerBlue);
     color: #fff;
     border-left: 6px solid var(--color_oragePeel);
+    cursor: pointer;
 }
 .item-list{
     width: calc(100% - 220px);
