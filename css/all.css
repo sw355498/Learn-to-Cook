@@ -9,7 +9,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;500&display=swap');
     @font-face{
         font-family: NaikaiFont;
-        /* src: url('../font/naikaifont-master/jp/NaikaiFont-Bold.ttf'); */
+        /* src: url('../font/-master/jp/NaikaiFont-Bold.ttf'); */
         src: url('../font/naikaifont-master/webfont/NaikaiFont-Bold.woff');
         font-display: swap;
     }
@@ -41,6 +41,7 @@
 header{
     min-width: 960px;
     font-family: NaikaiFont;
+    font-weight: 900;
 }
 /* 網站logo使用h1標籤優化seo方面 */
 header h1 a{

@@ -14,7 +14,7 @@
 .search-bg h2{
     width: 130px;
     font-size: 2rem;
-    font-family: NaikaiFont;
+    /* font-family: NaikaiFont; */
 }
 .search-block{
     background: rgba(255, 255, 255, .8);

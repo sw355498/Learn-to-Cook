@@ -20,7 +20,7 @@
 }
 .commodity-text h2{
     font-size: 2rem;
-    font-family: NaikaiFont;
+    /* font-family: NaikaiFont; */
     font-weight: 900;
     text-align: left;
 }
