@@ -26,7 +26,8 @@
     }
     .banner-list h2{
         font-size: 2.2rem;
-        font-family: NaikaiFont;
+        /* font-family: NaikaiFont; */
+        font-weight: 900;
         word-wrap: normal;
     }
     .banner-list p{
@@ -186,7 +187,8 @@
         position: absolute;
         bottom: 0;
         font-size: 1.6rem;
-        font-family: NaikaiFont;
+        /* font-family: NaikaiFont; */
+        font-weight: 900;
     }
     .themeRecipe{
         grid-column-start: 1;
@@ -284,7 +286,8 @@
     }
     .forum-content-text h3{
         font-size: 1.6rem;
-        font-family: NaikaiFont;
+        /* font-family: NaikaiFont; */
+        font-weight: 900;
     }
     .recipe-author{
         display: flex;
@@ -420,7 +423,8 @@
     }
     .item-text  h3{
         font-size: 1.6rem;
-        font-family: NaikaiFont;
+        /* font-family: NaikaiFont; */
+        font-weight: 900;
     }
     .item-introduce{
         padding: 10px;

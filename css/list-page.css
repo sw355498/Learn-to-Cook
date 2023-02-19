@@ -61,7 +61,8 @@
 }
 .item-text  h3{
     font-size: 1.2rem;
-    font-family: NaikaiFont;
+    /* font-family: NaikaiFont; */
+    font-weight: 900;
 }
 .item-introduce{
     padding: 10px;

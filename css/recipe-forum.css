@@ -34,7 +34,8 @@
 }
 .item-text  h3{
     font-size: 1.6rem;
-    font-family: NaikaiFont;
+    /* font-family: NaikaiFont; */
+    font-weight: 900;
     text-align: left;
 }
 .item-text h4{

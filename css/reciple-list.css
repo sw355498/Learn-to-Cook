@@ -38,7 +38,8 @@
     border-radius: 0 0 20px 20px;
     position: absolute;
     bottom: 0;
-    font-family: NaikaiFont;
+    /* font-family: NaikaiFont; */
+    font-weight: 900;
     font-size: 1.6rem;
 }
 .classification-list li:hover h3,
@@ -203,7 +204,8 @@
     letter-spacing: 15px;
     position: absolute;
     bottom: 0;
-    font-family: NaikaiFont;
+    /* font-family: NaikaiFont; */
+    font-weight: 900;
 }
 .soupRecipes li:nth-child(2n+1) h3{
     border-radius: 0 20px 0 0;

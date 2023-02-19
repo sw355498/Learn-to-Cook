@@ -138,7 +138,8 @@ header h1 a{
         text-align: center;
         font-size: 2rem;
         margin-bottom: 20px;
-        font-family: NaikaiFont;
+        /* font-family: NaikaiFont; */
+        font-weight: 900;
         position: relative;
         color: #333;
     }
