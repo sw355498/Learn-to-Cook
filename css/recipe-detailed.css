@@ -159,10 +159,11 @@
         font-size: 1.4rem;
     }
     .step{
+        margin-top: 60px;
         padding: 0 30px;
         grid-template-columns: 1fr;
         column-gap: 0px;
-        row-gap: 80px;
+        row-gap: 60px;
     }
     .step li:nth-child(2n+1){
         grid-column-start: 1;
@@ -173,12 +174,13 @@
         grid-column-end: 2;
     }
     .step div{
-        padding: 0px 10px 0 20px;
+        padding: 0px 10px 0 60px;
     }
     .step h4{
         width: 50px;
         line-height: 50px;
         font-size: 1rem;
         padding: 5px;
+        transform: translate(-40%, -70%);
     }
 }
