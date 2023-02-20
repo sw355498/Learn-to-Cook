@@ -49,6 +49,9 @@
     color: #333;
 }
 @media screen and (max-width:768px){
+    .more{
+        width: 150px;
+    }
     .classification-list h3,
     .fitnessRecipes h3,
     .soupRecipes h3,

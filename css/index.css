@@ -457,6 +457,9 @@
         }
     }
     @media screen and (max-width:768px){
+        .more{
+            width: 150px;
+        }
         .item{
             width: 200px;
         }
