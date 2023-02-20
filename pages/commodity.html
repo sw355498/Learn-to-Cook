@@ -262,13 +262,13 @@
             middleClose()
 
             // /* 加入購物車 */
-            let shopCarts = JSON.parse(localStorage.getItem("shopCarts"));
-            if(shopCarts){ // 若存在
-                shopCarts.unshift(shopCart);
-            }else{ // 若不存在
-                shopCarts = [shopCart];
-            }
-            localStorage.setItem("shopCarts", JSON.stringify(shopCarts));
+            // let shopCarts = JSON.parse(localStorage.getItem("shopCarts"));
+            // if(shopCarts){ // 若存在
+            //     shopCarts.unshift(shopCart);
+            // }else{ // 若不存在
+            //     shopCarts = [shopCart];
+            // }
+            // localStorage.setItem("shopCarts", JSON.stringify(shopCarts));
 
             history.back(); //後退到前一頁
         })
