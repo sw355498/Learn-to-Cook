@@ -234,19 +234,20 @@
         })
         
 
-        // let shopCart = {
-        //     commodityID,
-        //     commodityName,
-        //     shippingMethod,
-        //     paymentMethod,
-        //     amountNumber,
-        //     price,
-        //     picSrc
-        // }
+        let shopCart = {
+            commodityID,
+            commodityName,
+            shippingMethod,
+            paymentMethod,
+            amountNumber,
+            price,
+            picSrc
+        }
         let addToShopCart = document.querySelector('#addToShopCart')
         let confirm = document.querySelector("#confirm")
         let cancel = document.querySelector('#cancel')
         let bodyBlock = document.querySelector('body')
+        let mask = document.querySelector('.mask')
 
         function middleClose(){
             mask.classList.remove('active')
@@ -262,18 +263,21 @@
             middleClose()
 
             // /* 加入購物車 */
-            // let shopCarts = JSON.parse(localStorage.getItem("shopCarts"));
-            // if(shopCarts){ // 若存在
-            //     shopCarts.unshift(shopCart);
-            // }else{ // 若不存在
-            //     shopCarts = [shopCart];
-            // }
-            // localStorage.setItem("shopCarts", JSON.stringify(shopCarts));
+            let shopCarts = JSON.parse(localStorage.getItem("shopCarts"));
+            if(shopCarts){ // 若存在
+                shopCarts.unshift(shopCart);
+            }else{ // 若不存在
+                shopCarts = [shopCart];
+            }
+            localStorage.setItem("shopCarts", JSON.stringify(shopCarts));
 
             history.back(); //後退到前一頁
         })
 
         cancel.addEventListener('click', function(){
+            middleClose()
+        })
+        mask.addEventListener('click', function(){
             middleClose()
         })
 
