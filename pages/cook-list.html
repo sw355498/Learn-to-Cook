@@ -46,6 +46,21 @@
             text-align: right;
             color: #666;
         }
+        @media screen and (max-width:768px){
+            .item{
+                max-width: none;
+            }
+            .item-list{
+                grid-template-columns: repeat(1, 1fr);
+            }
+            .item img{
+                height: 180px;
+            }
+            .item-text{
+                padding: 10px;
+                /* height: 160px; */
+            }
+        }
     </style>
 </head>
 <body>

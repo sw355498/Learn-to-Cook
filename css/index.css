@@ -1,8 +1,3 @@
-/* more 按鈕 */
-    .more{
-        display: block;
-        margin:0 auto;
-    }
 /* banner設置 */
     .banner-block{
         width: 100%;
@@ -457,9 +452,6 @@
         }
     }
     @media screen and (max-width:768px){
-        .more{
-            width: 150px;
-        }
         .item{
             width: 200px;
         }

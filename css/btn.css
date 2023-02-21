@@ -72,7 +72,30 @@
         font-size: 14px;
     }
 }
-
+/* more */
+.more-block{
+    text-align: right;
+    margin-top: 20px;
+}
+.more-block a{
+    padding: 10px 20px; /* 增加感應區 */
+}
+.more{
+    color: #333;
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+.more:hover{
+    color: #ccc;
+}
+@media screen and (max-width:768px) {
+    .more-block{
+        text-align: center;
+    }
+    .more{
+        font-size: 1.1rem;
+    }
+}
 /* Go To Top*/
 #myBtn {
     display: none;
